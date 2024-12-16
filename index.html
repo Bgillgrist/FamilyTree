@@ -3,32 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Family Tree</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Family Tree - Protected</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f4f4f9;
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to Brennan's Family Tree</h1>
-    <p>See how we are all related and information about the family!.</p>
-  </header>
+  <h1>Protected Family Tree</h1>
+  <p>Please enter the password to access the site:</p>
 
-  <main>
-    <section>
-      <h2>Start Your Journey:</h2>
-      <a href="brennan2002.html">Start with Me (Brennan Gillgrist)</a>
-    </section>
+  <!-- Password Input -->
+  <input type="password" id="password" placeholder="Enter Password">
+  <button onclick="checkPassword()">Submit</button>
 
-    <section>
-      <h2>Search</h2>
-      <input type="text" id="search" placeholder="Search for a family member">
-      <ul id="results"></ul>
-    </section>
-  </main>
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
 
-  <footer>
-    <p>&copy; 2024 Brennan Gillgrist</p>
-  </footer>
-
-  <script src="search.js"></script>
+      // Set your password here
+      if (password === "brennanfamily55$") {
+        window.location.href = "home.html"; // Redirect to the main page
+      } else {
+        alert("Incorrect password. Try again.");
+      }
+    }
+  </script>
 </body>
 </html>
