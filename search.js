@@ -1,5 +1,6 @@
 const familyMembers = [
   { name: "Brennan Gillgrist", link: "brennan2002/index.html" },
+  { name: "Theodore Gillgrist", link: "theodore1971/index.html" },
   // Add more family members here
 ];
 
