@@ -5,60 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brennan Gillgrist</title>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Layout Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+
+    /* Left column for Family Relationships and Timeline */
+    .left {
+      flex: 1;
+      max-width: 60%;
+      padding: 20px;
+    }
+
+    /* Right column for Profile Picture */
+    .right {
+      flex: 1;
+      max-width: 40%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .right img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid #ddd;
+    }
+
+    /* Styling for sections */
+    h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 5px 0;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .gallery-item {
+      text-align: center;
+      flex: 1 1 calc(33.333% - 15px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 5px;
+    }
+
+    .gallery-item p {
+      margin-top: 5px;
+      font-size: 0.9em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header Section -->
   <header>
     <h1>Brennan Gillgrist</h1>
-    <p><strong>Born:</strong> November 15, 2002</p>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Family Relationships -->
-    <section>
-      <h2>Family Relationships</h2>
-      <ul>
-        <li><strong>Spouse:</li>
-        <li><strong>Parents:</strong>
-          <ul>
-            <li><a href="../theodore1971/index.html">Theodore Gillgrist</a></li>
-            <li><a href="../karen1974/index.html">Karen Gillgrist</a></li>
-          </ul>
-        </li>
-        <li><strong>Siblings:</strong>
-          <ul>
-            <li><a href="../kaitlyn2000/index.html">Kaitlyn Gillgrist</a></li>
-            <li><a href="../ethan2005/index.html">Ethan Gillgrist</a></li>
-          </ul>
-        </li>
-        <li><strong>Children:</strong>
-          <ul>
-          </ul>
-        </li>
-      </ul>
-    </section>
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Left Column: Family Relationships and Timeline -->
+    <div class="left">
+      <!-- Family Relationships -->
+      <section>
+        <h2>Family Relationships</h2>
+        <ul>
+          <li><strong>Spouse:</strong> <a href="../jane1975/index.html">Jane Doe</a></li>
+          <li><strong>Parents:</strong>
+            <ul>
+              <li><a href="../theodore1971/index.html">Theodore Gillgrist</a></li>
+              <li><a href="../karen1974/index.html">Karen Gillgrist</a></li>
+            </ul>
+          </li>
+          <li><strong>Siblings:</strong>
+            <ul>
+              <li><a href="../kaitlyn2000/index.html">Kaitlyn Gillgrist</a></li>
+              <li><a href="../ethan2005/index.html">Ethan Gillgrist</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
 
-    <!-- Photos and Media -->
-    <section>
-      <h2>Photos and Media</h2>
+      <!-- Timeline of Events -->
+      <section>
+        <h2>Timeline of Events</h2>
+        <ul>
+          <li><strong>2002</strong> - Born in Charleston, SC</li>
+          <li><strong>2024</strong> - Engaged to Taylor Hoffman</li>
+          <li><strong>2024</strong> - Graduated from the University of South Carolina</li>
+        </ul>
+      </section>
+    </div>
 
-    </section>
+    <!-- Right Column: Profile Picture -->
+    <div class="right">
+      <img src="profile.jpg" alt="Brennan Gillgrist">
+      <p><em>Brennan Gillgrist</em></p>
+    </div>
+  </div>
 
-    <!-- Timeline / Key Life Events -->
-    <section>
-      <h2>Key Life Events</h2>
-      <ul>
-        <li><strong>2002</strong> - Born in Charleston, SC</li>
-        <li><strong>2024</strong> - Engaged to Taylor Hoffman</li>
-        <li><strong>2024</strong> - Graduated College from the University of South Carolina</li>
-      </ul>
-    </section>
-  </main>
+  <!-- Extra Photos with Captions -->
+  <section>
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="photo1.jpg" alt="Brennan at Graduation">
+        <p>Brennan at Graduation</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo2.jpg" alt="Brennan and Family">
+        <p>Brennan with Family</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo3.jpg" alt="Brennan's Favorite Hobby">
+        <p>Playing Guitar</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer Navigation -->
   <footer>
-    <a href="../home.html">Back to Family Tree</a> |
+    <a href="../home.html">Back to Family Tree</a>
   </footer>
 </body>
 </html>
