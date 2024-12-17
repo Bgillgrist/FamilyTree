@@ -2,6 +2,7 @@ const familyMembers = [
   { name: "Brennan Gillgrist", link: "brennan2002/index.html" },
   { name: "Theodore Gillgrist", link: "theodore1971/index.html" },
   { name: "Ethan Gillgrist", link: "ethan2005/index.html" },
+  { name: "Karen Gillgrist", link: "karen1974/index.html" },
   // Add more family members here
 ];
 
