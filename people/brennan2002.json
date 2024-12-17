@@ -1,0 +1,22 @@
+{
+  "name": "Brennan Gillgrist",
+  "birthdate": "November 15, 2002",
+  "profilePicture": "brennan2002.jpg",
+  "family": [
+    { "label": "Spouse", "name": "N/A", "link": "#" },
+    { "label": "Parents", "name": "Theodore Gillgrist", "link": "template.html?people/theodore1971.json" },
+    { "label": "Parents", "name": "Karen Gillgrist", "link": "template.html?people/karen1974.json" },
+    { "label": "Siblings", "name": "Kaitlyn Gillgrist", "link": "template.html?people/kaitlyn2000.json" },
+    { "label": "Siblings", "name": "Ethan Gillgrist", "link": "template.html?people/ethan2005.json" }
+  ],
+  "timeline": [
+    { "year": "2002", "description": "Born in Charleston, SC" },
+    { "year": "2024", "description": "Engaged to Taylor Hoffman" },
+    { "year": "2024", "description": "Graduated from the University of South Carolina" }
+  ],
+  "gallery": [
+    { "src": "brennan2002.engagement.JPG", "alt": "Engagement", "caption": "Engagement with Taylor Hoffman" },
+    { "src": "brennan2002.family.JPG", "alt": "Family Graduation", "caption": "High School Graduation" },
+    { "src": "brennan2002.mom.HEIC", "alt": "Grand Canyon", "caption": "With Mom at Grand Canyon" }
+  ]
+}
