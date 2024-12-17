@@ -1,5 +1,5 @@
 // Fetch the data for the specific person
-fetch(window.location.search.substring(1) + ".json")
+fetch("people/" + window.location.search.substring(1) + ".json")
   .then(response => response.json())
   .then(data => {
     document.getElementById("name").textContent = data.name;
