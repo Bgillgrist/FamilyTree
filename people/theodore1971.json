@@ -4,9 +4,9 @@
   "profilePicture": "theodore1971.JPG",
   "family": [
     { "label": "Spouse", "name": "Karen Gillgrist", "link": "template.html?people/karen1974.json" },
-    { "label": "Parents", "name": "Susan Gillgrist", "link": "template.html?people/susan1943.json" },
-    { "label": "Parents", "name": "Robert Gillgrist", "link": "template.html?people/robert1944.json" },
-    { "label": "Siblings", "name": "Robert Gillgrist", "link": "template.html?people/robert1969.json" }
+    { "label": "Parent", "name": "Susan Gillgrist", "link": "template.html?people/susan1943.json" },
+    { "label": "Parent", "name": "Robert Gillgrist", "link": "template.html?people/robert1944.json" },
+    { "label": "Sibling", "name": "Robert Gillgrist", "link": "template.html?people/robert1969.json" }
   ],
   "timeline": [
     { "year": "1971", "description": "Born in Pittsburgh, PA" },
