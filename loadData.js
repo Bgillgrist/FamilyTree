@@ -2,18 +2,31 @@
 fetch("people/" + window.location.search.substring(1) + ".json")
   .then(response => response.json())
   .then(data => {
+    // Basic information
     document.getElementById("name").textContent = data.name;
     document.getElementById("birthdate").textContent = `Born: ${data.birthdate}`;
-
-    // Profile Picture
     document.getElementById("profile-pic").src = data.profilePicture;
 
-    // Family Relationships
-    const familyList = document.getElementById("family");
+    // Grouped family relationships
+    const spouseList = document.getElementById("spouse");
+    const parentsList = document.getElementById("parents");
+    const siblingsList = document.getElementById("siblings");
+    const childrenList = document.getElementById("children");
+
+    // Loop through family and categorize
     data.family.forEach(member => {
       const li = document.createElement("li");
-      li.innerHTML = `<strong>${member.label}:</strong> <a href="${member.link}">${member.name}</a>`;
-      familyList.appendChild(li);
+      li.innerHTML = `<a href="${member.link}">${member.name}</a>`;
+      
+      if (member.label === "Spouse") {
+        spouseList.appendChild(li);
+      } else if (member.label === "Parent") {
+        parentsList.appendChild(li);
+      } else if (member.label === "Sibling") {
+        siblingsList.appendChild(li);
+      } else if (member.label === "Child") {
+        childrenList.appendChild(li);
+      }
     });
 
     // Timeline
