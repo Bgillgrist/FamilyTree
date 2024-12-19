@@ -119,10 +119,12 @@
         "July", "August", "September", "October", "November", "December"
       ];
 
+      monthList.innerHTML = "";
+
       months.forEach((birthdaysInMonth, index) => {
         const monthDiv = document.createElement("div");
         monthDiv.className = "month";
-        monthDiv.textContent = monthNames[index];
+        monthDiv.textContent = `${monthNames[index]} (${birthdaysInMonth.length} birthdays)`;
         monthDiv.onclick = () => displayBirthdays(index, birthdaysInMonth);
         monthList.appendChild(monthDiv);
       });
