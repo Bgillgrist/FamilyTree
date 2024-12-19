@@ -13,10 +13,34 @@
       text-align: center;
     }
 
+    .month-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .month {
+      flex: 0 1 calc(33% - 10px);
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .month:hover {
+      background-color: #007BFF;
+      color: white;
+    }
+
     .calendar-grid {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 5px;
+      margin-top: 20px;
     }
 
     .calendar-day {
@@ -32,12 +56,24 @@
       cursor: pointer;
     }
 
-    .calendar-header {
-      font-weight: bold;
+    .calendar-day .birthday {
+      font-size: 0.8em;
+      margin-top: 5px;
+      color: #555;
     }
 
-    .calendar-info {
+    .back-button {
       margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
@@ -46,24 +82,25 @@
   <div class="tab-bar">
     <a href="home.html">Home</a>
     <a href="calendar.html" class="active">Calendar</a>
-    <!-- Add more links as needed -->
   </div>
 
   <!-- Calendar Section -->
   <div class="calendar-container">
     <h1>Family Birthday Calendar</h1>
-    <div class="calendar-grid" id="calendar-grid">
-      <!-- Calendar days will be inserted here -->
+    <div id="month-view" class="month-list">
+      <!-- Months will be populated here -->
     </div>
-    <div class="calendar-info" id="calendar-info">
-      Click on a day to see birthdays.
+    <div id="day-view" style="display: none;">
+      <h2 id="month-name"></h2>
+      <div class="calendar-grid" id="calendar-grid"></div>
+      <button class="back-button" onclick="showMonthView()">Back to Months</button>
     </div>
   </div>
 
   <script>
     // Sample birthday data
     const birthdays = [
-      { name: "Ted Gillgrist", date: "1971-09-27" },
+      { name: "Theodore Gillgrist", date: "1971-09-27" },
       { name: "Brennan Gillgrist", date: "2002-11-15" },
       { name: "Karen Gillgrist", date: "1974-05-13" },
       { name: "Ethan Gillgrist", date: "2005-04-28" },
@@ -78,32 +115,79 @@
       { name: "Bella Gillgrist", date: "2011-04-18" }
     ];
 
-    // Function to generate calendar
-    function generateCalendar() {
-      const calendarGrid = document.getElementById("calendar-grid");
-      const calendarInfo = document.getElementById("calendar-info");
-      
-      // Create days for each month
-      for (let day = 1; day <= 31; day++) {
-        const calendarDay = document.createElement("div");
-        calendarDay.className = "calendar-day";
-        calendarDay.textContent = day;
+    // Function to group birthdays by month
+    function groupBirthdaysByMonth() {
+      const months = Array.from({ length: 12 }, () => []);
+      birthdays.forEach(b => {
+        const month = new Date(b.date).getMonth(); // 0 = January, 11 = December
+        months[month].push(b);
+      });
+      return months;
+    }
 
-        // Add birthdays to the day
-        const birthdaysOnThisDay = birthdays.filter(b => new Date(b.date).getDate() === day);
+    // Function to display month view
+    function showMonthView() {
+      const monthView = document.getElementById("month-view");
+      const dayView = document.getElementById("day-view");
+      const months = groupBirthdaysByMonth();
+
+      monthView.innerHTML = ""; // Clear existing months
+      dayView.style.display = "none";
+      monthView.style.display = "flex";
+
+      const monthNames = [
+        "January", "February", "March", "April", "May", "June", 
+        "July", "August", "September", "October", "November", "December"
+      ];
+
+      months.forEach((birthdaysInMonth, index) => {
+        if (birthdaysInMonth.length > 0) {
+          const monthDiv = document.createElement("div");
+          monthDiv.className = "month";
+          monthDiv.textContent = `${monthNames[index]} (${birthdaysInMonth.length} birthdays)`;
+          monthDiv.onclick = () => showDayView(index, birthdaysInMonth);
+          monthView.appendChild(monthDiv);
+        }
+      });
+    }
+
+    // Function to display day view for a specific month
+    function showDayView(monthIndex, birthdaysInMonth) {
+      const monthView = document.getElementById("month-view");
+      const dayView = document.getElementById("day-view");
+      const calendarGrid = document.getElementById("calendar-grid");
+      const monthName = document.getElementById("month-name");
+
+      monthView.style.display = "none";
+      dayView.style.display = "block";
+      monthName.textContent = `Birthdays in ${new Date(2000, monthIndex).toLocaleString('default', { month: 'long' })}`;
+      calendarGrid.innerHTML = ""; // Clear previous days
+
+      // Create days in month
+      const daysInMonth = new Date(2024, monthIndex + 1, 0).getDate(); // 0 = last day of previous month
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayDiv = document.createElement("div");
+        dayDiv.className = "calendar-day";
+        dayDiv.textContent = day;
+
+        // Check if birthdays exist for this day
+        const birthdaysOnThisDay = birthdaysInMonth.filter(b => new Date(b.date).getDate() === day);
         if (birthdaysOnThisDay.length > 0) {
-          calendarDay.style.backgroundColor = "#FFD700"; // Highlight days with birthdays
-          calendarDay.onclick = () => {
-            const birthdayNames = birthdaysOnThisDay.map(b => b.name).join(", ");
-            calendarInfo.textContent = `Birthdays on Day ${day}: ${birthdayNames}`;
-          };
+          dayDiv.style.backgroundColor = "#FFD700"; // Highlight days with birthdays
+          birthdaysOnThisDay.forEach(b => {
+            const birthdaySpan = document.createElement("span");
+            birthdaySpan.className = "birthday";
+            birthdaySpan.textContent = b.name;
+            dayDiv.appendChild(birthdaySpan);
+          });
         }
 
-        calendarGrid.appendChild(calendarDay);
+        calendarGrid.appendChild(dayDiv);
       }
     }
 
-    generateCalendar();
+    // Initialize the calendar
+    showMonthView();
   </script>
 </body>
 </html>
