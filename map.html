@@ -20,6 +20,30 @@
     .leaflet-popup-content {
       font-size: 14px;
     }
+
+    /* Tab Bar Styling */
+    .tab-bar {
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .tab-bar a {
+      flex: 1;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .tab-bar a:hover {
+      background-color: #575757;
+    }
+
+    .tab-bar a.active {
+      background-color: #007BFF;
+    }
   </style>
 </head>
 <body>
@@ -28,19 +52,16 @@
     <a href="calendar.html">Calendar</a>
     <a href="map.html" class="active">Map</a>
   </div>
+
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-        // Family location data
-    const familyLocations = [
-      { name: "Theodore Gillgrist", birthday: "1971-09-27", city: "North Charleston", coordinates: [32.8769, -80.0114] },
-      { name: "Karen Gillgrist", birthday: "1974-05-13", city: "North Charleston", coordinates: [32.8769, -80.0114] },
-      { name: "Brennan Gillgrist", birthday: "2002-11-15", city: "Columbia", coordinates: [34.0008, -81.0351] },
-      { name: "Ethan Gillgrist", birthday: "2005-04-28", city: "North Charleston", coordinates: [32.8769, -80.0114] },
-      { name: "Kaitlyn Kinsel", birthday: "2000-07-15", city: "Greer", coordinates: [34.9387, -82.2271] },
-      { name: "Susie Gillgrist", birthday: "1943-03-17", city: "North Charleston", coordinates: [32.8769, -80.0114] }
-    ];
+    // Fetch people data from JSON
+    async function fetchPeopleData() {
+      const response = await fetch('people.json'); // Make sure this file is in the same directory as `map.html`
+      return await response.json();
+    }
 
     // Initialize map
     const map = L.map('map').setView([37.7749, -95.7129], 4); // Centered on the US
@@ -50,27 +71,33 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Group family members by city
-    const groupedLocations = {};
-    familyLocations.forEach(member => {
-      const { city, name, birthday, coordinates } = member;
-      if (!groupedLocations[city]) {
-        groupedLocations[city] = { coordinates, people: [] };
-      }
-      groupedLocations[city].people.push({ name, birthday });
-    });
+    // Fetch data and populate the map
+    fetchPeopleData().then(people => {
+      const groupedLocations = {};
 
-    // Add markers for each city
-    Object.values(groupedLocations).forEach(location => {
-      const { coordinates, people } = location;
+      // Group people by city
+      people.forEach(person => {
+        const { city, name, birthday, coordinates } = person;
+        if (!groupedLocations[city]) {
+          groupedLocations[city] = { coordinates, people: [] };
+        }
+        groupedLocations[city].people.push({ name, birthday });
+      });
 
-      // Create a tooltip content with all names and birthdays
-      const tooltipContent = people.map(person => `<strong>${person.name}</strong><br>Birthday: ${person.birthday}`).join('<br><br>');
+      // Add markers to the map
+      Object.values(groupedLocations).forEach(location => {
+        const { coordinates, people } = location;
 
-      // Add marker
-      L.marker(coordinates)
-        .addTo(map)
-        .bindPopup(tooltipContent);
+        // Create tooltip content with names and birthdays
+        const tooltipContent = people
+          .map(person => `<strong>${person.name}</strong><br>Birthday: ${person.birthday}`)
+          .join('<br><br>');
+
+        // Add marker
+        L.marker(coordinates)
+          .addTo(map)
+          .bindPopup(tooltipContent);
+      });
     });
   </script>
 </body>
