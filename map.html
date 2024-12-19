@@ -59,8 +59,14 @@
   <script>
     // Fetch people data from JSON
     async function fetchPeopleData() {
-      const response = await fetch('people.json'); // Make sure this file is in the same directory as `map.html`
-      return await response.json();
+      try {
+        const response = await fetch('people.json'); // Ensure the file is in the same directory
+        if (!response.ok) throw new Error(`Failed to load: ${response.statusText}`);
+        return await response.json();
+      } catch (error) {
+        console.error('Error fetching people data:', error);
+        return [];
+      }
     }
 
     // Initialize map
@@ -97,6 +103,9 @@
         L.marker(coordinates)
           .addTo(map)
           .bindPopup(tooltipContent);
+        L.marker([32.7765, -79.9311])
+          .addTo(map)
+          .bindPopup('Debug Marker: Charleston');
       });
     });
   </script>
