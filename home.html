@@ -5,8 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Family Tree</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Tab Bar Styling */
+    .tab-bar {
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .tab-bar a {
+      flex: 1;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .tab-bar a:hover {
+      background-color: #575757;
+    }
+
+    .tab-bar a.active {
+      background-color: #007BFF;
+    }
+  </style>
 </head>
 <body>
+  <div class="tab-bar">
+    <a href="home.html" class="active">Home</a>
+    <a href="calendar.html">Calendar</a>
+    <!-- Add more links as needed -->
+  </div>
   <header>
     <h1>Welcome to Brennan's Family Tree</h1>
     <p>Explore our family history and connections.</p>
