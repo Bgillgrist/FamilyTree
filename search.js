@@ -5,6 +5,11 @@ const familyMembers = [
   { name: "Karen Gillgrist", link: "karen1974/index.html" },
   { name: "Kaitlyn Gillgrist", link: "kaitlyn2000/index.html" },
   { name: "Robert Bob Gillgrist", link: "robert1944/index.html" },
+  { name: "Susan Susie Gillgrist", link: "susan1943/index.html" },
+  { name: "Robert Bob Kinsel", link: "robert1938/index.html" },
+  { name: "Frances Lucy Kinsel", link: "frances1937/index.html" },
+  { name: "Robert Rob Gillgrist", link: "robert1969/index.html" },
+  { name: "Melanie Gillgrist", link: "melanie1967/index.html" },
   // Add more family members here
 ];
 
