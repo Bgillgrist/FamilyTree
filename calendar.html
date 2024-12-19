@@ -137,23 +137,19 @@
   </div>
 
   <script>
-    // Sample birthday data
-    const birthdays = [
-      { name: "Theodore Gillgrist", date: "1971-09-27", family: ["Gillgrist", "Lehman", "Kinsel", "Mullin"]  },
-      { name: "Brennan Gillgrist", date: "2002-11-15", family: ["Gillgrist", "Lehman", "Kinsel", "Mullin"]  },
-      { name: "Karen Gillgrist", date: "1974-05-13", family: ["Gillgrist", "Lehman", "Kinsel", "Mullin"]  },
-      { name: "Ethan Gillgrist", date: "2005-04-28", family: ["Gillgrist", "Lehman", "Kinsel", "Mullin"]  },
-      { name: "Kaitlyn Gillgrist", date: "2000-07-15", family: ["Gillgrist", "Lehman", "Kinsel", "Mullin"]  },
-      { name: "Bob Gillgrist", date: "1944-01-30", family: ["Gillgrist", "Lehman"]  },
-      { name: "Susie Gillgrist", date: "1943-03-17", family: ["Gillgrist", "Lehman"]  },
-      { name: "Bob Kinsel", date: "1938-04-19", family: ["Kinsel", "Mullin"]  },
-      { name: "Lucy Kinsel", date: "1937-04-02", family: ["Kinsel", "Mullin"]  },
-      { name: "Rob Gillgrist", date: "1969-12-14", family: ["Gillgrist", "Lehman"]  },
-      { name: "Melanie Gillgrist", date: "1967-01-01", family: ["Gillgrist", "Lehman"]  },
-      { name: "Sam Gillgrist", date: "2007-02-07", family: ["Gillgrist", "Lehman"]  },
-      { name: "Bella Gillgrist", date: "2011-04-18", family: ["Gillgrist", "Lehman"]  }
-    ];
-
+    // Function to grab People Data
+    async function fetchPeopleData() {
+      const response = await fetch('people.json'); // Fetch the JSON file
+      return await response.json(); // Parse and return the JSON data
+    }
+    
+    fetchPeopleData().then(people => {
+      const birthdays = people.map(person => ({
+        name: person.name,
+        date: person.birthday,
+        family: person.family
+      }));
+    
     // Function to group birthdays by month
     function groupBirthdaysByMonth(filteredBirthdays) {
       const months = Array.from({ length: 12 }, () => []);
