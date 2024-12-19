@@ -139,19 +139,19 @@
   <script>
     // Sample birthday data
     const birthdays = [
-      { name: "Theodore Gillgrist", date: "1971-09-27", family: "Gillgrist"  },
-      { name: "Brennan Gillgrist", date: "2002-11-15", family: "Gillgrist"  },
-      { name: "Karen Gillgrist", date: "1974-05-13", family: "Gillgrist"  },
-      { name: "Ethan Gillgrist", date: "2005-04-28", family: "Gillgrist"  },
-      { name: "Kaitlyn Gillgrist", date: "2000-07-15", family: "Gillgrist"  },
-      { name: "Bob Gillgrist", date: "1944-01-30", family: "Gillgrist"  },
-      { name: "Susie Gillgrist", date: "1943-03-17", family: "Gillgrist"  },
-      { name: "Bob Kinsel", date: "1938-04-19", family: "Gillgrist"  },
-      { name: "Lucy Kinsel", date: "1937-04-02", family: "Gillgrist"  },
-      { name: "Rob Gillgrist", date: "1969-12-14", family: "Gillgrist"  },
-      { name: "Melanie Gillgrist", date: "1967-01-01", family: "Gillgrist"  },
-      { name: "Sam Gillgrist", date: "2007-02-07", family: "Gillgrist"  },
-      { name: "Bella Gillgrist", date: "2011-04-18", family: "Gillgrist"  }
+      { name: "Theodore Gillgrist", date: "1971-09-27", family: ["All"]  },
+      { name: "Brennan Gillgrist", date: "2002-11-15", family: ["All"]  },
+      { name: "Karen Gillgrist", date: "1974-05-13", family: ["All"]  },
+      { name: "Ethan Gillgrist", date: "2005-04-28", family: ["All"]  },
+      { name: "Kaitlyn Gillgrist", date: "2000-07-15", family: ["All"]  },
+      { name: "Bob Gillgrist", date: "1944-01-30", family: ["Gillgrist", "Lehman"]  },
+      { name: "Susie Gillgrist", date: "1943-03-17", family: ["Gillgrist", "Lehman"]  },
+      { name: "Bob Kinsel", date: "1938-04-19", family: ["Kinsel", "Mullin"]  },
+      { name: "Lucy Kinsel", date: "1937-04-02", family: ["Kinsel", "Mullin"]  },
+      { name: "Rob Gillgrist", date: "1969-12-14", family: ["Gillgrist", "Lehman"]  },
+      { name: "Melanie Gillgrist", date: "1967-01-01", family: ["Gillgrist", "Lehman"]  },
+      { name: "Sam Gillgrist", date: "2007-02-07", family: ["Gillgrist", "Lehman"]  },
+      { name: "Bella Gillgrist", date: "2011-04-18", family: ["Gillgrist", "Lehman"]  }
     ];
 
     // Function to group birthdays by month
@@ -216,13 +216,16 @@
     function filterBirthdays(family) {
       currentFamilyFilter = family;
 
+      // Update active button
       const buttons = document.querySelectorAll(".filter-buttons button");
       buttons.forEach(button => button.classList.remove("active"));
       const activeButton = Array.from(buttons).find(button => button.textContent === family);
       if (activeButton) activeButton.classList.add("active");
 
-      // Filter birthdays: Include "All" family type in every filter
-      const filteredBirthdays = birthdays.filter(b => family === "All" || b.family === family || b.family === "All");
+      // Filter birthdays: Check if the person belongs to the selected family
+      const filteredBirthdays = birthdays.filter(b => 
+        family === "All" || b.family.includes(family)
+      );
 
       // Re-display the month list with the new filter
       displayMonthList(filteredBirthdays);
