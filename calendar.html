@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Calendar</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Calendar Styling */
+    .calendar-container {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+
+    .calendar-day {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    .calendar-day:hover {
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    .calendar-header {
+      font-weight: bold;
+    }
+
+    .calendar-info {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <a href="home.html">Home</a>
+    <a href="calendar.html" class="active">Calendar</a>
+    <!-- Add more links as needed -->
+  </div>
+
+  <!-- Calendar Section -->
+  <div class="calendar-container">
+    <h1>Family Birthday Calendar</h1>
+    <div class="calendar-grid" id="calendar-grid">
+      <!-- Calendar days will be inserted here -->
+    </div>
+    <div class="calendar-info" id="calendar-info">
+      Click on a day to see birthdays.
+    </div>
+  </div>
+
+  <script>
+    // Sample birthday data
+    const birthdays = [
+      { name: "Ted Gillgrist", date: "1971-09-27" },
+      { name: "Brennan Gillgrist", date: "2002-11-15" },
+      { name: "Karen Gillgrist", date: "1974-05-13" },
+      { name: "Ethan Gillgrist", date: "2005-04-28" },
+      { name: "Kaitlyn Gillgrist", date: "2000-07-15" },
+      { name: "Bob Gillgrist", date: "1944-01-30" },
+      { name: "Susie Gillgrist", date: "1943-03-17" },
+      { name: "Bob Kinsel", date: "1938-04-19" },
+      { name: "Lucy Kinsel", date: "1937-04-02" },
+      { name: "Rob Gillgrist", date: "1969-12-14" },
+      { name: "Melanie Gillgrist", date: "1967-01-01" },
+      { name: "Sam Gillgrist", date: "2007-02-07" },
+      { name: "Bella Gillgrist", date: "2011-04-18" }
+    ];
+
+    // Function to generate calendar
+    function generateCalendar() {
+      const calendarGrid = document.getElementById("calendar-grid");
+      const calendarInfo = document.getElementById("calendar-info");
+      
+      // Create days for each month
+      for (let day = 1; day <= 31; day++) {
+        const calendarDay = document.createElement("div");
+        calendarDay.className = "calendar-day";
+        calendarDay.textContent = day;
+
+        // Add birthdays to the day
+        const birthdaysOnThisDay = birthdays.filter(b => new Date(b.date).getDate() === day);
+        if (birthdaysOnThisDay.length > 0) {
+          calendarDay.style.backgroundColor = "#FFD700"; // Highlight days with birthdays
+          calendarDay.onclick = () => {
+            const birthdayNames = birthdaysOnThisDay.map(b => b.name).join(", ");
+            calendarInfo.textContent = `Birthdays on Day ${day}: ${birthdayNames}`;
+          };
+        }
+
+        calendarGrid.appendChild(calendarDay);
+      }
+    }
+
+    generateCalendar();
+  </script>
+</body>
+</html>
