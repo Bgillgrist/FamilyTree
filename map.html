@@ -32,7 +32,46 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    // JavaScript code for the map goes here
+        // Family location data
+    const familyLocations = [
+      { name: "Theodore Gillgrist", birthday: "1971-09-27", city: "North Charleston", coordinates: [32.8769, -80.0114] },
+      { name: "Karen Gillgrist", birthday: "1974-05-13", city: "North Charleston", coordinates: [32.8769, -80.0114] },
+      { name: "Brennan Gillgrist", birthday: "2002-11-15", city: "Columbia", coordinates: [34.0008, -81.0351] },
+      { name: "Ethan Gillgrist", birthday: "2005-04-28", city: "North Charleston", coordinates: [32.8769, -80.0114] },
+      { name: "Kaitlyn Kinsel", birthday: "2000-07-15", city: "Greer", coordinates: [34.9387, -82.2271] },
+      { name: "Susie Gillgrist", birthday: "1943-03-17", city: "North Charleston", coordinates: [32.8769, -80.0114] }
+    ];
+
+    // Initialize map
+    const map = L.map('map').setView([37.7749, -95.7129], 4); // Centered on the US
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Group family members by city
+    const groupedLocations = {};
+    familyLocations.forEach(member => {
+      const { city, name, birthday, coordinates } = member;
+      if (!groupedLocations[city]) {
+        groupedLocations[city] = { coordinates, people: [] };
+      }
+      groupedLocations[city].people.push({ name, birthday });
+    });
+
+    // Add markers for each city
+    Object.values(groupedLocations).forEach(location => {
+      const { coordinates, people } = location;
+
+      // Create a tooltip content with all names and birthdays
+      const tooltipContent = people.map(person => `<strong>${person.name}</strong><br>Birthday: ${person.birthday}`).join('<br><br>');
+
+      // Add marker
+      L.marker(coordinates)
+        .addTo(map)
+        .bindPopup(tooltipContent);
+    });
   </script>
 </body>
 </html>
