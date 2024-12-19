@@ -3,31 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Family Tree</title>
+  <title>Family Tree Home</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Tab Bar Styling */
-    .tab-bar {
-      background-color: #000000;
-      overflow: hidden;
-      display: flex;
-    }
-
-    .tab-bar a {
-      flex: 1;
-      color: white;
+    /* Basic styling for search */
+    #search-container {
+      margin: 20px auto;
+      max-width: 600px;
       text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
     }
 
-    .tab-bar a:hover {
-      background-color: #575757;
+    #search-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
     }
 
-    .tab-bar a.active {
-      background-color: #007BFF;
+    #search-results {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    #search-results li {
+      padding: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #search-results li:hover {
+      background-color: #f0f0f0;
     }
   </style>
 </head>
@@ -36,33 +45,51 @@
     <a href="home.html" class="active">Home</a>
     <a href="calendar.html">Calendar</a>
     <a href="map.html">Map</a>
-    <!-- Add more links as needed -->
   </div>
-  <header>
-    <h1>Welcome to Brennan's Family Tree</h1>
-    <p>Explore our family history and connections.</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>Start With an Ancestor (Or Me!)</h2>
-      <ul>
-        <li><a href="brennan2002/index.html">Brennan Gillgrist (2002)</a></li>
-      </ul>
-    </section>
+  <div id="search-container">
+    <h1>Search Family Tree</h1>
+    <input type="text" id="search-input" placeholder="Search for a family member..." />
+    <ul id="search-results"></ul>
+  </div>
 
-    <section>
-      <h2>Search Specific Family Members</h2>
-      <input type="text" id="search" placeholder="Search by name...">
-      <ul id="results"></ul>
-    </section>
-  </main>
+  <script>
+    // Function to fetch people data
+    async function fetchPeopleData() {
+      const response = await fetch('people.json'); // Make sure the file is in the same directory
+      return await response.json();
+    }
 
-  <footer>
-    <p>&copy; 2024 Brennan Gillgrist. All rights reserved.</p>
-    <a href="index.html">Log Out</a>
-  </footer>
+    // Add search functionality
+    fetchPeopleData().then(people => {
+      const searchInput = document.getElementById('search-input');
+      const searchResults = document.getElementById('search-results');
 
-  <script src="search.js"></script>
+      // Listen for input in the search box
+      searchInput.addEventListener('input', event => {
+        const query = event.target.value.toLowerCase();
+        searchResults.innerHTML = '';
+
+        // Filter people based on the search query
+        const matches = people.filter(person =>
+          person.name.toLowerCase().includes(query)
+        );
+
+        // Display results
+        if (matches.length > 0) {
+          matches.forEach(match => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${match.name} (Born: ${match.birthday})`;
+            listItem.onclick = () => {
+              window.location.href = `person.html?name=${encodeURIComponent(match.name)}`;
+            };
+            searchResults.appendChild(listItem);
+          });
+        } else if (query.trim() !== '') {
+          searchResults.innerHTML = '<li>No results found</li>';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
