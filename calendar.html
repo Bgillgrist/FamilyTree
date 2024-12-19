@@ -101,9 +101,8 @@
     function groupBirthdaysByMonth() {
       const months = Array.from({ length: 12 }, () => []);
       birthdays.forEach(b => {
-        const month = new Date(b.date).getMonth(); // 0 = January, 11 = December
-        const day = new Date(b.date).getDate(); // Day of the month
-        months[month].push({ ...b, day });
+        const [year, month, day] = b.date.split("-").map(Number); // Split "YYYY-MM-DD"
+        months[month - 1].push({ ...b, day }); // Use `month - 1` for 0-indexed months
       });
 
       // Sort birthdays by day in each month
