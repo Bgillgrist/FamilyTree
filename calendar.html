@@ -28,6 +28,31 @@
     .tab-bar a.active {
       background-color: #007BFF;
     }
+
+    .filter-buttons {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filter-buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    .filter-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .filter-buttons button.active {
+      background-color: #0044a1;
+    }
     
     /* General Styling */
     .calendar-container {
@@ -89,6 +114,14 @@
     <a href="map.html">Map</a>
   </div>
 
+  <div class="filter-buttons">
+    <button class="active" onclick="filterBirthdays('All')">All</button>
+    <button onclick="filterBirthdays('Gillgrist')">Gillgrist</button>
+    <button onclick="filterBirthdays('Lehman')">Lehman</button>
+    <button onclick="filterBirthdays('Kinsel')">Kinsel</button>
+    <button onclick="filterBirthdays('Mullin')">Mullin</button>
+  </div>
+
   <!-- Calendar Section -->
   <div class="calendar-container">
     <h1>Family Birthday Calendar</h1>
@@ -106,19 +139,19 @@
   <script>
     // Sample birthday data
     const birthdays = [
-      { name: "Theodore Gillgrist", date: "1971-09-27" },
-      { name: "Brennan Gillgrist", date: "2002-11-15" },
-      { name: "Karen Gillgrist", date: "1974-05-13" },
-      { name: "Ethan Gillgrist", date: "2005-04-28" },
-      { name: "Kaitlyn Gillgrist", date: "2000-07-15" },
-      { name: "Bob Gillgrist", date: "1944-01-30" },
-      { name: "Susie Gillgrist", date: "1943-03-17" },
-      { name: "Bob Kinsel", date: "1938-04-19" },
-      { name: "Lucy Kinsel", date: "1937-04-02" },
-      { name: "Rob Gillgrist", date: "1969-12-14" },
-      { name: "Melanie Gillgrist", date: "1967-01-01" },
-      { name: "Sam Gillgrist", date: "2007-02-07" },
-      { name: "Bella Gillgrist", date: "2011-04-18" }
+      { name: "Theodore Gillgrist", date: "1971-09-27", family: "Gillgrist"  },
+      { name: "Brennan Gillgrist", date: "2002-11-15", family: "Gillgrist"  },
+      { name: "Karen Gillgrist", date: "1974-05-13", family: "Gillgrist"  },
+      { name: "Ethan Gillgrist", date: "2005-04-28", family: "Gillgrist"  },
+      { name: "Kaitlyn Gillgrist", date: "2000-07-15", family: "Gillgrist"  },
+      { name: "Bob Gillgrist", date: "1944-01-30", family: "Gillgrist"  },
+      { name: "Susie Gillgrist", date: "1943-03-17", family: "Gillgrist"  },
+      { name: "Bob Kinsel", date: "1938-04-19", family: "Gillgrist"  },
+      { name: "Lucy Kinsel", date: "1937-04-02", family: "Gillgrist"  },
+      { name: "Rob Gillgrist", date: "1969-12-14", family: "Gillgrist"  },
+      { name: "Melanie Gillgrist", date: "1967-01-01", family: "Gillgrist"  },
+      { name: "Sam Gillgrist", date: "2007-02-07", family: "Gillgrist"  },
+      { name: "Bella Gillgrist", date: "2011-04-18", family: "Gillgrist"  }
     ];
 
     // Function to group birthdays by month
@@ -135,14 +168,15 @@
     }
 
     // Function to display the month list
-    function displayMonthList() {
+    function displayMonthList(filteredBirthdays) {
       const monthList = document.getElementById("month-list");
-      const months = groupBirthdaysByMonth();
+      const months = groupBirthdaysByMonth(filteredBirthdays);
       const monthNames = [
         "January", "February", "March", "April", "May", "June", 
         "July", "August", "September", "October", "November", "December"
       ];
 
+      // Clear any existing content in the month list
       monthList.innerHTML = "";
 
       months.forEach((birthdaysInMonth, index) => {
@@ -177,6 +211,21 @@
 
       // Show the birthday list
       birthdaysList.style.display = "block";
+    }
+
+    function filterBirthdays(family) {
+      currentFamilyFilter = family;
+
+      const buttons = document.querySelectorAll(".filter-buttons button");
+      buttons.forEach(button => button.classList.remove("active"));
+      const activeButton = Array.from(buttons).find(button => button.textContent === family);
+      if (activeButton) activeButton.classList.add("active");
+
+      // Filter birthdays: Include "All" family type in every filter
+      const filteredBirthdays = birthdays.filter(b => family === "All" || b.family === family || b.family === "All");
+
+      // Re-display the month list with the new filter
+      displayMonthList(filteredBirthdays);
     }
 
     // Initialize the calendar
