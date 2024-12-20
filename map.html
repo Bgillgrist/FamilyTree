@@ -44,45 +44,80 @@
     .tab-bar a.active {
       background-color: #007BFF;
     }
+
+    /* Filter Buttons Styling */
+    .filter-buttons {
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filter-buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    .filter-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .filter-buttons button.active {
+      background-color: #0044a1;
+    }
   </style>
 </head>
 <body>
+  <!-- Tab Bar -->
   <div class="tab-bar">
     <a href="home.html">Home</a>
     <a href="calendar.html">Calendar</a>
     <a href="map.html" class="active">Map</a>
   </div>
 
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button class="active" onclick="filterMarkers('All')">All</button>
+    <button onclick="filterMarkers('Gillgrist')">Gillgrist</button>
+    <button onclick="filterMarkers('Lehman')">Lehman</button>
+    <button onclick="filterMarkers('Kinsel')">Kinsel</button>
+    <button onclick="filterMarkers('Mullin')">Mullin</button>
+  </div>
+
+  <!-- Map Container -->
   <div id="map"></div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    // Fetch people data from JSON
-    async function fetchPeopleData() {
-      try {
-        const response = await fetch('people.json'); // Ensure the file is in the same directory
-        if (!response.ok) throw new Error(`Failed to load: ${response.statusText}`);
-        return await response.json();
-      } catch (error) {
-        console.error('Error fetching people data:', error);
-        return [];
-      }
-    }
-
-    // Initialize map
-    const map = L.map('map').setView([37.7749, -95.7129], 4); // Centered on the US
+    let peopleData = []; // Global variable to store fetched data
+    let markers = []; // Array to keep track of markers on the map
+    const map = L.map('map').setView([37.7749, -95.7129], 4); // Initialize map
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Fetch data and populate the map
-    fetchPeopleData().then(people => {
-      const groupedLocations = {};
+    // Fetch people data
+    async function fetchPeopleData() {
+      const response = await fetch('people.json');
+      return await response.json();
+    }
+
+    // Add markers to the map based on filtered data
+    function addMarkers(filteredPeople) {
+      // Clear existing markers
+      markers.forEach(marker => map.removeLayer(marker));
+      markers = [];
 
       // Group people by city
-      people.forEach(person => {
+      const groupedLocations = {};
+      filteredPeople.forEach(person => {
         const { city, name, birthday, coordinates } = person;
         if (!groupedLocations[city]) {
           groupedLocations[city] = { coordinates, people: [] };
@@ -90,7 +125,7 @@
         groupedLocations[city].people.push({ name, birthday });
       });
 
-      // Add markers to the map
+      // Add new markers
       Object.values(groupedLocations).forEach(location => {
         const { coordinates, people } = location;
 
@@ -99,11 +134,32 @@
           .map(person => `<strong>${person.name}</strong><br>Birthday: ${person.birthday}`)
           .join('<br><br>');
 
-        // Add marker
-        L.marker(coordinates)
-          .addTo(map)
-          .bindPopup(tooltipContent);
+        const marker = L.marker(coordinates).bindPopup(tooltipContent).addTo(map);
+        markers.push(marker); // Track marker
       });
+    }
+
+    // Filter markers by family
+    function filterMarkers(family) {
+      // Update active button styling
+      const buttons = document.querySelectorAll('.filter-buttons button');
+      buttons.forEach(button => button.classList.remove('active'));
+      const activeButton = Array.from(buttons).find(button => button.textContent === family);
+      if (activeButton) activeButton.classList.add('active');
+
+      // Filter people data
+      const filteredPeople = peopleData.filter(person =>
+        family === 'All' || person.family.includes(family)
+      );
+
+      // Add markers for the filtered data
+      addMarkers(filteredPeople);
+    }
+
+    // Initialize the map
+    fetchPeopleData().then(data => {
+      peopleData = data; // Store fetched data
+      addMarkers(peopleData); // Show all markers by default
     });
   </script>
 </body>
