@@ -115,5 +115,104 @@
     "coordinates": [40.8612, -79.8953],
     "deceased": false,
     "folder": "isabella2011"
+  },
+  {
+    "name": "Melinda Mauricio",
+    "birthday": "1972-11-12",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Raleigh",
+    "coordinates": [35.7796, -78.6382],
+    "deceased": false,
+    "folder": "melinda1972"
+  },
+  {
+    "name": "Steve Mauricio",
+    "birthday": "1970-09-15",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Raleigh",
+    "coordinates": [35.7796, -78.6382],
+    "deceased": false,
+    "folder": "steve1970"
+  },
+  {
+    "name": "Adrianna Gross",
+    "birthday": "2001-11-21",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Raleigh",
+    "coordinates": [35.7796, -78.6382],
+    "deceased": false,
+    "folder": "adrianna2001"
+  },
+  {
+    "name": "Ashley Gross",
+    "birthday": "2005-02-24",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Raleigh",
+    "coordinates": [35.7796, -78.6382],
+    "deceased": false,
+    "folder": "ashley2005"
+  },
+  {
+    "name": "Lindsey Gross",
+    "birthday": "2007-02-06",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Raleigh",
+    "coordinates": [35.7796, -78.6382],
+    "deceased": false,
+    "folder": "lindsey2007"
+  },
+  {
+    "name": "Jim Kinsel",
+    "birthday": "1971-10-23",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Great Falls",
+    "coordinates": [38.9982, -77.2883],
+    "deceased": false,
+    "folder": "james1971"
+  },
+  {
+    "name": "Becky Kinsel",
+    "birthday": "1979-06-22",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Great Falls",
+    "coordinates": [38.9982, -77.2883],
+    "deceased": false,
+    "folder": "becky2007"
+  },
+  {
+    "name": "Maddie Kinsel",
+    "birthday": "2007-02-06",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Great Falls",
+    "coordinates": [38.9982, -77.2883],
+    "deceased": false,
+    "folder": "maddie2007"
+  },
+  {
+    "name": "Owen Kinsel",
+    "birthday": "2007-02-06",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Great Falls",
+    "coordinates": [38.9982, -77.2883],
+    "deceased": false,
+    "folder": "owen2007"
+  },
+  {
+    "name": "Grant Segal",
+    "birthday": "2009-09-17",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Great Falls",
+    "coordinates": [38.9982, -77.2883],
+    "deceased": false,
+    "folder": "grant2009"
+  },
+  {
+    "name": "Reese Segal",
+    "birthday": "2011-12-26",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Great Falls",
+    "coordinates": [38.9982, -77.2883],
+    "deceased": false,
+    "folder": "reese2011"
   }
 ]
