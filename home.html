@@ -147,9 +147,13 @@
           matches.forEach(match => {
             const listItem = document.createElement('li');
             listItem.textContent = `${match.name} (Born: ${match.birthday})`;
+
+            // Generate the link using the folder field
             listItem.onclick = () => {
-              window.location.href = `person.html?name=${encodeURIComponent(match.name)}`;
+              const folderName = match.folder; // Use the folder field
+              window.location.href = `${folderName}/index.html`; // Redirect to the person's page
             };
+
             searchResults.appendChild(listItem);
           });
         } else if (query.trim() !== '') {
