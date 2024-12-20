@@ -70,6 +70,26 @@
     .filter-buttons button.active {
       background-color: #0044a1;
     }
+
+    .deceased-toggle {
+      margin: 20px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .deceased-toggle label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .deceased-toggle input[type="checkbox"] {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -87,6 +107,13 @@
     <button onclick="filterMarkers('Lehman')">Lehman</button>
     <button onclick="filterMarkers('Kinsel')">Kinsel</button>
     <button onclick="filterMarkers('Mullin')">Mullin</button>
+  </div>
+
+  <div class="deceased-toggle">
+    <label>
+      <input type="checkbox" id="include-deceased" checked>
+      Include Deceased Relatives
+    </label>
   </div>
 
   <!-- Map Container -->
@@ -141,20 +168,28 @@
 
     // Filter markers by family
     function filterMarkers(family) {
+      const includeDeceased = document.getElementById('include-deceased').checked;
+
       // Update active button styling
       const buttons = document.querySelectorAll('.filter-buttons button');
       buttons.forEach(button => button.classList.remove('active'));
       const activeButton = Array.from(buttons).find(button => button.textContent === family);
       if (activeButton) activeButton.classList.add('active');
 
-      // Filter people data
+      // Filter markers by family and deceased status
       const filteredPeople = peopleData.filter(person =>
-        family === 'All' || person.family.includes(family)
+        (family === 'All' || person.family.includes(family)) &&
+        (includeDeceased || !person.deceased)
       );
 
-      // Add markers for the filtered data
       addMarkers(filteredPeople);
     }
+
+    // Reapply filter when the slider changes
+    document.getElementById('include-deceased').addEventListener('change', () => {
+      const activeFamily = document.querySelector('.filter-buttons .active').textContent;
+      filterMarkers(activeFamily);
+    });
 
     // Initialize the map
     fetchPeopleData().then(data => {
