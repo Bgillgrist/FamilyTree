@@ -6,57 +6,124 @@
   <title>Family Tree Home</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Basic styling for search */
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    /* Tab Bar Styling */
+    .tab-bar {
+      background-color: #333;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .tab-bar a {
+      flex: 1;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .tab-bar a:hover {
+      background-color: #575757;
+    }
+
+    .tab-bar a.active {
+      background-color: #007BFF;
+    }
+
+    /* Header Styling */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #007BFF;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    /* Search Container Styling */
     #search-container {
-      margin: 20px auto;
+      margin: 40px auto;
       max-width: 600px;
       text-align: center;
     }
 
     #search-input {
       width: 100%;
-      padding: 10px;
+      padding: 12px 15px;
       font-size: 16px;
-      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     #search-results {
       list-style: none;
       padding: 0;
-      margin-top: 10px;
+      margin-top: 20px;
       text-align: left;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      background-color: white;
     }
 
     #search-results li {
       padding: 10px;
-      border: 1px solid #ddd;
-      margin-bottom: 5px;
-      border-radius: 5px;
+      border-bottom: 1px solid #ddd;
       cursor: pointer;
     }
 
+    #search-results li:last-child {
+      border-bottom: none;
+    }
+
     #search-results li:hover {
-      background-color: #f0f0f0;
+      background-color: #f9f9f9;
     }
   </style>
 </head>
 <body>
+  <!-- Tab Bar -->
   <div class="tab-bar">
     <a href="home.html" class="active">Home</a>
     <a href="calendar.html">Calendar</a>
     <a href="map.html">Map</a>
   </div>
 
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to the Family Tree</h1>
+    <p>Explore our family’s history, connections, and key moments. Use the search feature below to find family members quickly.</p>
+  </header>
+
+  <!-- Search Container -->
   <div id="search-container">
-    <h1>Search Family Tree</h1>
-    <input type="text" id="search-input" placeholder="Search for a family member..." />
+    <h2>Search for a Family Member</h2>
+    <input type="text" id="search-input" placeholder="Enter a name..." />
     <ul id="search-results"></ul>
   </div>
 
   <script>
-    // Function to fetch people data
+    // Fetch people data from JSON
     async function fetchPeopleData() {
-      const response = await fetch('people.json'); // Make sure the file is in the same directory
+      const response = await fetch('people.json'); // Ensure the file is in the same directory
       return await response.json();
     }
 
