@@ -46,5 +46,45 @@
     "city": "North Charleston",
     "coordinates": [32.8769, -80.0114],
     "deceased": false
-  }
+  },
+  {
+    "name": "Bob Gillgrist",
+    "birthday": "1944-01-30",
+    "family": ["Gillgrist", "Lehman"],
+    "city": "North Charleston",
+    "coordinates": [32.8769, -80.0114],
+    "deceased": true
+  },
+  {
+    "name": "Rob Gillgrist",
+    "birthday": "1969-12-14",
+    "family": ["Gillgrist", "Lehman"],
+    "city": "Butler",
+    "coordinates": [40.8612, -79.8953],
+    "deceased": false
+  },
+  {
+    "name": "Melanie Gillgrist",
+    "birthday": "1967-01-01",
+    "family": [40.8612, -79.8953],
+    "city": "Butler",
+    "coordinates": [40.8612, -79.8953],
+    "deceased": false
+  },
+  {
+    "name": "Samuel Gillgrist",
+    "birthday": "2007-02-07",
+    "family": ["Gillgrist", "Lehman"],
+    "city": "Butler",
+    "coordinates": [40.8612, -79.8953],
+    "deceased": false
+  },
+  {
+    "name": "Bella Gillgrist",
+    "birthday": "2011-04-18",
+    "family": ["Gillgrist", "Lehman"],
+    "city": "Butler",
+    "coordinates": [40.8612, -79.8953],
+    "deceased": false
+  },
 ]
