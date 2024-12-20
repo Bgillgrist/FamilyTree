@@ -56,6 +56,22 @@
     "deceased": true
   },
   {
+    "name": "Bob Kinsel",
+    "birthday": "1938-04-19",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Springfield",
+    "coordinates": [38.8462, -77.3064],
+    "deceased": false
+  },
+  {
+    "name": "Lucy Kinsel",
+    "birthday": "1937-04-02",
+    "family": ["Kinsel", "Mullin"],
+    "city": "Springfield",
+    "coordinates": [38.8462, -77.3064],
+    "deceased": false
+  },
+  {
     "name": "Rob Gillgrist",
     "birthday": "1969-12-14",
     "family": ["Gillgrist", "Lehman"],
@@ -86,5 +102,5 @@
     "city": "Butler",
     "coordinates": [40.8612, -79.8953],
     "deceased": false
-  },
+  }
 ]
