@@ -222,8 +222,9 @@
       // Populate the birthday list
       birthdayItems.innerHTML = "";
       birthdaysInMonth.forEach(b => {
+        const year = b.date.split("-")[0];
         const li = document.createElement("li");
-        li.innerHTML = `<span>${b.day}</span>: ${b.name}`;
+        li.innerHTML = `<span>${b.day}</span>: ${b.name} (${year})`;
         birthdayItems.appendChild(li);
       });
 
