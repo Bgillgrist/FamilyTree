@@ -4,41 +4,47 @@
     "birthday": "1971-09-27",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114]
+    "coordinates": [32.8769, -80.0114],
+    "deceased": false
   },
   {
     "name": "Karen Gillgrist",
     "birthday": "1974-05-13",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114]
+    "coordinates": [32.8769, -80.0114],
+    "deceased": false
   },
   {
     "name": "Brennan Gillgrist",
     "birthday": "2002-11-15",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "Columbia",
-    "coordinates": [34.0008, -81.0351]
+    "coordinates": [34.0008, -81.0351],
+    "deceased": false
   },
   {
     "name": "Ethan Gillgrist",
     "birthday": "2005-04-28",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114]
+    "coordinates": [32.8769, -80.0114],
+    "deceased": false
   },
   {
     "name": "Kaitlyn Gillgrist",
     "birthday": "2000-07-15",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "Greer",
-    "coordinates": [34.9387, -82.2271]
+    "coordinates": [34.9387, -82.2271],
+    "deceased": false
   },
   {
     "name": "Susie Gillgrist",
     "birthday": "1943-03-17",
     "family": ["Gillgrist", "Lehman"],
     "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114]
+    "coordinates": [32.8769, -80.0114],
+    "deceased": false
   }
 ]
