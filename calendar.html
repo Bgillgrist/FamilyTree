@@ -137,20 +137,15 @@
   </div>
 
   <script>
-    // Function to grab People Data
+    let birthdays = []; // Global variable to hold all birthdays
+
+    // Function to fetch people data
     async function fetchPeopleData() {
       const response = await fetch('people.json'); // Fetch the JSON file
       return await response.json(); // Parse and return the JSON data
     }
-    
-    fetchPeopleData().then(people => {
-      const birthdays = people.map(person => ({
-        name: person.name,
-        date: person.birthday,
-        family: person.family
-      }));
-    
-    // Function to group birthdays by month
+
+    // Group birthdays by month
     function groupBirthdaysByMonth(filteredBirthdays) {
       const months = Array.from({ length: 12 }, () => []);
       filteredBirthdays.forEach(b => {
@@ -163,7 +158,7 @@
       return months;
     }
 
-    // Function to display the month list
+    // Display month list
     function displayMonthList(filteredBirthdays) {
       const monthList = document.getElementById("month-list");
       const months = groupBirthdaysByMonth(filteredBirthdays);
@@ -184,7 +179,7 @@
       });
     }
 
-    // Function to display birthdays for a specific month
+    // Display birthdays for a specific month
     function displayBirthdays(monthIndex, birthdaysInMonth) {
       const monthName = document.getElementById("month-name");
       const birthdayItems = document.getElementById("birthday-items");
@@ -209,26 +204,29 @@
       birthdaysList.style.display = "block";
     }
 
+    // Filter birthdays
     function filterBirthdays(family) {
-      currentFamilyFilter = family;
-
-      // Update active button
       const buttons = document.querySelectorAll(".filter-buttons button");
       buttons.forEach(button => button.classList.remove("active"));
       const activeButton = Array.from(buttons).find(button => button.textContent === family);
       if (activeButton) activeButton.classList.add("active");
 
-      // Filter birthdays: Check if the person belongs to the selected family
-      const filteredBirthdays = birthdays.filter(b => 
+      const filteredBirthdays = birthdays.filter(b =>
         family === "All" || b.family.includes(family)
       );
 
-      // Re-display the month list with the new filter
       displayMonthList(filteredBirthdays);
     }
 
     // Initialize the calendar
-    displayMonthList(birthdays);
+    fetchPeopleData().then(data => {
+      birthdays = data.map(person => ({
+        name: person.name,
+        date: person.birthday,
+        family: person.family
+      }));
+      displayMonthList(birthdays); // Default to showing all birthdays
+    });
   </script>
 </body>
 </html>
