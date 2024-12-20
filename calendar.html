@@ -104,6 +104,26 @@
     .birthdays-list ul li span {
       font-weight: bold;
     }
+
+    .deceased-toggle {
+    margin: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .deceased-toggle label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .deceased-toggle input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
@@ -120,6 +140,13 @@
     <button onclick="filterBirthdays('Lehman')">Lehman</button>
     <button onclick="filterBirthdays('Kinsel')">Kinsel</button>
     <button onclick="filterBirthdays('Mullin')">Mullin</button>
+  </div>
+
+  <div class="deceased-toggle">
+    <label>
+      <input type="checkbox" id="include-deceased" checked>
+      Include Deceased Relatives
+    </label>
   </div>
 
   <!-- Calendar Section -->
@@ -206,17 +233,28 @@
 
     // Filter birthdays
     function filterBirthdays(family) {
-      const buttons = document.querySelectorAll(".filter-buttons button");
-      buttons.forEach(button => button.classList.remove("active"));
-      const activeButton = Array.from(buttons).find(button => button.textContent === family);
-      if (activeButton) activeButton.classList.add("active");
+      const includeDeceased = document.getElementById('include-deceased').checked;
 
+      // Update active button styling
+      const buttons = document.querySelectorAll('.filter-buttons button');
+      buttons.forEach(button => button.classList.remove('active'));
+      const activeButton = Array.from(buttons).find(button => button.textContent === family);
+      if (activeButton) activeButton.classList.add('active');
+
+      // Filter birthdays by family and deceased status
       const filteredBirthdays = birthdays.filter(b =>
-        family === "All" || b.family.includes(family)
+        (family === 'All' || b.family.includes(family)) &&
+        (includeDeceased || !b.deceased)
       );
 
       displayMonthList(filteredBirthdays);
     }
+
+    // Reapply filter when the slider changes
+    document.getElementById('include-deceased').addEventListener('change', () => {
+      const activeFamily = document.querySelector('.filter-buttons .active').textContent;
+      filterBirthdays(activeFamily);
+    });
 
     // Initialize the calendar
     fetchPeopleData().then(data => {
