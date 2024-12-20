@@ -1,11 +1,12 @@
 [
   {
-    "name": "Theodore Gillgrist",
+    "name": "Ted Gillgrist",
     "birthday": "1971-09-27",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "North Charleston",
     "coordinates": [32.8769, -80.0114],
-    "deceased": false
+    "deceased": false,
+    "folder": "theodore1971"
   },
   {
     "name": "Karen Gillgrist",
@@ -13,7 +14,8 @@
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "North Charleston",
     "coordinates": [32.8769, -80.0114],
-    "deceased": false
+    "deceased": false,
+    "folder": "karen1974"
   },
   {
     "name": "Brennan Gillgrist",
@@ -21,7 +23,8 @@
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "Columbia",
     "coordinates": [34.0008, -81.0351],
-    "deceased": false
+    "deceased": false,
+    "folder": "brennan2002"
   },
   {
     "name": "Ethan Gillgrist",
@@ -29,7 +32,8 @@
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "North Charleston",
     "coordinates": [32.8769, -80.0114],
-    "deceased": false
+    "deceased": false,
+    "folder": "ethan2005"
   },
   {
     "name": "Kaitlyn Gillgrist",
@@ -37,7 +41,8 @@
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "city": "Greer",
     "coordinates": [34.9387, -82.2271],
-    "deceased": false
+    "deceased": false,
+    "folder": "kaitlyn2000"
   },
   {
     "name": "Susie Gillgrist",
@@ -45,7 +50,8 @@
     "family": ["Gillgrist", "Lehman"],
     "city": "North Charleston",
     "coordinates": [32.8769, -80.0114],
-    "deceased": false
+    "deceased": false,
+    "folder": "susan1943"
   },
   {
     "name": "Bob Gillgrist",
@@ -53,7 +59,8 @@
     "family": ["Gillgrist", "Lehman"],
     "city": "North Charleston",
     "coordinates": [32.8769, -80.0114],
-    "deceased": true
+    "deceased": true,
+    "folder": "robert1944"
   },
   {
     "name": "Bob Kinsel",
@@ -61,7 +68,8 @@
     "family": ["Kinsel", "Mullin"],
     "city": "Springfield",
     "coordinates": [38.8462, -77.3064],
-    "deceased": false
+    "deceased": false,
+    "folder": "robert1938"
   },
   {
     "name": "Lucy Kinsel",
@@ -69,7 +77,8 @@
     "family": ["Kinsel", "Mullin"],
     "city": "Springfield",
     "coordinates": [38.8462, -77.3064],
-    "deceased": false
+    "deceased": false,
+    "folder": "frances1937"
   },
   {
     "name": "Rob Gillgrist",
@@ -77,7 +86,8 @@
     "family": ["Gillgrist", "Lehman"],
     "city": "Butler",
     "coordinates": [40.8612, -79.8953],
-    "deceased": false
+    "deceased": false,
+    "folder": "robert1969"
   },
   {
     "name": "Melanie Gillgrist",
@@ -85,7 +95,8 @@
     "family": [40.8612, -79.8953],
     "city": "Butler",
     "coordinates": [40.8612, -79.8953],
-    "deceased": false
+    "deceased": false,
+    "folder": "melanie1967"
   },
   {
     "name": "Samuel Gillgrist",
@@ -93,7 +104,8 @@
     "family": ["Gillgrist", "Lehman"],
     "city": "Butler",
     "coordinates": [40.8612, -79.8953],
-    "deceased": false
+    "deceased": false,
+    "folder": "samuel2007"
   },
   {
     "name": "Bella Gillgrist",
@@ -101,6 +113,7 @@
     "family": ["Gillgrist", "Lehman"],
     "city": "Butler",
     "coordinates": [40.8612, -79.8953],
-    "deceased": false
+    "deceased": false,
+    "folder": "isabella2011"
   }
 ]
