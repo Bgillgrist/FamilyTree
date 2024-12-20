@@ -261,7 +261,8 @@
       birthdays = data.map(person => ({
         name: person.name,
         date: person.birthday,
-        family: person.family
+        family: person.family,
+        deceased: person.deceased
       }));
       displayMonthList(birthdays); // Default to showing all birthdays
     });
