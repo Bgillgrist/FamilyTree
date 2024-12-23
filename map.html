@@ -90,6 +90,20 @@
       transform: scale(1.2);
       cursor: pointer;
     }
+    .view-toggle {
+      text-align: center;
+      margin: 20px;
+      font-size: 16px;
+    }
+
+    .view-toggle label {
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    .view-toggle input[type="radio"] {
+      margin-right: 5px;
+    }
   </style>
 </head>
 <body>
@@ -116,6 +130,17 @@
     </label>
   </div>
 
+  <div class="view-toggle">
+    <label>
+      <input type="radio" name="view" value="residence" checked>
+      Current Residence / Burial Place
+    </label>
+    <label>
+      <input type="radio" name="view" value="birthplace">
+      Birthplace
+    </label>
+  </div>
+
   <!-- Map Container -->
   <div id="map"></div>
 
@@ -132,69 +157,73 @@
 
     // Fetch people data
     async function fetchPeopleData() {
-      const response = await fetch('people.json');
+      const response = await fetch('people.json'); // Ensure the file is in the same directory
       return await response.json();
     }
 
-    // Add markers to the map based on filtered data
-    function addMarkers(filteredPeople) {
-      // Clear existing markers
-      markers.forEach(marker => map.removeLayer(marker));
-      markers = [];
+    // Initialize map
+    const map = L.map('map').setView([37.7749, -95.7129], 4); // Centered on the US
 
-      // Group people by city
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Group locations for markers
+    function groupLocations(people, viewType) {
       const groupedLocations = {};
-      filteredPeople.forEach(person => {
-        const { city, name, birthday, coordinates } = person;
+
+      people.forEach(person => {
+        const location = person[viewType]; // 'residence' or 'birthplace'
+        if (!location) return;
+
+        const { city, coordinates } = location;
         if (!groupedLocations[city]) {
           groupedLocations[city] = { coordinates, people: [] };
         }
-        groupedLocations[city].people.push({ name, birthday });
+        groupedLocations[city].people.push({ name: person.name, birthday: person.birthday });
       });
 
-      // Add new markers
+      return groupedLocations;
+    }
+
+    // Add markers to the map
+    function displayLocations(groupedLocations) {
+      map.eachLayer(layer => {
+        if (layer instanceof L.Marker) map.removeLayer(layer); // Remove existing markers
+      });
+
       Object.values(groupedLocations).forEach(location => {
         const { coordinates, people } = location;
 
-        // Create tooltip content with names and birthdays
         const tooltipContent = people
           .map(person => `<strong>${person.name}</strong><br>Birthday: ${person.birthday}`)
           .join('<br><br>');
 
-        const marker = L.marker(coordinates).bindPopup(tooltipContent).addTo(map);
-        markers.push(marker); // Track marker
+        L.marker(coordinates)
+          .addTo(map)
+          .bindPopup(tooltipContent);
       });
     }
 
-    // Filter markers by family
-    function filterMarkers(family) {
-      const includeDeceased = document.getElementById('include-deceased').checked;
-
-      // Update active button styling
-      const buttons = document.querySelectorAll('.filter-buttons button');
-      buttons.forEach(button => button.classList.remove('active'));
-      const activeButton = Array.from(buttons).find(button => button.textContent === family);
-      if (activeButton) activeButton.classList.add('active');
-
-      // Filter markers by family and deceased status
-      const filteredPeople = peopleData.filter(person =>
-        (family === 'All' || person.family.includes(family)) &&
-        (includeDeceased || !person.deceased)
-      );
-
-      addMarkers(filteredPeople);
+    // Update map view based on selected option
+    function updateMap(viewType) {
+      fetchPeopleData().then(people => {
+        const groupedLocations = groupLocations(people, viewType);
+        displayLocations(groupedLocations);
+      });
     }
 
-    // Reapply filter when the slider changes
-    document.getElementById('include-deceased').addEventListener('change', () => {
-      const activeFamily = document.querySelector('.filter-buttons .active').textContent;
-      filterMarkers(activeFamily);
-    });
+    // Initialize map with default view
+    document.addEventListener('DOMContentLoaded', () => {
+      const viewToggle = document.querySelectorAll('input[name="view"]');
+      viewToggle.forEach(radio => {
+        radio.addEventListener('change', () => {
+          updateMap(radio.value); // Switch view based on toggle
+        });
+      });
 
-    // Initialize the map
-    fetchPeopleData().then(data => {
-      peopleData = data; // Store fetched data
-      addMarkers(peopleData); // Show all markers by default
+      updateMap('residence'); // Default to 'residence'
     });
   </script>
 </body>
