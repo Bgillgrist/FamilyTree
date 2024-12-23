@@ -242,14 +242,22 @@
       const activeButton = Array.from(buttons).find(button => button.textContent === family);
       if (activeButton) activeButton.classList.add('active');
 
-      // Filter birthdays by family and deceased status
-      const filteredBirthdays = birthdays.filter(b =>
-        (family === 'All' || b.family.includes(family)) &&
-        (includeDeceased || !b.deceased)
-      );
+      // Filter logic
+      let filteredBirthdays = birthdays;
 
-      displayMonthList(filteredBirthdays);
-    }
+      // Apply family filter if not "All"
+      if (family !== 'All') {
+        filteredBirthdays = filteredBirthdays.filter(b => b.family.includes(family));
+      }
+
+      // Apply deceased filter
+      if (!includeDeceased) {
+        filteredBirthdays = filteredBirthdays.filter(b => !b.deceased);
+      }
+
+  // Display the filtered birthdays
+  displayMonthList(filteredBirthdays);
+}
 
     // Reapply filter when the slider changes
     document.getElementById('include-deceased').addEventListener('change', () => {
