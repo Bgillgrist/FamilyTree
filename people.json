@@ -214,5 +214,176 @@
     "coordinates": [38.9982, -77.2883],
     "deceased": false,
     "folder": "reese2011"
+  },
+  {
+    "name": "Bill Kinsel",
+    "birthday": "1938-04-19",
+    "family": ["Kinsel"],
+    "city": "Napa",
+    "coordinates": [38.2975, -122.2869],
+    "deceased": true,
+    "folder": "william1938"
+  },
+  {
+    "name": "Patt Kinsel",
+    "birthday": "1939-09-25",
+    "family": ["Kinsel"],
+    "city": "Pleasanton",
+    "coordinates": [37.6604, -121.8758],
+    "deceased": false,
+    "folder": "patricia1939"
+  },
+  {
+    "name": "James Kinsel",
+    "birthday": "1959-02-27",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": true,
+    "folder": "james1959"
+  },
+  {
+    "name": "Suzi Kinsel",
+    "birthday": "1959-12-30",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "suzette1959"
+  },
+  {
+    "name": "Wills Kinsel",
+    "birthday": "1986-04-26",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "william1986"
+  },
+  {
+    "name": "Johanna Joey Kinsel",
+    "birthday": "1990-10-27",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "johanna1990"
+  },
+  {
+    "name": "Andy Kinsel",
+    "birthday": "2015-04-28",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "andrea2015"
+  },
+  {
+    "name": "Tilly Kinsel",
+    "birthday": "2018-??-??",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "matilda2018"
+  },
+  {
+    "name": "Dave Kinsel",
+    "birthday": "1987-05-26",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "dave1987"
+  },
+  {
+    "name": "Alex Kinsel",
+    "birthday": "1989-07-14",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "alexandra1989"
+  },
+  {
+    "name": "Josiah Kinsel",
+    "birthday": "2015-06-29",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "josiah2015"
+  },
+  {
+    "name": "Judah Kinsel",
+    "birthday": "2017-11-03",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "judah2017"
+  },
+  {
+    "name": "Eva Kinsel",
+    "birthday": "2020-05-26",
+    "family": ["Kinsel"],
+    "city": "Gold Coast",
+    "coordinates": [-28.0167, 153.4000],
+    "deceased": false,
+    "folder": "eva2020"
+  },
+  {
+    "name": "Daniel Kinsel",
+    "birthday": "1990-05-07",
+    "family": ["Kinsel"],
+    "city": "Austin",
+    "coordinates": [30.2672, -97.7431],
+    "deceased": false,
+    "folder": "daniel1990"
+  },
+  {
+    "name": "Jamie Kinsel",
+    "birthday": "1985-10-29",
+    "family": ["Kinsel"],
+    "city": "Austin",
+    "coordinates": [30.2672, -97.7431],
+    "deceased": false,
+    "folder": "jamie1985"
+  },
+  {
+    "name": "Debi Burton",
+    "birthday": "1958-01-10",
+    "family": ["Kinsel"],
+    "city": "Pleasanton",
+    "coordinates": [37.6604, -121.8758],
+    "deceased": false,
+    "folder": "debi1958"
+  },
+  {
+    "name": "Keith Burton",
+    "birthday": "1987-09-01",
+    "family": ["Kinsel"],
+    "city": "Pleasanton",
+    "coordinates": [37.6604, -121.8758],
+    "deceased": false,
+    "folder": "keith1987"
+  },
+  {
+    "name": "Laura Burton",
+    "birthday": "1990-07-17",
+    "family": ["Kinsel"],
+    "city": "Pleasanton",
+    "coordinates": [37.6604, -121.8758],
+    "deceased": false,
+    "folder": "laura1990"
+  },
+  {
+    "name": "Sebastien Messier",
+    "birthday": "1989-07-04",
+    "family": ["Kinsel"],
+    "city": "Pleasanton",
+    "coordinates": [37.6604, -121.8758],
+    "deceased": false,
+    "folder": "sebastien1989"
   }
 ]
