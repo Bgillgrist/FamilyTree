@@ -385,5 +385,104 @@
     "coordinates": [37.6604, -121.8758],
     "deceased": false,
     "folder": "sebastien1989"
+  },
+  {
+    "name": "James Kinsel",
+    "birthday": "1894-10-20",
+    "family": ["Kinsel"],
+    "city": "Napa",
+    "coordinates": [38.2975, -122.2869],
+    "deceased": true,
+    "folder": "james1894"
+  },
+  {
+    "name": "Minnie Kinsel",
+    "birthday": "1913-07-11",
+    "family": ["Kinsel"],
+    "city": "Napa",
+    "coordinates": [38.2975, -122.2869],
+    "deceased": true,
+    "folder": "minnie1913"
+  },
+  {
+    "name": "Earl Kinsel",
+    "birthday": "1940-09-26",
+    "family": ["Kinsel"],
+    "city": "Tyrone",
+    "coordinates": [33.4712, -84.5972],
+    "deceased": false,
+    "folder": "earl1940"
+  },
+  {
+    "name": "Julie Kinsel",
+    "birthday": "1945-09-24",
+    "family": ["Kinsel"],
+    "city": "San Diego",
+    "coordinates": [32.7157, -117.1611],
+    "deceased": true,
+    "folder": "julie1945"
+  },
+  {
+    "name": "Jenny Kinsel",
+    "birthday": "1969-11-18",
+    "family": ["Kinsel"],
+    "city": "San Diego",
+    "coordinates": [32.7157, -117.1611],
+    "deceased": false,
+    "folder": "jenny1969"
+  },
+  {
+    "name": "Tracy Reilly",
+    "birthday": "1972-04-24",
+    "family": ["Kinsel"],
+    "city": "Tyrone",
+    "coordinates": [33.4712, -84.5972],
+    "deceased": false,
+    "folder": "tracy1972"
+  },
+  {
+    "name": "Brian Reilly",
+    "birthday": "1970-09-22",
+    "family": ["Kinsel"],
+    "city": "Tyrone",
+    "coordinates": [33.4712, -84.5972],
+    "deceased": false,
+    "folder": "brian1970"
+  },
+  {
+    "name": "John Reilly",
+    "birthday": "2009-09-18",
+    "family": ["Kinsel"],
+    "city": "Tyrone",
+    "coordinates": [33.4712, -84.5972],
+    "deceased": false,
+    "folder": "john2009"
+  },
+  {
+    "name": "Brody Reilly",
+    "birthday": "2012-06-22",
+    "family": ["Kinsel"],
+    "city": "Tyrone",
+    "coordinates": [33.4712, -84.5972],
+    "deceased": false,
+    "folder": "brody2012"
+  },
+  {
+    "name": "Leon Kinsel",
+    "birthday": "1945-05-11",
+    "family": ["Kinsel"],
+    "city": "Napa",
+    "coordinates": [38.2975, -122.2869],
+    "deceased": false,
+    "folder": "leon1945"
+  },
+  {
+    "name": "Kimberly Kinsel",
+    "birthday": "1973-08-00",
+    "family": ["Kinsel"],
+    "city": "Napa",
+    "coordinates": [38.2975, -122.2869],
+    "deceased": true,
+    "folder": "kimberly1973"
   }
 ]
