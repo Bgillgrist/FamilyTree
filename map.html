@@ -199,7 +199,9 @@
         const { coordinates, people } = location;
 
         const tooltipContent = people
-          .map(person => `<strong>${person.name}</strong><br>Birthday: ${person.birthday}`)
+          .map(person => 
+            `<strong><a href="${person.folder}/index.html">${person.name}</a></strong><br>Birthday: ${person.birthday}`
+          )
           .join('<br><br>');
 
         L.marker(coordinates)
@@ -253,10 +255,17 @@
 
       // Initialize map
       fetchPeopleData().then(data => {
-        peopleData = data;
-        updateMap('residence', 'All', deceasedToggle.checked);
+        peopleData = data.map(person => ({
+          name: person.name,
+          birthday: person.birthday,
+          family: person.family,
+          deceased: person.deceased,
+          residence: person.residence,
+          birthplace: person.birthplace,
+          folder: person.folder // Include the folder property
+        }));
+        updateMap('residence'); // Default to 'residence'
       });
-    });
   </script>
 </body>
 </html>
