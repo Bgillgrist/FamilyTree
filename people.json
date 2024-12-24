@@ -12,7 +12,7 @@
       ],
       "parents": [
         {
-          "name": "Robert Gillgrist",
+          "name": "Bob Gillgrist",
           "id": "robert1944"
         },
         {
@@ -22,7 +22,7 @@
       ],
       "siblings": [
         {
-          "name": "Robert Gillgrist",
+          "name": "Rob Gillgrist",
           "id": "robert1969"
         }
       ],
@@ -350,12 +350,30 @@
   },
   {
     "id": "kaitlyn2000",
-    "name": "Kaitlyn Gillgrist",
-    "commonName": "Kaitlyn",
+    "name": "Kaitlyn Elizabeth Gillgrist",
+    "commonName": "Kaitlyn Gillgrist",
     "family": {
       "spouse": [],
-      "parents": [],
-      "siblings": [],
+      "parents": "parents": [
+        {
+          "name": "Ted Gillgrist",
+          "id": "theodore1971"
+        },
+        {
+          "name": "Karen Gillgrist",
+          "id": "karen1974"
+        }
+      ],
+      "siblings": "siblings": [
+        {
+          "name": "Kaitlyn Gillgrist",
+          "id": "kaitlyn2000"
+        },
+        {
+          "name": "Brennan Gillgrist",
+          "id": "brennan2002"
+        }
+      ],
       "children": []
     },
     "birthday": "2000-07-15",
@@ -375,15 +393,44 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
+    "timeline": [
+      {
+        "year": "2000",
+        "event": "Born in Pittsburgh, PA"
+      },
+      {
+        "year": "2001",
+        "event": "Moved to North Charleston, SC"
+      },
+      {
+        "year": "2018",
+        "event": "Moved to Clemson, SC"
+      },
+      {
+        "year": "2023",
+        "event": "Graduated from Clemson University"
+      },
+      {
+        "year": "2023",
+        "event": "Moved to Greer, SC"
+      }
+    ],
     "profilePicture": "kaitlyn2000/kaitlyn2000.jpg",
-    "photos": [],
-    "photoDescriptions": []
+    "photos": [
+      "kaitlyn2000/kaitlyn2000.siblings.jpeg",
+      "kaitlyn2000/kaitlyn2000.grandpa.jpg",
+      "kaitlyn2000/kaitlyn2000.dad.jpg"
+    ],
+    "photoDescriptions": [
+      "Kaitlyn and her Siblings",
+      "Kaitilyn and her Papa",
+      "Kaitlyn and her Dad"
+    ]
   },
   {
     "id": "susan1943",
-    "name": "Susie Gillgrist",
-    "commonName": "Susie",
+    "name": "Susan Jane Gillgrist (Lehman)",
+    "commonName": "Susie Gillgrist",
     "family": {
       "spouse": [],
       "parents": [],
