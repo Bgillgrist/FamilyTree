@@ -147,7 +147,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     let peopleData = []; // Global variable to store fetched data
-    let markers = []; // Array to keep track of markers on the map
+
     const map = L.map('map').setView([37.7749, -95.7129], 4); // Initialize map
 
     // Add OpenStreetMap tiles
@@ -157,20 +157,16 @@
 
     // Fetch people data
     async function fetchPeopleData() {
-      const response = await fetch('people.json'); // Ensure the file is in the same directory
+      const response = await fetch('people.json');
+      if (!response.ok) {
+        console.error('Failed to fetch people data');
+        return [];
+      }
       return await response.json();
     }
 
-    // Initialize map
-    const map = L.map('map').setView([37.7749, -95.7129], 4); // Centered on the US
-
-    // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
     // Group locations for markers
-    function groupLocations(people, viewType) {
+    function groupLocations(people, viewType, familyFilter, includeDeceased) {
       const groupedLocations = {};
 
       people.forEach(person => {
@@ -178,10 +174,16 @@
         if (!location) return;
 
         const { city, coordinates } = location;
-        if (!groupedLocations[city]) {
-          groupedLocations[city] = { coordinates, people: [] };
+
+        if (
+          (familyFilter === 'All' || person.family.includes(familyFilter)) &&
+          (includeDeceased || !person.deceased)
+        ) {
+          if (!groupedLocations[city]) {
+            groupedLocations[city] = { coordinates, people: [] };
+          }
+          groupedLocations[city].people.push({ name: person.name, birthday: person.birthday });
         }
-        groupedLocations[city].people.push({ name: person.name, birthday: person.birthday });
       });
 
       return groupedLocations;
@@ -206,24 +208,54 @@
       });
     }
 
-    // Update map view based on selected option
-    function updateMap(viewType) {
-      fetchPeopleData().then(people => {
-        const groupedLocations = groupLocations(people, viewType);
-        displayLocations(groupedLocations);
-      });
+    // Update map view based on filters
+    function updateMap(viewType, familyFilter, includeDeceased) {
+      const groupedLocations = groupLocations(peopleData, viewType, familyFilter, includeDeceased);
+      displayLocations(groupedLocations);
     }
 
-    // Initialize map with default view
+    // Event handlers for filters
     document.addEventListener('DOMContentLoaded', () => {
+      const familyButtons = document.querySelectorAll('.filter-buttons button');
+      const deceasedToggle = document.getElementById('include-deceased');
       const viewToggle = document.querySelectorAll('input[name="view"]');
-      viewToggle.forEach(radio => {
-        radio.addEventListener('change', () => {
-          updateMap(radio.value); // Switch view based on toggle
+
+      // Add event listeners to toggle filters
+      familyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          familyButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          updateMap(
+            document.querySelector('input[name="view"]:checked').value,
+            button.textContent,
+            deceasedToggle.checked
+          );
         });
       });
 
-      updateMap('residence'); // Default to 'residence'
+      deceasedToggle.addEventListener('change', () => {
+        updateMap(
+          document.querySelector('input[name="view"]:checked').value,
+          document.querySelector('.filter-buttons .active').textContent,
+          deceasedToggle.checked
+        );
+      });
+
+      viewToggle.forEach(radio => {
+        radio.addEventListener('change', () => {
+          updateMap(
+            radio.value,
+            document.querySelector('.filter-buttons .active').textContent,
+            deceasedToggle.checked
+          );
+        });
+      });
+
+      // Initialize map
+      fetchPeopleData().then(data => {
+        peopleData = data;
+        updateMap('residence', 'All', deceasedToggle.checked);
+      });
     });
   </script>
 </body>
