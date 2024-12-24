@@ -145,7 +145,7 @@
           const sublist = document.createElement('ul');
           family[category].forEach(member => {
             const subLi = document.createElement('li');
-            subLi.innerHTML = `<a href="person.html?id=${member.id}">${member.name}</a>`;
+            subLi.innerHTML = `<strong><a href="person.html?id=${member.id}">${member.name}</a></strong>`;
             sublist.appendChild(subLi);
           });
 
@@ -159,7 +159,15 @@
       const timelineContainer = document.getElementById('timeline');
       timeline.forEach(event => {
         const li = document.createElement('li');
-        li.innerHTML = `<strong>${event.year}</strong> - ${event.event}`;
+
+        // Add link if an `id` exists
+        if (event.id) {
+          li.innerHTML = `<strong>${event.year}</strong> - 
+            <a href="person.html?id=${event.id}">${event.event}</a>`;
+        } else {
+          li.innerHTML = `<strong>${event.year}</strong> - ${event.event}`;
+        }
+
         timelineContainer.appendChild(li);
       });
     }
