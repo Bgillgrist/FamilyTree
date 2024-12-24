@@ -1,8 +1,8 @@
 [
   {
-    "name": "Ted Gillgrist",
+    "id": "theodore1971",
+    "name": "Theodore 'Ted' James Gillgrist",
     "birthday": "1971-09-27",
-    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "birthplace": {
       "city": "Pittsburgh, PA",
       "coordinates": [40.4406, -79.9959]
@@ -11,8 +11,40 @@
       "city": "North Charleston, SC",
       "coordinates": [32.8769, -80.0114]
     },
+    "deathday": null,
     "deceased": false,
-    "folder": "theodore1971"
+    "family": {
+      "spouse": [
+        { "name": "Karen Gillgrist", "id": "karen1974" }
+      ],
+      "parents": [
+        { "name": "Robert Gillgrist", "id": "robert1944" },
+        { "name": "Susan Gillgrist", "id": "susan1943" }
+      ],
+      "siblings": [
+        { "name": "Robert Gillgrist", "id": "robert1969" }
+      ],
+      "children": [
+        { "name": "Kaitlyn Gillgrist", "id": "kaitlyn2000" },
+        { "name": "Brennan Gillgrist", "id": "brennan2002" },
+        { "name": "Ethan Gillgrist", "id": "ethan2005" }
+      ]
+    },
+    "timeline": [
+      { "year": "1971", "event": "Born in Pittsburgh, PA" },
+      { "year": "1994", "event": "Graduated from Slippery Rock University" },
+      { "year": "1996", "event": "Married Karen Gillgrist", "id": "karen1974" },
+      { "year": "2000", "event": "Birth of First Child Kaitlyn", "id": "kaitlyn2000" },
+      { "year": "2002", "event": "Birth of Second Child Brennan", "id": "brennan2002" },
+      { "year": "2005", "event": "Birth of Third Child Ethan", "id": "ethan2005" },
+      { "year": "2023", "event": "Started his Teaching Career" }
+    ],
+    "profilePicture": "theodore1971/theodore1971.jpg",
+    "photos": [
+      "theodore1971/theodore1971.wedding.jpg",
+      "theodore1971/theodore1971.teaching.jpg",
+      "theodore1971/theodore1971.family.jpg"
+    ]
   },
   {
     "name": "Karen Gillgrist",
