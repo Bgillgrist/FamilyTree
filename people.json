@@ -429,13 +429,57 @@
   },
   {
     "id": "susan1943",
-    "name": "Susan Jane Gillgrist (Lehman)",
+    "name": "Susan 'Susie' Jane Gillgrist (Lehman)",
     "commonName": "Susie Gillgrist",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        {
+          "name": "Bob Gillgrist",
+          "id": "robert1944"
+        }
+      ],
+      "parents": [
+        {
+          "name": "Robert Lehman",
+          "id": "robert1909"
+        },
+        {
+          "name": "Helen Lehman",
+          "id": "helen1916"
+        }
+      ],
+      "siblings": [
+        {
+          "name": "Marjorie Lehman",
+          "id": "marjorie1939"
+        },
+        {
+          "name": "Robert Lehman Jr.",
+          "id": "robert1941"
+        },
+        {
+          "name": "Bill Lehman",
+          "id": "william1944"
+        },
+        {
+          "name": "Wayne Lehman",
+          "id": "wayne1950"
+        },
+        {
+          "name": "Ron Lehman",
+          "id": "ronald1954"
+        }
+      ],
+      "children": [
+        {
+          "name": "Rob Gillgrist",
+          "id": "robert1969"
+        },
+        {
+          "name": "Ted Gillgrist",
+          "id": "theodore1971"
+        }
+      ]
     },
     "birthday": "1943-03-17",
     "birthplace": {
@@ -454,20 +498,84 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
+    "timeline": "timeline": [
+      {
+        "year": "1943",
+        "event": "Born in New Castle, PA"
+      },
+      {
+        "year": "1964",
+        "event": "Graduated from Jameson Memorial Hospital School of Nursing"
+      },
+      {
+        "year": "1965",
+        "event": "Married to Bob Gillgrist",
+        "id": "robert1944"
+      },
+      {
+        "year": "1969",
+        "event": "Birth of First Child Robert Gillgrist",
+        "id": "robert1969"
+      },
+      {
+        "year": "1971",
+        "event": "Birth of Second Child Theodore Gillgrist",
+        "id": "theodore1971"
+      },
+      {
+        "year": "1988",
+        "event": "Graduated from Ball State University"
+      },
+    ],
     "profilePicture": "susan1943/susan1943.jpg",
-    "photos": [],
-    "photoDescriptions": []
+    "photos": [
+      "susan1943/susan1943.family.jpg",
+      "susan1943/susan1943.family2.jpg",
+      "susan1943/susan1943.wedding.jpg"
+    ],
+    "photoDescriptions": [
+      "Susie with her husband and children",
+      "Susie with her parents and siblings",
+      "Susie at her wedding with her husband Bob"
+    ]
   },
   {
     "id": "robert1944",
-    "name": "Bob Gillgrist",
-    "commonName": "Bob",
+    "name": "Robert 'Bob' Andrew Gillgrist",
+    "commonName": "Bob Gillgrist",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        {
+          "name": "Susie Gillgrist",
+          "id": "susan1943"
+        }
+      ],
+      "parents": [
+        {
+          "name": "Dallas Gillgrist",
+          "id": "dallas1906"
+        },
+        {
+          "name": "Frances Gillgrist",
+          "id": "frances1906"
+        }
+      ],
+      "siblings": [
+        {
+          "name": "Mary Jane Knoblespease",
+          "id": "mary1938"
+        }
+      ],
+      "children": [
+        {
+          "name": "Rob Gillgrist",
+          "id": "robert1969"
+        },
+        {
+          "name": "Ted Gillgrist",
+          "id": "theodore1971"
+        }
+      ]
     },
     "birthday": "1944-01-30",
     "birthplace": {
@@ -486,20 +594,96 @@
     },
     "deathday": null,
     "deceased": true,
-    "timeline": [],
+    "timeline": "timeline": [
+      {
+        "year": "1944",
+        "event": "Born in New Castle, PA"
+      },
+      {
+        "year": "1965",
+        "event": "Graduated from Slippery Rock University"
+      },
+      {
+        "year": "1965",
+        "event": "Married to Susie Gillgrist",
+        "id": "susan1943"
+      },
+      {
+        "year": "1969",
+        "event": "Birth of First Child Robert Gillgrist",
+        "id": "robert1969"
+      },
+      {
+        "year": "1971",
+        "event": "Birth of Second Child Theodore Gillgrist",
+        "id": "theodore1971"
+      },
+      {
+        "year": "2022",
+        "event": "Died in North Charleston, SC"
+      },
+    ],
     "profilePicture": "robert1944/robert1944.jpg",
-    "photos": [],
-    "photoDescriptions": []
+    "photos": [
+      "robert1944/robert1944.full.family.jpeg",
+      "robert1944/robert1944.family.jpg",
+      "robert1944/robert1944.wife.jpg"
+    ],
+    "photoDescriptions": [
+      "Bob with his Full Family (August 7, 2021)",
+      "Bob and his Family (December 24, 1995)",
+      "Bob with his Wife Susie"
+    ]
   },
   {
     "id": "robert1938",
-    "name": "Bob Kinsel",
-    "commonName": "Bob",
+    "name": "Robert 'Bob' Lee Kinsel",
+    "commonName": "Bob Kinsel",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        {
+          "name": "Lucy Kinsel",
+          "id": "frances1937"
+        }
+      ],
+      "parents": [
+        {
+          "name": "James Kinsel",
+          "id": "james1894"
+        },
+        {
+          "name": "Minnie Kinsel",
+          "id": "minnie1913"
+        }
+      ],
+      "siblings": [
+        {
+          "name": "Bill Kinsel",
+          "id": "william1938"
+        },
+        {
+          "name": "Earl Kinsel",
+          "id": "earl1940"
+        },
+        {
+          "name": "Leon Kinsel",
+          "id": "leon1945"
+        }
+      ],
+      "children": [
+        {
+          "name": "Jim Kinsel",
+          "id": "james1971"
+        },
+        {
+          "name": "Melinda Mauricio",
+          "id": "melinda1972"
+        },
+        {
+          "name": "Karen Gillgrist",
+          "id": "karen1974"
+        }
+      ]
     },
     "birthday": "1938-04-19",
     "birthplace": {
@@ -518,20 +702,101 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
-    "profilePicture": "robert1938/robert1938.jpg",
-    "photos": [],
-    "photoDescriptions": []
+    "timeline": "timeline": [
+      {
+        "year": "1938",
+        "event": "Born in Calistoga, CA"
+      },
+      {
+        "year": "0000",
+        "event": "Graduated from Oregon State University"
+      },
+      {
+        "year": "1971",
+        "event": "Married to Lucy Kinsel",
+        "id": "frances1937"
+      },
+      {
+        "year": "1971",
+        "event": "Birth of First Child Jim Kinsel",
+        "id": "james1971"
+      },
+      {
+        "year": "1972",
+        "event": "Birth of Second Child Melinda Mauricio",
+        "id": "melinda1972"
+      },
+      {
+        "year": "1974",
+        "event": "Birth of Third Child Karen Gillgrist",
+        "id": "karen1974"
+      }
+    ],
+    "profilePicture": "robert1938/robert1938.png",
+    "photos": [
+      "robert1938/robert1938.family.jpeg",
+      "robert1938/robert1938.family2.jpg",
+      "robert1938/robert1938.wedding.jpg"
+    ],
+    "photoDescriptions": [
+      "Bob with his Wife and Kids",
+      "Bob with some of his family",
+      "Bob's Wedding with his Wife Lucy"
+    ]
   },
   {
     "id": "frances1937",
-    "name": "Lucy Kinsel",
-    "commonName": "Lucy",
+    "name": "Frances 'Lucy' Lucille Kinsel (Mullin)",
+    "commonName": "Lucy Kinsel",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        {
+          "name": "Bob Kinsel",
+          "id": "robert1938"
+        }
+      ],
+      "parents": [
+        {
+          "name": "Forrest Mullin",
+          "id": "forrest1898"
+        },
+        {
+          "name": "Beulah Mullin",
+          "id": "beulah1908"
+        }
+      ],
+      "siblings": [
+        {
+          "name": "Fred Mullin",
+          "id": "fred1928"
+        },
+        {
+          "name": "Robert Mullin",
+          "id": "robert1930"
+        },
+        {
+          "name": "Kenneth Mullin",
+          "id": "kenneth1932"
+        },
+        {
+          "name": "Elizabeth Mullin",
+          "id": "elizabeth1938"
+        }
+      ],
+      "children": [
+        {
+          "name": "Jim Kinsel",
+          "id": "james1971"
+        },
+        {
+          "name": "Melinda Mauricio",
+          "id": "melinda1972"
+        },
+        {
+          "name": "Karen Gillgrist",
+          "id": "karen1974"
+        }
+      ]
     },
     "birthday": "1937-04-02",
     "birthplace": {
@@ -550,10 +815,47 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
-    "profilePicture": "frances1937/frances1937.jpg",
-    "photos": [],
-    "photoDescriptions": []
+    "timeline": "timeline": [
+      {
+        "year": "1937",
+        "event": "Born in South Bend, WA"
+      },
+      {
+        "year": "0000",
+        "event": "Graduated from Washington University"
+      },
+      {
+        "year": "1971",
+        "event": "Married to Robert Kinsel",
+        "id": "robert1938"
+      },
+      {
+        "year": "1971",
+        "event": "Birth of First Child Jim Kinsel",
+        "id": "james1971"
+      },
+      {
+        "year": "1972",
+        "event": "Birth of Second Child Melinda Mauricio",
+        "id": "melinda1972"
+      },
+      {
+        "year": "1974",
+        "event": "Birth of Third Child Karen Gillgrist",
+        "id": "karen1974"
+      }
+    ],
+    "profilePicture": "frances1937/frances1937.png",
+    "photos": [
+      "frances1937/frances1937.daughters.png",
+      "frances1937/frances1937.children.png",
+      "frances1937/frances1937.sister.png"
+    ],
+    "photoDescriptions": [
+      "Lucy with her Daughters",
+      "Lucy with her Children",
+      "Lucy with her Sister Betty"
+    ]
   },
   {
     "id": "robert1969",
