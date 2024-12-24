@@ -2,7 +2,7 @@
   {
     "id": "theodore1971",
     "name": "Theodore 'Ted' James Gillgrist",
-    "commonName": "Ted",
+    "commonName": "Ted Gillgrist",
     "birthday": "1971-09-27",
     "birthplace": {
       "city": "Pittsburgh, PA",
@@ -53,9 +53,10 @@
       ]
   },
   {
-    "name": "Karen Gillgrist",
+    "id": "karen1974",
+    "name": "Karen Lee Gillgrist (Kinsel)",
+    "commonName": "Karen Gillgrist",
     "birthday": "1974-05-13",
-    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "birthplace": {
       "city": "Fairfax, VA",
       "coordinates": [38.8462, -77.3064]
@@ -64,13 +65,51 @@
       "city": "North Charleston, SC",
       "coordinates": [32.8769, -80.0114]
     },
+    "deathday": null,
     "deceased": false,
-    "folder": "karen1974"
+    "family": {
+      "spouse": [
+        { "name": "Ted Gillgrist", "id": "theodore1971" }
+      ],
+      "parents": [
+        { "name": "Bob Kinsel", "id": "robert1938" },
+        { "name": "Lucy Kinsel", "id": "frances1937" }
+      ],
+      "siblings": [
+        { "name": "Jim Kinsel", "id": "james1971" },
+        { "name": "Melinda Mauricio", "id": "melinda1972" }
+      ],
+      "children": [
+        { "name": "Kaitlyn Gillgrist", "id": "kaitlyn2000" },
+        { "name": "Brennan Gillgrist", "id": "brennan2002" },
+        { "name": "Ethan Gillgrist", "id": "ethan2005" }
+      ]
+    },
+    "timeline": [
+      { "year": "1974", "event": "Born in Fairfax, VA" },
+      { "year": "1996", "event": "Graduated from Slippery Rock University" },
+      { "year": "1996", "event": "Married Ted Gillgrist", "id": "theodore1971" },
+      { "year": "2000", "event": "Birth of First Child Kaitlyn", "id": "kaitlyn2000" },
+      { "year": "2002", "event": "Birth of Second Child Brennan", "id": "brennan2002" },
+      { "year": "2005", "event": "Birth of Third Child Ethan", "id": "ethan2005" }
+    ],
+    "profilePicture": "karen1974/karen1974.HEIC",
+      "photos": [
+        "karen1974/karen1974.wedding.jpg",
+        "karen1974/karen1974.family.jpg",
+        "karen1974/karen1974.trip.jpg"
+      ],
+      "photoDescriptions": [
+        "Karen and Ted's Wedding (July 13, 1996)",
+        "Karen with her Mom and Siblings",
+        "Karen on Route 66 (June 29, 2024)"
+      ]
   },
   {
-    "name": "Brennan Gillgrist",
+    "id": "brennan2002",
+    "name": "Brennan Andrew Gillgrist",
+    "commonName": "Brennan Gillgrist",
     "birthday": "2002-11-15",
-    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "birthplace": {
       "city": "Charleston, SC",
       "coordinates": [32.7833, -79.9320]
@@ -79,23 +118,40 @@
       "city": "Columbia, SC",
       "coordinates": [34.0008, -81.0351]
     },
+    "deathday": null,
     "deceased": false,
-    "folder": "brennan2002"
-  },
-  {
-    "name": "Ethan Gillgrist",
-    "birthday": "2005-04-28",
-    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
-    "birthplace": {
-      "city": "Charleston, SC",
-      "coordinates": [32.7833, -79.9320]
+    "family": {
+      "spouse": [
+        
+      ],
+      "parents": [
+        { "name": "Ted Gillgrist", "id": "theodore1971" },
+        { "name": "Karen Gillgrist", "id": "karen1974" }
+      ],
+      "siblings": [
+        { "name": "Kaitlyn Gillgrist", "id": "kaitlyn2000" },
+        { "name": "Ethan Gillgrist", "id": "ethan2005" }
+      ],
+      "children": [
+        
+      ]
     },
-    "residence": {
-      "city": "North Charleston, SC",
-      "coordinates": [32.8769, -80.0114]
-    },
-    "deceased": false,
-    "folder": "ethan2005"
+    "timeline": [
+      { "year": "2002", "event": "Born in Charleston, SC" },
+      { "year": "2024", "event": "Engaged to Taylor Hoffman", "id": "taylor2003" },
+      { "year": "2024", "event": "Graduated from the University of South Carolina" }
+    ],
+    "profilePicture": "brennan2002/brennan2002.HEIC",
+      "photos": [
+        "brennan2002/brennan2002.engagement.JPG",
+        "brennan2002/brennan2002.family.JPG",
+        "brennan2002/brennan2002.mom.HEIC"
+      ],
+      "photoDescriptions": [
+        "Brennan and Taylor's Engagement (March 7, 2024)",
+        "Brennan with Family at HS Graduation (June 18, 2021)",
+        "Brennan and Mom at the Grand Canyon (May 28, 2024)"
+      ]
   },
   {
     "name": "Kaitlyn Gillgrist",
