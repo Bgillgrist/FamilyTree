@@ -3,8 +3,14 @@
     "name": "Ted Gillgrist",
     "birthday": "1971-09-27",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
-    "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114],
+    "birthplace": {
+      "city": "Pittsburgh, PA",
+      "coordinates": [40.4406, -79.9959]
+    },
+    "residence": {
+      "city": "North Charleston, SC",
+      "coordinates": [32.8769, -80.0114]
+    },
     "deceased": false,
     "folder": "theodore1971"
   },
@@ -12,8 +18,14 @@
     "name": "Karen Gillgrist",
     "birthday": "1974-05-13",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
-    "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114],
+    "birthplace": {
+      "city": "Fairfax, VA",
+      "coordinates": [38.8462, -77.3064]
+    },
+    "residence": {
+      "city": "North Charleston, SC",
+      "coordinates": [32.8769, -80.0114]
+    },
     "deceased": false,
     "folder": "karen1974"
   },
@@ -21,8 +33,14 @@
     "name": "Brennan Gillgrist",
     "birthday": "2002-11-15",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
-    "city": "Columbia",
-    "coordinates": [34.0008, -81.0351],
+    "birthplace": {
+      "city": "Charleston, SC",
+      "coordinates": [32.7833, -79.9320]
+    },
+    "residence": {
+      "city": "North Charleston, SC",
+      "coordinates": [32.8769, -80.0114]
+    },
     "deceased": false,
     "folder": "brennan2002"
   },
@@ -30,8 +48,14 @@
     "name": "Ethan Gillgrist",
     "birthday": "2005-04-28",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
-    "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114],
+    "birthplace": {
+      "city": "Charleston, SC",
+      "coordinates": [32.7833, -79.9320]
+    },
+    "residence": {
+      "city": "North Charleston, SC",
+      "coordinates": [32.8769, -80.0114]
+    },
     "deceased": false,
     "folder": "ethan2005"
   },
@@ -39,8 +63,14 @@
     "name": "Kaitlyn Gillgrist",
     "birthday": "2000-07-15",
     "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
-    "city": "Greer",
-    "coordinates": [34.9387, -82.2271],
+    "birthplace": {
+      "city": "Pittsburgh, PA",
+      "coordinates": [40.4406, -79.9959]
+    },
+    "residence": {
+      "city": "Greer, SC",
+      "coordinates": [34.9387, -82.2271]
+    },
     "deceased": false,
     "folder": "kaitlyn2000"
   },
@@ -48,8 +78,14 @@
     "name": "Susie Gillgrist",
     "birthday": "1943-03-17",
     "family": ["Gillgrist", "Lehman"],
-    "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114],
+    "birthplace": {
+      "city": "New Castle, PA",
+      "coordinates": [39.6620, -75.5668]
+    },
+    "residence": {
+      "city": "North Charleston, SC",
+      "coordinates": [34.9387, -82.2271]
+    },
     "deceased": false,
     "folder": "susan1943"
   },
@@ -57,8 +93,14 @@
     "name": "Bob Gillgrist",
     "birthday": "1944-01-30",
     "family": ["Gillgrist", "Lehman"],
-    "city": "North Charleston",
-    "coordinates": [32.8769, -80.0114],
+    "birthplace": {
+      "city": "New Castle, PA",
+      "coordinates": [39.6620, -75.5668]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
     "deceased": true,
     "folder": "robert1944"
   },
@@ -66,8 +108,14 @@
     "name": "Bob Kinsel",
     "birthday": "1938-04-19",
     "family": ["Kinsel", "Mullin"],
-    "city": "Springfield",
-    "coordinates": [38.8462, -77.3064],
+    "birthplace": {
+      "city": "Calistoga, CA",
+      "coordinates": [38.5788, -122.5797]
+    },
+    "residence": {
+      "city": "Springfield, VA",
+      "coordinates": [38.7893, -77.1872]
+    },
     "deceased": false,
     "folder": "robert1938"
   },
@@ -75,8 +123,14 @@
     "name": "Lucy Kinsel",
     "birthday": "1937-04-02",
     "family": ["Kinsel", "Mullin"],
-    "city": "Springfield",
-    "coordinates": [38.8462, -77.3064],
+    "birthplace": {
+      "city": "South Bend, WA",
+      "coordinates": [46.6632, -123.8046]
+    },
+    "residence": {
+      "city": "Springfield, VA",
+      "coordinates": [38.7893, -77.1872]
+    },
     "deceased": false,
     "folder": "frances1937"
   },
@@ -84,8 +138,14 @@
     "name": "Rob Gillgrist",
     "birthday": "1969-12-14",
     "family": ["Gillgrist", "Lehman"],
-    "city": "Butler",
-    "coordinates": [40.8612, -79.8953],
+    "birthplace": {
+      "city": "Pittsburgh, PA",
+      "coordinates": [40.4406, -79.9959]
+    },
+    "residence": {
+      "city": "Butler, PA",
+      "coordinates": [40.8612, -79.8953]
+    },
     "deceased": false,
     "folder": "robert1969"
   },
@@ -93,8 +153,14 @@
     "name": "Melanie Gillgrist",
     "birthday": "1967-01-01",
     "family": ["Gillgrist", "Lehman"],
-    "city": "Butler",
-    "coordinates": [40.8612, -79.8953],
+    "birthplace": {
+      "city": "Cape Girardeau, MO",
+      "coordinates": [37.3059, -89.5181]
+    },
+    "residence": {
+      "city": "Butler, PA",
+      "coordinates": [40.8612, -79.8953]
+    },
     "deceased": false,
     "folder": "melanie1967"
   },
@@ -102,8 +168,14 @@
     "name": "Samuel Gillgrist",
     "birthday": "2007-02-07",
     "family": ["Gillgrist", "Lehman"],
-    "city": "Butler",
-    "coordinates": [40.8612, -79.8953],
+    "birthplace": {
+      "city": "Quetzaltenango, Guatemala",
+      "coordinates": [14.8446, -91.5232]
+    },
+    "residence": {
+      "city": "Butler, PA",
+      "coordinates": [40.8612, -79.8953]
+    },
     "deceased": false,
     "folder": "samuel2007"
   },
@@ -111,8 +183,14 @@
     "name": "Bella Gillgrist",
     "birthday": "2011-04-18",
     "family": ["Gillgrist", "Lehman"],
-    "city": "Butler",
-    "coordinates": [40.8612, -79.8953],
+    "birthplace": {
+      "city": "Butler, PA",
+      "coordinates": [40.8612, -79.8953]
+    },
+    "residence": {
+      "city": "Butler, PA",
+      "coordinates": [40.8612, -79.8953]
+    },
     "deceased": false,
     "folder": "isabella2011"
   },
@@ -120,8 +198,14 @@
     "name": "Melinda Mauricio",
     "birthday": "1972-11-12",
     "family": ["Kinsel", "Mullin"],
-    "city": "Raleigh",
-    "coordinates": [35.7796, -78.6382],
+    "birthplace": {
+      "city": "Fairfax, VA",
+      "coordinates": [38.8462, -77.3064]
+    },
+    "residence": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
     "deceased": false,
     "folder": "melinda1972"
   },
@@ -129,8 +213,14 @@
     "name": "Steve Mauricio",
     "birthday": "1970-09-15",
     "family": ["Kinsel", "Mullin"],
-    "city": "Raleigh",
-    "coordinates": [35.7796, -78.6382],
+    "birthplace": {
+      "city": "Los Angeles",
+      "coordinates": [34.0549, -118.2426]
+    },
+    "residence": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
     "deceased": false,
     "folder": "steve1970"
   },
@@ -138,8 +228,14 @@
     "name": "Adrianna Gross",
     "birthday": "2001-11-21",
     "family": ["Kinsel", "Mullin"],
-    "city": "Raleigh",
-    "coordinates": [35.7796, -78.6382],
+    "birthplace": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
+    "residence": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
     "deceased": false,
     "folder": "adrianna2001"
   },
@@ -147,8 +243,14 @@
     "name": "Ashley Gross",
     "birthday": "2006-02-24",
     "family": ["Kinsel", "Mullin"],
-    "city": "Raleigh",
-    "coordinates": [35.7796, -78.6382],
+    "birthplace": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
+    "residence": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
     "deceased": false,
     "folder": "ashley2005"
   },
@@ -156,8 +258,14 @@
     "name": "Lindsey Gross",
     "birthday": "2007-05-28",
     "family": ["Kinsel", "Mullin"],
-    "city": "Raleigh",
-    "coordinates": [35.7796, -78.6382],
+    "birthplace": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
+    "residence": {
+      "city": "Raleigh, NC",
+      "coordinates": [35.7796, -78.6382]
+    },
     "deceased": false,
     "folder": "lindsey2007"
   },
@@ -165,8 +273,14 @@
     "name": "Jim Kinsel",
     "birthday": "1971-10-23",
     "family": ["Kinsel", "Mullin"],
-    "city": "Great Falls",
-    "coordinates": [38.9982, -77.2883],
+    "birthplace": {
+      "city": "Fairfax, VA",
+      "coordinates": [38.8462, -77.3064]
+    },
+    "residence": {
+      "city": "Great Falls, VA",
+      "coordinates": [38.9982, -77.2883]
+    },
     "deceased": false,
     "folder": "james1971"
   },
@@ -174,8 +288,14 @@
     "name": "Becky Kinsel",
     "birthday": "1979-06-22",
     "family": ["Kinsel", "Mullin"],
-    "city": "Great Falls",
-    "coordinates": [38.9982, -77.2883],
+    "birthplace": {
+      "city": "Richmond, VA",
+      "coordinates": [37.5407, -77.4360]
+    },
+    "residence": {
+      "city": "Great Falls, VA",
+      "coordinates": [38.9982, -77.2883]
+    },
     "deceased": false,
     "folder": "becky2007"
   },
@@ -183,8 +303,14 @@
     "name": "Maddie Kinsel",
     "birthday": "2005-08-30",
     "family": ["Kinsel", "Mullin"],
-    "city": "Great Falls",
-    "coordinates": [38.9982, -77.2883],
+    "birthplace": {
+      "city": "Fairfax, VA",
+      "coordinates": [38.8462, -77.3064]
+    },
+    "residence": {
+      "city": "Great Falls, VA",
+      "coordinates": [38.9982, -77.2883]
+    },
     "deceased": false,
     "folder": "madeleine2007"
   },
@@ -192,8 +318,14 @@
     "name": "Owen Kinsel",
     "birthday": "2008-01-07",
     "family": ["Kinsel", "Mullin"],
-    "city": "Great Falls",
-    "coordinates": [38.9982, -77.2883],
+    "birthplace": {
+      "city": "Fairfax, VA",
+      "coordinates": [38.8462, -77.3064]
+    },
+    "residence": {
+      "city": "Great Falls, VA",
+      "coordinates": [38.9982, -77.2883]
+    },
     "deceased": false,
     "folder": "owen2007"
   },
@@ -201,8 +333,14 @@
     "name": "Grant Segal",
     "birthday": "2009-09-17",
     "family": ["Kinsel", "Mullin"],
-    "city": "Great Falls",
-    "coordinates": [38.9982, -77.2883],
+    "birthplace": {
+      "city": "Arlington, VA",
+      "coordinates": [38.8816, -77.0910]
+    },
+    "residence": {
+      "city": "Great Falls, VA",
+      "coordinates": [38.9982, -77.2883]
+    },
     "deceased": false,
     "folder": "grant2009"
   },
@@ -210,8 +348,14 @@
     "name": "Reese Segal",
     "birthday": "2011-12-26",
     "family": ["Kinsel", "Mullin"],
-    "city": "Great Falls",
-    "coordinates": [38.9982, -77.2883],
+    "birthplace": {
+      "city": "Arlington, VA",
+      "coordinates": [38.8816, -77.0910]
+    },
+    "residence": {
+      "city": "Great Falls, VA",
+      "coordinates": [38.9982, -77.2883]
+    },
     "deceased": false,
     "folder": "reese2011"
   },
@@ -219,8 +363,14 @@
     "name": "Bill Kinsel",
     "birthday": "1938-04-19",
     "family": ["Kinsel"],
-    "city": "Napa",
-    "coordinates": [38.2975, -122.2869],
+    "birthplace": {
+      "city": "Calistoga, CA",
+      "coordinates": [38.5788, -122.5797]
+    },
+    "residence": {
+      "city": "Unknown",
+      "coordinates": [0, -0]
+    },
     "deceased": true,
     "folder": "william1938"
   },
@@ -228,8 +378,14 @@
     "name": "Patt Kinsel",
     "birthday": "1939-09-25",
     "family": ["Kinsel"],
-    "city": "Pleasanton",
-    "coordinates": [37.6604, -121.8758],
+    "birthplace": {
+      "city": "Oakland, CA",
+      "coordinates": [37.8044, -122.2712]
+    },
+    "residence": {
+      "city": "Pleasanton, CA",
+      "coordinates": [37.6604, -121.8758]
+    },
     "deceased": false,
     "folder": "patricia1939"
   },
@@ -237,8 +393,14 @@
     "name": "James Kinsel",
     "birthday": "1959-02-27",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Alameda, CA",
+      "coordinates": [37.7799, -122.2822]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": true,
     "folder": "james1959"
   },
@@ -246,17 +408,29 @@
     "name": "Suzi Kinsel",
     "birthday": "1959-12-30",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Unknown",
+      "coordinates": [0, -0]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "suzette1959"
   },
   {
-    "name": "Wills Kinsel",
+    "name": "William Kinsel",
     "birthday": "1986-04-26",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "william1986"
   },
@@ -264,8 +438,14 @@
     "name": "Johanna Joey Kinsel",
     "birthday": "1990-10-27",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Unknown",
+      "coordinates": [0, -0]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "johanna1990"
   },
@@ -273,8 +453,14 @@
     "name": "Andy Kinsel",
     "birthday": "2015-04-28",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "andrea2015"
   },
@@ -282,8 +468,14 @@
     "name": "Tilly Kinsel",
     "birthday": "2018-11-02",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "matilda2018"
   },
@@ -291,8 +483,14 @@
     "name": "Dave Kinsel",
     "birthday": "1987-05-26",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "dave1987"
   },
@@ -300,8 +498,14 @@
     "name": "Alex Kinsel",
     "birthday": "1989-07-14",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Unknown",
+      "coordinates": [0, -0]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "alexandra1989"
   },
@@ -309,8 +513,14 @@
     "name": "Josiah Kinsel",
     "birthday": "2015-06-29",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "josiah2015"
   },
@@ -318,8 +528,14 @@
     "name": "Judah Kinsel",
     "birthday": "2017-11-03",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "judah2017"
   },
@@ -327,8 +543,14 @@
     "name": "Eva Kinsel",
     "birthday": "2020-05-26",
     "family": ["Kinsel"],
-    "city": "Gold Coast",
-    "coordinates": [-28.0167, 153.4000],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
     "deceased": false,
     "folder": "eva2020"
   },
@@ -336,8 +558,14 @@
     "name": "Daniel Kinsel",
     "birthday": "1990-05-07",
     "family": ["Kinsel"],
-    "city": "Austin",
-    "coordinates": [30.2672, -97.7431],
+    "birthplace": {
+      "city": "Gold Coast, Australia",
+      "coordinates": [-28.0167, 153.4000]
+    },
+    "residence": {
+      "city": "Austin, TX",
+      "coordinates": [30.2672, -97.7431]
+    },
     "deceased": false,
     "folder": "daniel1990"
   },
@@ -345,8 +573,14 @@
     "name": "Jamie Kinsel",
     "birthday": "1985-10-29",
     "family": ["Kinsel"],
-    "city": "Austin",
-    "coordinates": [30.2672, -97.7431],
+    "birthplace": {
+      "city": "Mansfield, TX",
+      "coordinates": [32.5632, -97.1417]
+    },
+    "residence": {
+      "city": "Austin, TX",
+      "coordinates": [30.2672, -97.7431]
+    },
     "deceased": false,
     "folder": "jamie1985"
   },
@@ -354,8 +588,14 @@
     "name": "Debi Burton",
     "birthday": "1958-01-10",
     "family": ["Kinsel"],
-    "city": "Pleasanton",
-    "coordinates": [37.6604, -121.8758],
+    "birthplace": {
+      "city": "Oakland, CA",
+      "coordinates": [37.8044, -122.2712]
+    },
+    "residence": {
+      "city": "Pleasanton, CA",
+      "coordinates": [37.6604, -121.8758]
+    },
     "deceased": false,
     "folder": "debi1958"
   },
@@ -363,8 +603,14 @@
     "name": "Keith Burton",
     "birthday": "1987-09-01",
     "family": ["Kinsel"],
-    "city": "Pleasanton",
-    "coordinates": [37.6604, -121.8758],
+    "birthplace": {
+      "city": "Castro Valley, CA",
+      "coordinates": [37.6955, -122.0739]
+    },
+    "residence": {
+      "city": "Walnut Creek, CA",
+      "coordinates": [37.9101, -122.0652]
+    },
     "deceased": false,
     "folder": "keith1987"
   },
@@ -372,8 +618,14 @@
     "name": "Laura Burton",
     "birthday": "1990-07-17",
     "family": ["Kinsel"],
-    "city": "Pleasanton",
-    "coordinates": [37.6604, -121.8758],
+    "birthplace": {
+      "city": "Castro Valley, CA",
+      "coordinates": [37.6955, -122.0739]
+    },
+    "residence": {
+      "city": "Fremont, CA",
+      "coordinates": [37.5485, -121.9886]
+    },
     "deceased": false,
     "folder": "laura1990"
   },
@@ -381,8 +633,14 @@
     "name": "Sebastien Messier",
     "birthday": "1989-07-04",
     "family": ["Kinsel"],
-    "city": "Pleasanton",
-    "coordinates": [37.6604, -121.8758],
+    "birthplace": {
+      "city": "Drummondville, Canada",
+      "coordinates": [45.8803, -72.4843]
+    },
+    "residence": {
+      "city": "Fremont, CA",
+      "coordinates": [37.5485, -121.9886]
+    },
     "deceased": false,
     "folder": "sebastien1989"
   },
@@ -390,8 +648,14 @@
     "name": "James Kinsel",
     "birthday": "1894-10-20",
     "family": ["Kinsel"],
-    "city": "Napa",
-    "coordinates": [38.2975, -122.2869],
+    "birthplace": {
+      "city": "Unknown City, AR",
+      "coordinates": [35.2010, -91.8318]
+    },
+    "residence": {
+      "city": "Saint Helena, CA",
+      "coordinates": [38.5052, -122.4704]
+    },
     "deceased": true,
     "folder": "james1894"
   },
@@ -399,8 +663,14 @@
     "name": "Minnie Kinsel",
     "birthday": "1913-07-11",
     "family": ["Kinsel"],
-    "city": "Napa",
-    "coordinates": [38.2975, -122.2869],
+    "birthplace": {
+      "city": "Pittsburg County, OK",
+      "coordinates": [34.9879, -95.8143]
+    },
+    "residence": {
+      "city": "Saint Helena, CA",
+      "coordinates": [38.5052, -122.4704]
+    },
     "deceased": true,
     "folder": "minnie1913"
   },
@@ -408,8 +678,14 @@
     "name": "Earl Kinsel",
     "birthday": "1940-09-26",
     "family": ["Kinsel"],
-    "city": "Tyrone",
-    "coordinates": [33.4712, -84.5972],
+    "birthplace": {
+      "city": "Calistoga, CA",
+      "coordinates": [38.5788, -122.5797]
+    },
+    "residence": {
+      "city": "Tyrone, GA",
+      "coordinates": [33.4712, -84.5972]
+    },
     "deceased": false,
     "folder": "earl1940"
   },
@@ -417,8 +693,14 @@
     "name": "Julie Kinsel",
     "birthday": "1945-09-24",
     "family": ["Kinsel"],
-    "city": "San Diego",
-    "coordinates": [32.7157, -117.1611],
+    "birthplace": {
+      "city": "Springfield, MO",
+      "coordinates": [37.2090, -93.2923]
+    },
+    "residence": {
+      "city": "San Diego, CA",
+      "coordinates": [32.7157, -117.1611]
+    },
     "deceased": true,
     "folder": "julie1945"
   },
@@ -426,8 +708,14 @@
     "name": "Jenny Kinsel",
     "birthday": "1969-11-18",
     "family": ["Kinsel"],
-    "city": "San Diego",
-    "coordinates": [32.7157, -117.1611],
+    "birthplace": {
+      "city": "San Diego, CA",
+      "coordinates": [32.7157, -117.1611]
+    },
+    "residence": {
+      "city": "Unknown",
+      "coordinates": [0, -0]
+    },
     "deceased": false,
     "folder": "jenny1969"
   },
@@ -435,8 +723,14 @@
     "name": "Tracy Reilly",
     "birthday": "1972-04-24",
     "family": ["Kinsel"],
-    "city": "Tyrone",
-    "coordinates": [33.4712, -84.5972],
+    "birthplace": {
+      "city": "San Diego, CA",
+      "coordinates": [32.7157, -117.1611]
+    },
+    "residence": {
+      "city": "Tyrone, GA",
+      "coordinates": [33.4712, -84.5972]
+    },
     "deceased": false,
     "folder": "tracy1972"
   },
@@ -444,8 +738,14 @@
     "name": "Brian Reilly",
     "birthday": "1970-09-22",
     "family": ["Kinsel"],
-    "city": "Tyrone",
-    "coordinates": [33.4712, -84.5972],
+    "birthplace": {
+      "city": "New Brunswick, NJ",
+      "coordinates": [40.4967, -74.4443]
+    },
+    "residence": {
+      "city": "Tyrone, GA",
+      "coordinates": [33.4712, -84.5972]
+    },
     "deceased": false,
     "folder": "brian1970"
   },
@@ -453,8 +753,14 @@
     "name": "John Reilly",
     "birthday": "2009-09-18",
     "family": ["Kinsel"],
-    "city": "Tyrone",
-    "coordinates": [33.4712, -84.5972],
+    "birthplace": {
+      "city": "San Diego, CA",
+      "coordinates": [32.7157, -117.1611]
+    },
+    "residence": {
+      "city": "Tyrone, GA",
+      "coordinates": [33.4712, -84.5972]
+    },
     "deceased": false,
     "folder": "john2009"
   },
@@ -462,8 +768,14 @@
     "name": "Brody Reilly",
     "birthday": "2012-06-22",
     "family": ["Kinsel"],
-    "city": "Tyrone",
-    "coordinates": [33.4712, -84.5972],
+    "birthplace": {
+      "city": "San Diego, CA",
+      "coordinates": [32.7157, -117.1611]
+    },
+    "residence": {
+      "city": "Tyrone, GA",
+      "coordinates": [33.4712, -84.5972]
+    },
     "deceased": false,
     "folder": "brody2012"
   },
@@ -471,8 +783,14 @@
     "name": "Leon Kinsel",
     "birthday": "1945-05-11",
     "family": ["Kinsel"],
-    "city": "Napa",
-    "coordinates": [38.2975, -122.2869],
+    "birthplace": {
+      "city": "Calistoga, CA",
+      "coordinates": [38.5788, -122.5797]
+    },
+    "residence": {
+      "city": "Napa, CA",
+      "coordinates": [38.2975, -122.2869]
+    },
     "deceased": false,
     "folder": "leon1945"
   },
@@ -480,8 +798,14 @@
     "name": "Kimberly Kinsel",
     "birthday": "1973-08-22",
     "family": ["Kinsel"],
-    "city": "Napa",
-    "coordinates": [38.2975, -122.2869],
+    "birthplace": {
+      "city": "Napa, CA",
+      "coordinates": [38.2975, -122.2869]
+    },
+    "residence": {
+      "city": "Napa, CA",
+      "coordinates": [38.2975, -122.2869]
+    },
     "deceased": true,
     "folder": "kimberly1973"
   }
