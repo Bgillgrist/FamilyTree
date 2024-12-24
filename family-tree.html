@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Family Tree</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="libs/treant.css">
+  <style>
+    #tree-simple {
+      width: 100%;
+      height: auto;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tab Bar -->
+  <div class="tab-bar">
+    <a href="home.html">Home</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="map.html">Map</a>
+    <a href="family-tree.html" class="active">Family Tree</a>
+  </div>
+
+  <h1>Interactive Family Tree</h1>
+  <div id="tree-simple"></div>
+
+  <script src="libs/raphael.min.js"></script>
+  <script src="libs/treant.min.js"></script>
+  <script>
+    async function fetchPeopleData() {
+      const response = await fetch('people.json');
+      if (!response.ok) {
+        console.error('Failed to fetch people.json');
+        return [];
+      }
+      return await response.json();
+    }
+
+    async function fetchPersonData(folder) {
+      try {
+        const response = await fetch(`${folder}/index.html`);
+        const text = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
+
+        const name = doc.querySelector('header h1').textContent;
+
+        const relationships = {};
+        doc.querySelectorAll('ul > li').forEach(item => {
+          const category = item.textContent.split(':')[0].trim();
+          const links = Array.from(item.querySelectorAll('a'));
+          relationships[category] = links.map(link => ({
+            name: link.textContent.trim(),
+            href: link.getAttribute('href')
+          }));
+        });
+
+        return { name, relationships };
+      } catch (error) {
+        console.error(`Error fetching data for ${folder}:`, error);
+        return null;
+      }
+    }
+
+    async function buildFamilyTree() {
+      const people = await fetchPeopleData();
+      const familyTree = {};
+
+      for (const person of people) {
+        const personData = await fetchPersonData(person.folder);
+        if (personData) {
+          familyTree[person.folder] = {
+            ...personData,
+            folder: person.folder
+          };
+        }
+      }
+
+      return familyTree;
+    }
+
+    function formatForTreant(familyTree, rootFolder) {
+      const treeStructure = {
+        chart: { container: "#tree-simple", connectors: { type: 'curve' } },
+        nodeStructure: {}
+      };
+
+      function buildNode(person) {
+        const node = {
+          text: {
+            name: person.name,
+            desc: `<a href="${person.folder}/index.html">Profile</a>`
+          },
+          children: []
+        };
+
+        const children = person.relationships.Children || [];
+        children.forEach(child => {
+          const folder = child.href.replace('/index.html', '');
+          const childData = familyTree[folder];
+          if (childData) {
+            node.children.push(buildNode(childData));
+          }
+        });
+
+        return node;
+      }
+
+      treeStructure.nodeStructure = buildNode(familyTree[rootFolder]);
+      return treeStructure;
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const familyTree = await buildFamilyTree();
+      const treeData = formatForTreant(familyTree, 'theodore1971'); // Root folder
+      new Treant(treeData);
+    });
+  </script>
+</body>
+</html>
