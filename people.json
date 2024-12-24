@@ -38,8 +38,8 @@
       "coordinates": [32.7833, -79.9320]
     },
     "residence": {
-      "city": "North Charleston, SC",
-      "coordinates": [32.8769, -80.0114]
+      "city": "Columbia, SC",
+      "coordinates": [34.0008, -81.0351]
     },
     "deceased": false,
     "folder": "brennan2002"
@@ -713,8 +713,8 @@
       "coordinates": [32.7157, -117.1611]
     },
     "residence": {
-      "city": "Unknown",
-      "coordinates": [0, -0]
+      "city": "San Francisco",
+      "coordinates": [37.7749, -122.4194]
     },
     "deceased": false,
     "folder": "jenny1969"
