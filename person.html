@@ -145,7 +145,7 @@
           const sublist = document.createElement('ul');
           family[category].forEach(member => {
             const subLi = document.createElement('li');
-            subLi.innerHTML = `<a href="person.html?id=${member.id}">${member.name}</a>`;
+            subLi.innerHTML = `<strong><a href="person.html?id=${member.id}">${member.name}</a></strong>`;
             sublist.appendChild(subLi);
           });
 
