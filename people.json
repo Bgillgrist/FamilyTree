@@ -2,6 +2,7 @@
   {
     "id": "theodore1971",
     "name": "Theodore 'Ted' James Gillgrist",
+    "commonName": "Ted",
     "birthday": "1971-09-27",
     "birthplace": {
       "city": "Pittsburgh, PA",
@@ -39,12 +40,17 @@
       { "year": "2005", "event": "Birth of Third Child Ethan", "id": "ethan2005" },
       { "year": "2023", "event": "Started his Teaching Career" }
     ],
-    "profilePicture": "theodore1971/theodore1971.jpg",
-    "photos": [
-      "theodore1971/theodore1971.wedding.jpg",
-      "theodore1971/theodore1971.teaching.jpg",
-      "theodore1971/theodore1971.family.jpg"
-    ]
+    "profilePicture": "theodore1971/theodore1971.JPG",
+      "photos": [
+        "theodore1971/theodore1971.wedding.JPG",
+        "theodore1971/theodore1971.teaching.JPG",
+        "theodore1971/theodore1971.family.jpeg"
+      ],
+      "photoDescriptions": [
+        "Ted and Karen's Wedding (July 13, 1996)",
+        "Ted's First Day Teaching (August 21, 2023)",
+        "Ted with his Family"
+      ]
   },
   {
     "name": "Karen Gillgrist",
