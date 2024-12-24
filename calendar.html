@@ -224,7 +224,10 @@
       birthdaysInMonth.forEach(b => {
         const year = b.date.split("-")[0];
         const li = document.createElement("li");
-        li.innerHTML = `<span>${b.day}</span>: ${b.name} (${year})`;
+        li.innerHTML = `
+          <span>${b.day}</span>: 
+          <a href="${b.folder}/index.html">${b.name}</a> (${year})
+        `;
         birthdayItems.appendChild(li);
       });
 
@@ -271,7 +274,8 @@
         name: person.name,
         date: person.birthday,
         family: person.family,
-        deceased: person.deceased
+        deceased: person.deceased,
+        folder: person.folder
       }));
       filterBirthdays('All'); // Default to showing all birthdays
     });
