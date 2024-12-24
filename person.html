@@ -6,7 +6,6 @@
   <title>Person Profile</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Layout Styling */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -15,32 +14,51 @@
       color: #333;
     }
 
-    .container {
+    .tab-bar {
+      background-color: #333;
+      overflow: hidden;
       display: flex;
-      flex-wrap: wrap;
-      margin: 20px;
     }
 
-    /* Left column for Family Relationships and Timeline */
-    .left {
+    .tab-bar a {
       flex: 1;
-      max-width: 60%;
-      padding: 20px;
-    }
-
-    /* Right column for Profile Picture */
-    .right {
-      flex: 1;
-      max-width: 40%;
-      padding: 20px;
+      color: white;
       text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
     }
 
-    .right img {
-      width: 100%;
+    .tab-bar a:hover {
+      background-color: #575757;
+    }
+
+    .tab-bar a.active {
+      background-color: #007BFF;
+    }
+
+    #profile {
+      text-align: center;
+      padding: 20px;
+    }
+
+    #profile img {
       max-width: 300px;
       border-radius: 10px;
-      border: 2px solid #ddd;
+      margin-top: 10px;
+    }
+
+    section {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+
+    h2 {
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 5px;
     }
 
     ul {
@@ -52,26 +70,19 @@
       margin: 5px 0;
     }
 
-    .gallery {
+    #gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 10px;
+      gap: 20px;
     }
 
-    .gallery-item {
-      text-align: center;
-      flex: 1 1 calc(33.333% - 15px);
-    }
-
-    .gallery-item img {
-      width: 100%;
+    #gallery img {
       max-width: 200px;
       border-radius: 5px;
     }
 
-    .gallery-item p {
-      margin-top: 5px;
+    #gallery p {
+      margin: 5px 0;
       font-size: 0.9em;
     }
   </style>
@@ -82,133 +93,111 @@
     <a href="home.html">Home</a>
     <a href="calendar.html">Calendar</a>
     <a href="map.html">Map</a>
+    <a href="family-tree.html">Family Tree</a>
   </div>
 
-  <!-- Header Section -->
-  <header>
-    <h1 id="person-name"></h1>
-    <h3 id="person-dates"></h3>
-  </header>
-
-  <!-- Main Container -->
-  <div class="container">
-    <!-- Left Column: Family Relationships and Timeline -->
-    <div class="left">
-      <!-- Family Relationships -->
-      <section>
-        <h2>Family Relationships</h2>
-        <ul id="family-relationships"></ul>
-      </section>
-
-      <!-- Timeline of Events -->
-      <section>
-        <h2>Timeline of Events</h2>
-        <ul id="timeline"></ul>
-      </section>
-    </div>
-
-    <!-- Right Column: Profile Picture -->
-    <div class="right">
-      <img id="profile-picture" src="" alt="Profile Picture">
-      <p id="person-caption"></p>
-    </div>
+  <!-- Profile Section -->
+  <div id="profile">
+    <h1 id="name"></h1>
+    <div id="common-name" style="font-style: italic; color: gray;"></div>
+    <img id="profile-picture" alt="Profile Picture">
   </div>
 
-  <!-- Extra Photos with Captions -->
-  <section>
+  <!-- Family Relationships -->
+  <section id="family">
+    <h2>Family Relationships</h2>
+    <ul id="family-list"></ul>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline">
+    <h2>Timeline of Events</h2>
+    <ul id="timeline-list"></ul>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section id="photo-gallery">
     <h2>Photo Gallery</h2>
-    <div class="gallery" id="photo-gallery"></div>
+    <div id="gallery"></div>
   </section>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const personId = urlParams.get('id'); // Get the ID from the URL
-
+    // Fetch people data
     async function fetchPeopleData() {
       const response = await fetch('people.json');
-      if (!response.ok) {
-        console.error('Failed to fetch people.json');
-        return [];
-      }
       return await response.json();
     }
 
-    function renderFamilyRelationships(family) {
-      const relationshipsList = document.getElementById('family-relationships');
-      const categories = ['spouse', 'parents', 'siblings', 'children'];
-
-      categories.forEach(category => {
-        if (family[category] && family[category].length > 0) {
-          const li = document.createElement('li');
-          li.innerHTML = `<strong>${category.charAt(0).toUpperCase() + category.slice(1)}:</strong>`;
-
-          const sublist = document.createElement('ul');
-          family[category].forEach(member => {
-            const subLi = document.createElement('li');
-            subLi.innerHTML = `<strong><a href="person.html?id=${member.id}">${member.name}</a></strong>`;
-            sublist.appendChild(subLi);
-          });
-
-          li.appendChild(sublist);
-          relationshipsList.appendChild(li);
-        }
-      });
+    // Get query parameter
+    function getQueryParameter(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
     }
 
-    function renderTimeline(timeline) {
-      const timelineContainer = document.getElementById('timeline');
-      timeline.forEach(event => {
-        const li = document.createElement('li');
+    // Populate the page
+    function populatePage(person) {
+      // Name and common name
+      document.getElementById('name').textContent = person.name;
+      if (person.commonName) {
+        document.getElementById('common-name').textContent = `(${person.commonName})`;
+      }
 
-        // Add link if an `id` exists
-        if (event.id) {
-          li.innerHTML = `<strong>${event.year}</strong> - 
-            <a href="person.html?id=${event.id}">${event.event}</a>`;
-        } else {
-          li.innerHTML = `<strong>${event.year}</strong> - ${event.event}`;
-        }
+      // Profile picture
+      const profilePicture = document.getElementById('profile-picture');
+      profilePicture.src = person.profilePicture;
+      profilePicture.alt = `${person.name}'s Profile Picture`;
 
-        timelineContainer.appendChild(li);
+      // Family relationships
+      const familyList = document.getElementById('family-list');
+      Object.entries(person.family).forEach(([relation, members]) => {
+        const relationItem = document.createElement('li');
+        relationItem.innerHTML = `<strong>${relation.charAt(0).toUpperCase() + relation.slice(1)}:</strong>`;
+        const memberList = document.createElement('ul');
+        members.forEach(member => {
+          const memberItem = document.createElement('li');
+          memberItem.innerHTML = `<strong><a href="person.html?id=${member.id}">${member.name}</a></strong>`;
+          memberList.appendChild(memberItem);
+        });
+        relationItem.appendChild(memberList);
+        familyList.appendChild(relationItem);
       });
-    }
 
-    function renderPhotoGallery(photos) {
-      const galleryContainer = document.getElementById('photo-gallery');
-      photos.forEach(photo => {
-        const galleryItem = document.createElement('div');
-        galleryItem.className = 'gallery-item';
+      // Timeline
+      const timelineList = document.getElementById('timeline-list');
+      person.timeline.forEach(event => {
+        const eventItem = document.createElement('li');
+        eventItem.textContent = `${event.year}: ${event.event}`;
+        timelineList.appendChild(eventItem);
+      });
+
+      // Photo gallery
+      const gallery = document.getElementById('gallery');
+      person.photos.forEach((photo, index) => {
+        const photoContainer = document.createElement('div');
 
         const img = document.createElement('img');
         img.src = photo;
-        galleryItem.appendChild(img);
+        img.alt = person.photoDescriptions ? person.photoDescriptions[index] : 'Photo';
 
-        galleryContainer.appendChild(galleryItem);
+        const description = document.createElement('p');
+        description.textContent = person.photoDescriptions ? person.photoDescriptions[index] : '';
+
+        photoContainer.appendChild(img);
+        photoContainer.appendChild(description);
+        gallery.appendChild(photoContainer);
       });
     }
 
-    async function renderPersonPage() {
+    document.addEventListener('DOMContentLoaded', async () => {
       const people = await fetchPeopleData();
+      const personId = getQueryParameter('id');
       const person = people.find(p => p.id === personId);
-
-      if (!person) {
+      if (person) {
+        populatePage(person);
+      } else {
         document.body.innerHTML = '<h1>Person not found</h1>';
-        return;
       }
-
-      // Render the main profile details
-      document.getElementById('person-name').textContent = person.name;
-      document.getElementById('person-dates').textContent = person.deceased
-        ? `${person.birthday} - ${person.deathday || 'Unknown'}`
-        : `${person.birthday} - Present`;
-      document.getElementById('profile-picture').src = person.profilePicture;
-
-      // Render relationships, timeline, and photo gallery
-      renderFamilyRelationships(person.family);
-      renderTimeline(person.timeline);
-      renderPhotoGallery(person.photos);
-    }
-
-    document.addEventListener('DOMContentLoaded', renderPersonPage);
+    });
   </script>
 </body>
 </html>
