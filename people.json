@@ -3,6 +3,7 @@
     "id": "theodore1971",
     "name": "Theodore 'Ted' James Gillgrist",
     "commonName": "Ted Gillgrist",
+    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "birthday": "1971-09-27",
     "birthplace": {
       "city": "Pittsburgh, PA",
@@ -56,6 +57,7 @@
     "id": "karen1974",
     "name": "Karen Lee Gillgrist (Kinsel)",
     "commonName": "Karen Gillgrist",
+    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "birthday": "1974-05-13",
     "birthplace": {
       "city": "Fairfax, VA",
@@ -109,6 +111,7 @@
     "id": "brennan2002",
     "name": "Brennan Andrew Gillgrist",
     "commonName": "Brennan Gillgrist",
+    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
     "birthday": "2002-11-15",
     "birthplace": {
       "city": "Charleston, SC",
@@ -151,6 +154,54 @@
         "Brennan and Taylor's Engagement (March 7, 2024)",
         "Brennan with Family at HS Graduation (June 18, 2021)",
         "Brennan and Mom at the Grand Canyon (May 28, 2024)"
+      ]
+  },
+  {
+    "id": "ethan2005",
+    "name": "Ethan Theodore Gillgrist",
+    "commonName": "Ethan Gillgrist",
+    "family": ["Gillgrist", "Lehman", "Kinsel", "Mullin"],
+    "birthday": "2005-04-28",
+    "birthplace": {
+      "city": "Charleston, SC",
+      "coordinates": [32.7833, -79.9320]
+    },
+    "residence": {
+      "city": "North Charleston, SC",
+      "coordinates": [32.8769, -80.0114]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        
+      ],
+      "parents": [
+        { "name": "Ted Gillgrist", "id": "theodore1971" },
+        { "name": "Karen Gillgrist", "id": "karen1974" }
+      ],
+      "siblings": [
+        { "name": "Kaitlyn Gillgrist", "id": "kaitlyn2000" },
+        { "name": "Brennan Gillgrist", "id": "brennan2002" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "2005", "event": "Born in Charleston, SC" },
+      { "year": "2023", "event": "Graduated High School" }
+    ],
+    "profilePicture": "ethan2005/ethan2005.JPG",
+      "photos": [
+        "ethan2005/ethan2005.family.JPG",
+        "ethan2005/ethan2005.graduation.JPG",
+        "ethan2005/ethan2005.basketball.jpeg"
+      ],
+      "photoDescriptions": [
+        "Ethan with Family on Easter (April 12, 2009)",
+        "Ethan's High School Graduation with his Siblings Brennan and Kaitlyn (May 27, 2023)",
+        "Ethan with his Brother Brennan on their Basketball Team"
       ]
   },
   {
