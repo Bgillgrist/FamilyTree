@@ -182,7 +182,11 @@
           if (!groupedLocations[city]) {
             groupedLocations[city] = { coordinates, people: [] };
           }
-          groupedLocations[city].people.push({ name: person.name, birthday: person.birthday });
+          groupedLocations[city].people.push({ 
+            name: person.name, 
+            birthday: person.birthday, 
+            folder: person.folder // Include folder for link
+          });
         }
       });
 
@@ -264,8 +268,9 @@
           birthplace: person.birthplace,
           folder: person.folder // Include the folder property
         }));
-        updateMap('residence'); // Default to 'residence'
+        updateMap('residence', 'All', true); // Default to 'residence', 'All', and include deceased
       });
+    });
   </script>
 </body>
 </html>
