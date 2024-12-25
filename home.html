@@ -121,46 +121,46 @@
   </div>
 
   <script>
-    // Fetch people data from JSON
-    async function fetchPeopleData() {
-      const response = await fetch('people.json'); // Ensure the file is in the same directory
-      return await response.json();
-    }
+  // Fetch people data from JSON
+  async function fetchPeopleData() {
+    const response = await fetch('people.json'); // Ensure the file is in the same directory
+    return await response.json();
+  }
 
-    // Add search functionality
-    fetchPeopleData().then(people => {
-      const searchInput = document.getElementById('search-input');
-      const searchResults = document.getElementById('search-results');
+  // Add search functionality
+  fetchPeopleData().then(people => {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
 
-      // Listen for input in the search box
-      searchInput.addEventListener('input', event => {
-        const query = event.target.value.toLowerCase();
-        searchResults.innerHTML = '';
+    // Listen for input in the search box
+    searchInput.addEventListener('input', event => {
+      const query = event.target.value.toLowerCase();
+      searchResults.innerHTML = '';
 
-        // Filter people based on the search query
-        const matches = people.filter(person =>
-          person.name.toLowerCase().includes(query)
-        );
+      // Filter people based on the search query
+      const matches = people.filter(person =>
+        person.name.toLowerCase().includes(query) || 
+        (person.commonName && person.commonName.toLowerCase().includes(query))
+      );
 
-        // Display results
-        if (matches.length > 0) {
-          matches.forEach(match => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${match.name} (Born: ${match.birthday})`;
+      // Display results
+      if (matches.length > 0) {
+        matches.forEach(match => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${match.name} (Born: ${match.birthday})`;
 
-            // Generate the link using the folder field
-            listItem.onclick = () => {
-              const folderName = match.folder; // Use the folder field
-              window.location.href = `${folderName}/index.html`; // Redirect to the person's page
-            };
+          // Generate the link using the id field
+          listItem.onclick = () => {
+            window.location.href = `person.html?id=${match.id}`; // Redirect to the person's page
+          };
 
-            searchResults.appendChild(listItem);
-          });
-        } else if (query.trim() !== '') {
-          searchResults.innerHTML = '<li>No results found</li>';
-        }
-      });
+          searchResults.appendChild(listItem);
+        });
+      } else if (query.trim() !== '') {
+        searchResults.innerHTML = '<li>No results found</li>';
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
