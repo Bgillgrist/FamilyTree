@@ -859,13 +859,41 @@
   },
   {
     "id": "robert1969",
-    "name": "Rob Gillgrist",
-    "commonName": "Rob",
+    "name": "Robert Dallas Gillgrist",
+    "commonName": "Rob Gillgrist",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        {
+          "name": "Melanie Gillgrist",
+          "id": "melanie1967"
+        }
+      ],
+      "parents": [
+        {
+          "name": "Bob Gillgrist",
+          "id": "robert1944"
+        },
+        {
+          "name": "Susie Gillgrist",
+          "id": "susan1943"
+        }
+      ],
+      "siblings": [
+        {
+          "name": "Ted Gillgrist",
+          "id": "theodore1971"
+        }
+      ],
+      "children": [
+        {
+          "name": "Sam Gillgrist",
+          "id": "samuel2007"
+        },
+        {
+          "name": "Bella Gillgrist",
+          "id": "isabella2011"
+        }
+      ]
     },
     "birthday": "1969-12-14",
     "birthplace": {
@@ -884,20 +912,92 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
+    "timeline": "timeline": [
+      {
+        "year": "1969",
+        "event": "Born in Pittsburgh, PA"
+      },
+      {
+        "year": "1993",
+        "event": "Graduated from Purdue Univeristy"
+      },
+      {
+        "year": "1997",
+        "event": "Met his future wife Melanie",
+        "id": "melanie1967"
+      },
+      {
+        "year": "1999",
+        "event": "Graduated from University of Minnesota"
+      },
+      {
+        "year": "2000",
+        "event": "Married Melanie",
+        "id": "melanie1967"
+      },
+      {
+        "year": "2005",
+        "event": "Graduated from Seattle School (MDiv)"
+      },
+      {
+        "year": "2005",
+        "event": "Church Planted in Seattle"
+      },
+      {
+        "year": "2011",
+        "event": "Moved to Butler, PA"
+      },
+      {
+        "year": "2018",
+        "event": "Became Pastor at Oak Hills Church"
+      }
+    ],
     "profilePicture": "robert1969/robert1969.jpg",
-    "photos": [],
-    "photoDescriptions": []
+    "photos": [
+      "robert1969/robert1969.",
+      "robert1969/robert1969.",
+      "robert1969/robert1969."
+    ],
+    "photoDescriptions": [
+      "",
+      "",
+      ""
+    ]
   },
   {
     "id": "melanie1967",
-    "name": "Melanie Gillgrist",
-    "commonName": "Melanie",
+    "name": "Melanie ???? Gillgrist (Poole)",
+    "commonName": "Melanie Gillgrist",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        {
+          "name": "Rob Gillgrist",
+          "id": "robert1969"
+        }
+      ],
+      "parents": [
+        {
+          "name": "Ron Poole",
+          "id": "ronnie1946"
+        },
+        {
+          "name": "Joyce Poole",
+          "id": "joyce1949"
+        }
+      ],
+      "siblings": [
+        
+      ],
+      "children": [
+        {
+          "name": "Sam Gillgrist",
+          "id": "samuel2007"
+        },
+        {
+          "name": "Bella Gillgrist",
+          "id": "isabella2011"
+        }
+      ]
     },
     "birthday": "1967-01-01",
     "birthplace": {
@@ -916,20 +1016,73 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
+    "timeline": "timeline": [
+      {
+        "year": "1967",
+        "event": "Born in Cape Girardeau, MO"
+      },
+      {
+        "year": "1989",
+        "event": "Graduated from Wheaton College"
+      },
+      {
+        "year": "1995",
+        "event": "Graduated from Indiana University (MBA Finance)"
+      },
+      {
+        "year": "1995",
+        "event": "Moved to Minnesota"
+      },
+      {
+        "year": "1997",
+        "event": "Met her future husband Rob",
+        "id": "robert1969"
+      },
+      {
+        "year": "2000",
+        "event": "Married Rob in Minnesota",
+        "id": "robert1969"
+      },
+      {
+        "year": "2003",
+        "event": "Moved to Seattle, WA"
+      },
+      {
+        "year": "2011",
+        "event": "Moved to Butler, PA"
+      }
+    ],
     "profilePicture": "melanie1967/melanie1967.jpg",
     "photos": [],
     "photoDescriptions": []
   },
   {
     "id": "samuel2007",
-    "name": "Samuel Gillgrist",
-    "commonName": "Samuel",
+    "name": "Samuel José Gillgrist",
+    "commonName": "Sam Gillgrist",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        
+      ],
+      "parents": [
+        {
+          "name": "Rob Gillgrist",
+          "id": "robert1969"
+        },
+        {
+          "name": "Melanie Gillgrist",
+          "id": "melanie1967"
+        }
+      ],
+      "siblings": [
+        {
+          "name": "Bella Gillgrist",
+          "id": "isabella2011"
+        }
+      ],
+      "children": [
+        
+      ]
     },
     "birthday": "2007-02-07",
     "birthplace": {
@@ -948,7 +1101,24 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
+    "timeline": "timeline": [
+      {
+        "year": "2007",
+        "event": "Born in Quetzaltenango, Guatemala"
+      },
+      {
+        "year": "2007-2011",
+        "event": "Lived in Seattle"
+      },
+      {
+        "year": "2011",
+        "event": "Moved to Butler, PA"
+      },
+      {
+        "year": "2025",
+        "event": "Graduated from High School"
+      }
+    ],
     "profilePicture": "samuel2007/samuel2007.jpg",
     "photos": [],
     "photoDescriptions": []
@@ -958,10 +1128,28 @@
     "name": "Bella Gillgrist",
     "commonName": "Bella",
     "family": {
-      "spouse": [],
-      "parents": [],
-      "siblings": [],
-      "children": []
+      "spouse": [
+        
+      ],
+      "parents": [
+        {
+          "name": "Rob Gillgrist",
+          "id": "robert1969"
+        },
+        {
+          "name": "Melanie Gillgrist",
+          "id": "melanie1967"
+        }
+      ],
+      "siblings": [
+        {
+          "name": "Sam Gillgrist",
+          "id": "samuel2007"
+        }
+      ],
+      "children": [
+        
+      ]
     },
     "birthday": "2011-04-18",
     "birthplace": {
@@ -980,7 +1168,12 @@
     },
     "deathday": null,
     "deceased": false,
-    "timeline": [],
+    "timeline": "timeline": [
+      {
+        "year": "2011",
+        "event": "Born in Butler, PA"
+      }
+    ],
     "profilePicture": "isabella2011/isabella2011.jpg",
     "photos": [],
     "photoDescriptions": []
