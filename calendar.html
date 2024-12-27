@@ -214,16 +214,11 @@
     }
 
     // Filter birthdays
-    function filterBirthdays(family) {
-      const includeDeceased = document.getElementById('include-deceased').checked;
+    function filterByDropdown() {
+      const family = document.getElementById('family-filter').value; // Get the selected family
+      const includeDeceased = document.getElementById('include-deceased').checked; // Get the checkbox state
 
-      // Update active button styling
-      const buttons = document.querySelectorAll('.filter-buttons button');
-      buttons.forEach(button => button.classList.remove('active'));
-      const activeButton = Array.from(buttons).find(button => button.textContent === family);
-      if (activeButton) activeButton.classList.add('active');
-
-      // Filter logic
+      // Apply filter logic (reuse your existing filter logic)
       let filteredBirthdays = birthdays;
 
       // Apply family filter if not "All"
@@ -236,9 +231,9 @@
         filteredBirthdays = filteredBirthdays.filter(b => !b.deceased);
       }
 
-  // Display the filtered birthdays
-  displayMonthList(filteredBirthdays);
-}
+      // Re-display the filtered list
+      displayMonthList(filteredBirthdays);
+    }
 
     // Reapply filter when the slider changes
     document.getElementById('include-deceased').addEventListener('change', () => {
