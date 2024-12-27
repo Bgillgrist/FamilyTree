@@ -250,7 +250,7 @@
 
       // Apply family filter if not "All"
       if (family !== 'All') {
-        filteredBirthdays = filteredBirthdays.filter(b => b.family.includes(family));
+        filteredBirthdays = filteredBirthdays.filter(b => b.familyGroup.includes(family));
       }
 
       // Apply deceased filter
@@ -273,7 +273,7 @@
       birthdays = data.map(person => ({
         name: person.name,
         date: person.birthday,
-        family: person.family,
+        familyGroup: person.familyGroup,
         deceased: person.deceased,
         folder: person.folder
       }));
