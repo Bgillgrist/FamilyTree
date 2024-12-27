@@ -175,7 +175,7 @@
 
         // Update the heading
         const monthNames = [
-          "January", "February", "March", "April", "May", "June", 
+          "January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"
         ];
         monthName.textContent = `Birthdays in ${monthNames[monthIndex]}`;
@@ -194,6 +194,9 @@
 
         // Show the birthday list
         birthdaysList.style.display = "block";
+
+        // Scroll the birthdays list into view
+        birthdaysList.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
       // Filter birthdays
