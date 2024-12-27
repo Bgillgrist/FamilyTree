@@ -190,6 +190,15 @@
       });
     }
 
+    function formatDate(dateString) {
+      if (!dateString) return 'Unknown';
+  
+      const date = new Date(dateString);
+      if (isNaN(date)) return dateString;
+
+      return new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' }).format(date);
+    }
+    
     async function renderPersonPage() {
       const people = await fetchPeopleData();
       const person = people.find(p => p.id === personId);
@@ -199,11 +208,15 @@
         return;
       }
 
+      // Format the dates using the formatter
+      const formattedBirthday = formatDate(person.birthday);
+      const formattedDeathday = formatDate(person.deathday);
+
       // Render the main profile details
       document.getElementById('person-name').textContent = person.name;
       document.getElementById('person-dates').textContent = person.deceased
-        ? `${person.birthday} - ${person.deathday || 'Unknown'}`
-        : `${person.birthday} - Present`;
+        ? `${formattedBirthday} - ${formattedDeathday}`
+        : `${formattedBirthday} - Present`;
       document.getElementById('profile-picture').src = person.profilePicture;
 
       // Render common name under profile picture
