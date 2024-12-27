@@ -208,9 +208,18 @@
           )
           .join('<br><br>');
 
-        L.marker(coordinates)
-          .addTo(map)
-          .bindPopup(tooltipContent);
+        // Add markers for the main location and wrapped longitudes
+        const longitudes = [0, -360, 360]; // Adjust for wraparound
+        longitudes.forEach(offset => {
+          const wrappedCoordinates = [
+            coordinates[0], // Latitude stays the same
+            coordinates[1] + offset // Adjust longitude
+          ];
+
+          L.marker(wrappedCoordinates)
+            .addTo(map)
+            .bindPopup(tooltipContent);
+        });
       });
     }
 
