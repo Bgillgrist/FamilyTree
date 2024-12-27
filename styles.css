@@ -208,3 +208,36 @@ footer {
     width: 100%; /* Full-width family buttons for mobile */
   }
 }
+
+/* General styling for month buttons */
+.month {
+  flex: 0 1 calc(33% - 10px); /* Adjust size for desktop */
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap; /* Prevent wrapping on desktop */
+}
+
+.month:hover {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .month {
+    flex: 0 1 100%; /* Take full width */
+    white-space: normal; /* Allow text wrapping */
+    text-align: left; /* Align text to the left */
+  }
+
+  /* Add space between lines for better readability */
+  .month::after {
+    content: ""; /* Empty space to push lines apart */
+    display: block;
+  }
+}
