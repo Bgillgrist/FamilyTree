@@ -204,7 +204,7 @@
 
         const tooltipContent = people
           .map(person => 
-            `<strong><a href="${person.folder}/index.html">${person.name}</a></strong><br>Birthday: ${person.birthday}`
+            `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
           )
           .join('<br><br>');
 
@@ -262,11 +262,11 @@
         peopleData = data.map(person => ({
           name: person.name,
           birthday: person.birthday,
-          family: person.family,
+          familyGroup: person.familyGroup,
           deceased: person.deceased,
           residence: person.residence,
           birthplace: person.birthplace,
-          folder: person.folder // Include the folder property
+          id: person.id
         }));
         updateMap('residence', 'All', true); // Default to 'residence', 'All', and include deceased
       });
