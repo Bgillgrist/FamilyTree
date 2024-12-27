@@ -1,3 +1,30 @@
+/* Container for the tree visualization */
+.tree-container {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+/* Node and link styles */
+.node circle {
+  fill: steelblue;
+  r: 5;
+}
+
+.node text {
+  font-size: 12px;
+  fill: black;
+  text-anchor: middle;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
 /* Tab Bar Styling */
 .tab-bar {
   background-color: #000000;
