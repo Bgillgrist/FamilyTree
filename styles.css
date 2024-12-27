@@ -73,3 +73,54 @@ footer {
   color: white;
   padding: 10px 0;
 }
+
+/* Responsive Design */
+
+/* Smaller devices (Tablets, phones) */
+@media (max-width: 768px) {
+  /* Adjust font sizes */
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  main {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  ul li {
+    font-size: 0.9em;
+  }
+
+  /* Tab bar adjustments for smaller screens */
+  .tab-bar a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Very small devices (Phones, narrow viewports) */
+@media (max-width: 480px) {
+  /* Stack the tab bar vertically */
+  .tab-bar {
+    flex-direction: column;
+  }
+
+  .tab-bar a {
+    padding: 12px;
+  }
+
+  /* Adjust body text */
+  main {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+
+  h1, h2 {
+    font-size: 1.2em;
+  }
+}
