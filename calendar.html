@@ -109,12 +109,15 @@
     <a href="map.html">Map</a>
   </div>
 
-  <div class="filter-buttons">
-    <button class="all-button active" onclick="filterBirthdays('All')">All</button>
-    <button onclick="filterBirthdays('Gillgrist')">Gillgrist</button>
-    <button onclick="filterBirthdays('Lehman')">Lehman</button>
-    <button onclick="filterBirthdays('Kinsel')">Kinsel</button>
-    <button onclick="filterBirthdays('Mullin')">Mullin</button>
+  <div class="filter-dropdown">
+    <label for="family-filter">Filter by Family:</label>
+    <select id="family-filter" onchange="filterByDropdown()">
+      <option value="All" selected>All</option>
+      <option value="Gillgrist">Gillgrist</option>
+      <option value="Lehman">Lehman</option>
+      <option value="Kinsel">Kinsel</option>
+      <option value="Mullin">Mullin</option>
+    </select>
   </div>
 
   <div class="deceased-toggle">
