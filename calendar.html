@@ -150,20 +150,29 @@
       return await response.json(); // Parse and return the JSON data
     }
 
-    // Group birthdays by month
-    function groupBirthdaysByMonth(filteredBirthdays) {
-      const months = Array.from({ length: 12 }, () => []);
-      filteredBirthdays.forEach(b => {
-        const [year, month, day] = b.date.split("-").map(Number); // Split "YYYY-MM-DD"
-        months[month - 1].push({ ...b, day }); // Use `month - 1` for 0-indexed months
-      });
+    // Filter birthdays
+    function filterByDropdown() {
+      const family = document.getElementById('family-filter').value; // Get the selected family
+      const includeDeceased = document.getElementById('include-deceased').checked; // Get the checkbox state
 
-      // Sort birthdays by day in each month
-      months.forEach(month => month.sort((a, b) => a.day - b.day));
-      return months;
+      // Filter logic
+      let filteredBirthdays = birthdays;
+
+      // Apply family filter if not "All"
+      if (family !== 'All') {
+        filteredBirthdays = filteredBirthdays.filter(b => b.familyGroup.includes(family));
+      }
+
+      // Apply deceased filter
+      if (!includeDeceased) {
+        filteredBirthdays = filteredBirthdays.filter(b => !b.deceased);
+      }
+
+      // Re-display the filtered list
+      displayMonthList(filteredBirthdays);
     }
 
-    // Display month list
+    // Display birthdays for a specific month
     function displayMonthList(filteredBirthdays) {
       const monthList = document.getElementById("month-list");
       const months = groupBirthdaysByMonth(filteredBirthdays);
@@ -184,73 +193,29 @@
       });
     }
 
-    // Display birthdays for a specific month
-    function displayBirthdays(monthIndex, birthdaysInMonth) {
-      const monthName = document.getElementById("month-name");
-      const birthdayItems = document.getElementById("birthday-items");
-      const birthdaysList = document.getElementById("birthdays-list");
-
-      // Update the heading
-      const monthNames = [
-        "January", "February", "March", "April", "May", "June", 
-        "July", "August", "September", "October", "November", "December"
-      ];
-      monthName.textContent = `Birthdays in ${monthNames[monthIndex]}`;
-
-      // Populate the birthday list
-      birthdayItems.innerHTML = "";
-      birthdaysInMonth.forEach(b => {
-        const year = b.date.split("-")[0];
-        const li = document.createElement("li");
-        li.innerHTML = `
-          <span>${b.day}</span>: 
-          <a href="${b.id}/index.html">${b.name}</a> (${year})
-        `;
-        birthdayItems.appendChild(li);
-      });
-
-      // Show the birthday list
-      birthdaysList.style.display = "block";
+    // Initialize the calendar
+    function initializeCalendar() {
+      document.getElementById('family-filter').value = 'All'; // Set dropdown to default
+      filterByDropdown(); // Apply the default filter
     }
 
-    // Filter birthdays
-    function filterByDropdown() {
-      const family = document.getElementById('family-filter').value; // Get the selected family
-      const includeDeceased = document.getElementById('include-deceased').checked; // Get the checkbox state
-
-      // Apply filter logic (reuse your existing filter logic)
-      let filteredBirthdays = birthdays;
-
-      // Apply family filter if not "All"
-      if (family !== 'All') {
-        filteredBirthdays = filteredBirthdays.filter(b => b.familyGroup.includes(family));
-      }
-
-      // Apply deceased filter
-      if (!includeDeceased) {
-        filteredBirthdays = filteredBirthdays.filter(b => !b.deceased);
-      }
-
-      // Re-display the filtered list
-      displayMonthList(filteredBirthdays);
-    }
-
-    // Reapply filter when the slider changes
+    // Event listener for the checkbox
     document.getElementById('include-deceased').addEventListener('change', () => {
-      const activeFamily = document.querySelector('.filter-buttons .active').textContent;
-      filterBirthdays(activeFamily);
+      filterByDropdown();
     });
 
-    // Initialize the calendar
-    fetchPeopleData().then(data => {
-      birthdays = data.map(person => ({
-        name: person.name,
-        date: person.birthday,
-        familyGroup: person.familyGroup,
-        deceased: person.deceased,
-        id: person.id
-      }));
-      filterBirthdays('All'); // Default to showing all birthdays
+    // Fetch data and initialize on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchPeopleData().then(data => {
+        birthdays = data.map(person => ({
+          name: person.name,
+          date: person.birthday,
+          familyGroup: person.familyGroup,
+          deceased: person.deceased,
+          id: person.id
+        }));
+        initializeCalendar(); // Set default filter and populate calendar
+      });
     });
   </script>
 </body>
