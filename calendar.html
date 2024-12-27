@@ -226,7 +226,7 @@
         const li = document.createElement("li");
         li.innerHTML = `
           <span>${b.day}</span>: 
-          <a href="${b.folder}/index.html">${b.name}</a> (${year})
+          <a href="${b.id}/index.html">${b.name}</a> (${year})
         `;
         birthdayItems.appendChild(li);
       });
@@ -275,7 +275,7 @@
         date: person.birthday,
         familyGroup: person.familyGroup,
         deceased: person.deceased,
-        folder: person.folder
+        id: person.id
       }));
       filterBirthdays('All'); // Default to showing all birthdays
     });
