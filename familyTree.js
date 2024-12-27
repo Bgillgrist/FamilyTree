@@ -1,75 +1,81 @@
-// Set up the SVG canvas dimensions
-const width = 800;
-const height = 600;
+async function loadFamilyTree() {
+  // Fetch people.json
+  const response = await fetch("people.json");
+  const data = await response.json();
 
-// Create the SVG container
-const svg = d3
-  .select("#tree")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .append("g")
-  .attr("transform", "translate(50, 50)");
+  // Map people by ID for quick lookup
+  const peopleById = Object.fromEntries(data.map(person => [person.id, person]));
 
-// Create a tree layout
-const treeLayout = d3.tree().size([height - 100, width - 100]);
-
-// Fetch and render family tree data
-async function renderFamilyTree() {
-  try {
-    // Load family tree data from the JSON file
-    const familyData = await d3.json("people.json");
-
-    // Convert data into a hierarchy
-    const root = d3.hierarchy(familyData);
-
-    // Generate tree layout
-    const treeData = treeLayout(root);
-
-    // Add links (lines) between nodes
-    svg
-      .selectAll(".link")
-      .data(treeData.links())
-      .enter()
-      .append("path")
-      .attr("class", "link")
-      .attr(
-        "d",
-        d3
-          .linkHorizontal()
-          .x((d) => d.y)
-          .y((d) => d.x)
-      )
-      .attr("stroke", "#ccc")
-      .attr("stroke-width", 2)
-      .attr("fill", "none");
-
-    // Add nodes (circles) and labels
-    const nodes = svg
-      .selectAll(".node")
-      .data(treeData.descendants())
-      .enter()
-      .append("g")
-      .attr("class", "node")
-      .attr("transform", (d) => `translate(${d.y}, ${d.x})`);
-
-    // Add circles to nodes
-    nodes
-      .append("circle")
-      .attr("r", 5)
-      .attr("fill", "steelblue");
-
-    // Add text labels to nodes
-    nodes
-      .append("text")
-      .attr("dy", -10)
-      .attr("x", (d) => (d.children ? -10 : 10))
-      .style("text-anchor", (d) => (d.children ? "end" : "start"))
-      .text((d) => d.data.name);
-  } catch (error) {
-    console.error("Error loading family tree data:", error);
+  // Build the hierarchical structure
+  function buildTree(person) {
+    return {
+      name: person.name,
+      id: person.id,
+      birthday: person.birthday,
+      children: (person.family.children || [])
+        .map(child => peopleById[child.id])
+        .filter(Boolean)
+        .map(buildTree)
+    };
   }
+
+  // Find the root person (no parents in data)
+  const root = data.find(person => person.family.parents.length === 0);
+  const hierarchy = buildTree(root);
+
+  // Create the tree visualization
+  drawTree(hierarchy);
 }
 
-// Render the family tree when the page loads
-renderFamilyTree();
+function drawTree(root) {
+  const width = 1000;
+  const height = 600;
+
+  const svg = d3
+    .select("#tree")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(50,50)");
+
+  const treeLayout = d3.tree().size([height - 100, width - 200]);
+  const rootHierarchy = d3.hierarchy(root);
+
+  treeLayout(rootHierarchy);
+
+  // Add links
+  svg
+    .selectAll(".link")
+    .data(rootHierarchy.links())
+    .enter()
+    .append("path")
+    .attr("class", "link")
+    .attr(
+      "d",
+      d3
+        .linkHorizontal()
+        .x(d => d.y)
+        .y(d => d.x)
+    );
+
+  // Add nodes
+  const nodes = svg
+    .selectAll(".node")
+    .data(rootHierarchy.descendants())
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .attr("transform", d => `translate(${d.y},${d.x})`);
+
+  nodes.append("circle").attr("r", 5);
+
+  nodes
+    .append("text")
+    .attr("dx", 10)
+    .attr("dy", 3)
+    .text(d => d.data.name);
+}
+
+// Load the tree on page load
+loadFamilyTree();
