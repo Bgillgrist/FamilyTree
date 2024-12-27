@@ -126,82 +126,85 @@ footer {
 }
 
 /* CALENDAR STYLES */
-/* General dropdown styling for all screen sizes */
-.filter-dropdown {
+/* Filter Buttons Styling */
+.filter-buttons {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 10px;
   margin: 20px 0;
 }
 
-.filter-dropdown label {
-  margin-right: 15px;
+.filter-buttons .all {
+  width: auto;
+  padding: 10px 20px;
   font-size: 16px;
-  font-weight: bold;
-  color: #333;
-}
-
-.filter-dropdown select {
-  appearance: none; /* Remove default browser styling */
-  background-color: #ffffff;
-  color: #333;
-  border: 2px solid #007BFF;
+  border: none;
   border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
-  transition: all 0.3s ease-in-out;
 }
 
-/* Add a custom arrow for the dropdown */
-.filter-dropdown select::after {
-  content: "";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-top-color: #333;
+.filter-buttons .family-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
-/* Hover and focus effects */
-.filter-dropdown select:hover,
-.filter-dropdown select:focus {
-  border-color: #0056b3;
-  box-shadow: 0 4px 8px rgba(0, 91, 187, 0.3);
+.filter-buttons .filter-btn {
+  width: auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
 }
 
-/* Larger screens (e.g., desktops) */
+.filter-buttons .filter-btn:hover {
+  background-color: #0056b3;
+}
+
+.filter-buttons .filter-btn.active {
+  background-color: #0044a1;
+}
+
+/* Responsive Design for Filter Buttons */
 @media (min-width: 768px) {
-  .filter-dropdown {
-    margin: 40px auto;
+  .filter-buttons {
+    flex-direction: column;
   }
 
-  .filter-dropdown label {
-    font-size: 18px;
-    color: #007BFF; /* Add a highlight color */
-  }
-
-  .filter-dropdown select {
-    font-size: 18px;
-    padding: 12px 18px;
-    min-width: 300px; /* Make it wider for desktop */
-    background-color: #f8f9fa; /* Slightly gray background for elegance */
+  .filter-buttons .all {
+    margin-bottom: 10px;
+    max-width: 150px; /* Restrict the width of "All" button to match family buttons */
     text-align: center;
   }
-}
 
-/* Extra-large screens (e.g., wide desktop monitors) */
-@media (min-width: 1200px) {
-  .filter-dropdown {
-    gap: 20px;
-    justify-content: flex-start; /* Align dropdown to the left */
-    max-width: 600px;
+  .filter-buttons .family-buttons {
+    gap: 10px;
+    flex-wrap: nowrap;
   }
 
-  .filter-dropdown select {
-    font-size: 20px;
-    padding: 14px 20px;
+  .filter-buttons .filter-btn {
+    max-width: 150px; /* Make all buttons consistent in width */
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .filter-buttons .all {
+    width: 100%; /* Full-width buttons for mobile */
+  }
+
+  .filter-buttons .filter-btn {
+    width: 100%; /* Full-width family buttons for mobile */
   }
 }
