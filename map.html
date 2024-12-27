@@ -45,32 +45,6 @@
       background-color: #007BFF;
     }
 
-    /* Filter Buttons Styling */
-    .filter-buttons {
-      margin: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .filter-buttons button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007BFF;
-      color: white;
-      cursor: pointer;
-    }
-
-    .filter-buttons button:hover {
-      background-color: #0056b3;
-    }
-
-    .filter-buttons button.active {
-      background-color: #0044a1;
-    }
-
     .deceased-toggle {
       margin: 20px;
       text-align: center;
@@ -115,12 +89,18 @@
   </div>
 
   <!-- Filter Buttons -->
+  <div class="filter-header">
+    <h2>Filter by Family</h2>
+  </div>
+
   <div class="filter-buttons">
-    <button class="active" onclick="filterMarkers('All')">All</button>
-    <button onclick="filterMarkers('Gillgrist')">Gillgrist</button>
-    <button onclick="filterMarkers('Lehman')">Lehman</button>
-    <button onclick="filterMarkers('Kinsel')">Kinsel</button>
-    <button onclick="filterMarkers('Mullin')">Mullin</button>
+    <button class="filter-btn all active" onclick="filterByButton('All')">All</button>
+    <div class="family-buttons">
+      <button class="filter-btn" onclick="filterByButton('Gillgrist')">Gillgrist</button>
+      <button class="filter-btn" onclick="filterByButton('Lehman')">Lehman</button>
+      <button class="filter-btn" onclick="filterByButton('Kinsel')">Kinsel</button>
+      <button class="filter-btn" onclick="filterByButton('Mullin')">Mullin</button>
+    </div>
   </div>
 
   <div class="deceased-toggle">
