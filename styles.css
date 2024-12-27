@@ -126,50 +126,29 @@ footer {
 }
 
 /* CALENDAR STYLES */
-/* Family Filter Buttons Styling */
-.filter-buttons {
-  margin: 20px;
+.filter-dropdown {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+  margin: 20px 0;
 }
 
-/* Style for the "All" Button */
-.filter-buttons .all-button {
-  flex: 1 1 100%; /* Full width for the "All" button */
-  text-align: center;
-}
-
-/* Adjust family buttons to wrap and align properly */
-.filter-buttons button {
-  flex: 1 1 calc(25% - 10px); /* Equal width buttons (4 per row) */
-  padding: 10px 20px;
+.filter-dropdown label {
+  margin-right: 10px;
   font-size: 16px;
-  border: none;
+  font-weight: bold;
+}
+
+.filter-dropdown select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #007BFF;
-  color: white;
   cursor: pointer;
 }
 
-.filter-buttons button:hover {
-  background-color: #0056b3;
-}
-
-.filter-buttons button.active {
-  background-color: #0044a1;
-}
-
-/* Responsive Adjustments for Smaller Screens */
-@media (max-width: 768px) {
-  .filter-buttons button {
-    flex: 1 1 calc(50% - 10px); /* 2 buttons per row for smaller devices */
-  }
-}
-
-@media (max-width: 480px) {
-  .filter-buttons button {
-    flex: 1 1 100%; /* Full width for each button on very small devices */
-  }
+.filter-dropdown select:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
