@@ -124,3 +124,52 @@ footer {
     font-size: 1.2em;
   }
 }
+
+/* CALENDAR STYLES */
+/* Family Filter Buttons Styling */
+.filter-buttons {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Style for the "All" Button */
+.filter-buttons .all-button {
+  flex: 1 1 100%; /* Full width for the "All" button */
+  text-align: center;
+}
+
+/* Adjust family buttons to wrap and align properly */
+.filter-buttons button {
+  flex: 1 1 calc(25% - 10px); /* Equal width buttons (4 per row) */
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.filter-buttons button.active {
+  background-color: #0044a1;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .filter-buttons button {
+    flex: 1 1 calc(50% - 10px); /* 2 buttons per row for smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-buttons button {
+    flex: 1 1 100%; /* Full width for each button on very small devices */
+  }
+}
