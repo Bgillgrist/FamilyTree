@@ -129,14 +129,14 @@ footer {
 /* Filter Buttons Styling */
 .filter-header {
   text-align: center; /* Centers the text */
-  margin-bottom: 10px; /* Adds spacing below the label */
+  margin-bottom: 15px; /* Adds more spacing below the label */
+  font-size: 20px; /* Increases the font size for better visibility */
+  font-weight: bold; /* Keeps the text bold */
+  color: #333; /* Ensures the text color matches the theme */
 }
 
 .filter-header h2 {
-  margin: 0 auto; /* Ensures it's centered within the parent container */
-  font-size: 18px; /* Adjust font size as needed */
-  font-weight: bold;
-  color: #333; /* Matches other text colors */
+  margin: 0; /* Ensures no extra top or bottom spacing around the text */
 }
 
 .filter-buttons {
