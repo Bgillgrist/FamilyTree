@@ -3604,5 +3604,110 @@
         "Frances with her dad, husband, and various family",
         "Frances with her daughter Mary Jane and her son Bob"
       ]
+  },
+  {
+    "id": "mary1938",
+    "name": "Mary Jane Knoblespease (Gillgrist)",
+    "commonName": "Mary Jane Knoblespease",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1938-03-07",
+    "birthplace": {
+      "city": "Grove City, PA",
+      "coordinates": [41.1578, -80.0887]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.130307, -80.003578]
+    },
+    "deathday": "2020-02-01",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Paul Knoblespease", "id": "jeffery1938" }
+      ],
+      "parents": [
+        { "name": "Dallas Gillgrist", "id": "dallas1906" },
+        { "name": "Frances Gillgrist", "id": "frances1906" }
+      ],
+      "siblings": [
+        { "name": "Bob Gillgrist", "id": "robert1944" }
+      ],
+      "children": [
+        { "name": "Patty Foley", "id": "patricia1971" },
+        { "name": "Jeff Knoblespease", "id": "jeffery1974" }
+      ]
+    },
+    "timeline": [
+      { "year": "1938", "event": "Born in Grove City, PA" },
+      { "year": "1956", "event": "Graduated from Harrisville High School" },
+      { "year": "1960", "event": "Graduated from Slippery Rock State Teachers College" },
+      { "year": "1963", "event": "Married Paul Knoblespease", "id": "jeffery1938" },
+      { "year": "1971", "event": "Birth of First Child Patty", "id": "patricia1971" },
+      { "year": "1974", "event": "Birth of Second Child Jeff", "id": "jeffery1974" },
+      { "year": "2000", "event": "Retired from Teaching Career" },
+      { "year": "2020", "event": "Died in Harrisville, PA" }
+    ],
+    "profilePicture": "mary1938/mary1938.png",
+      "photos": [
+        "mary1938/mary1938.brother.png",
+        "mary1938/mary1938.family.png",
+        "mary1938/mary1938.family2.png"
+      ],
+      "photoDescriptions": [
+        "Mary Jane with her brother Bob",
+        "Mary Jane with her brother and his wife; and her husband",
+        "Mary Jane with her brother, husband, and a friend"
+      ]
+  },
+  {
+    "id": "jeffery1938",
+    "name": "Jeffery Paul Knoblespease",
+    "commonName": "Paul Knoblespease",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1938-??-??",
+    "birthplace": {
+      "city": "Unknown, PA",
+      "coordinates": [0, -0]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.130307, -80.003578]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        { "name": "Mary Jane Gillgrist", "id": "mary1938" }
+      ],
+      "parents": [
+        { "name": "William Knoblespease", "id": "william1911" },
+        { "name": "Mildred Knoblespease", "id": "mildred1916" }
+      ],
+      "siblings": [
+        { "name": "William Knoblespease", "id": "william1935" },
+        { "name": "Unknown if More", "id": "unknown" }
+      ],
+      "children": [
+        { "name": "Patty Foley", "id": "patricia1971" },
+        { "name": "Jeff Knoblespease", "id": "jeffery1974" }
+      ]
+    },
+    "timeline": [
+      { "year": "1938", "event": "Born in ????, PA" },
+      { "year": "1963", "event": "Married Mary Jane Gillgrist", "id": "mary1938" },
+      { "year": "1971", "event": "Birth of First Child Patty", "id": "patricia1971" },
+      { "year": "1974", "event": "Birth of Second Child Jeff", "id": "jeffery1974" }
+    ],
+    "profilePicture": "jeffery1938/jeffery1938.png",
+      "photos": [
+        "jeffery1938/jeffery1938.family.png",
+        "jeffery1938/jeffery1938.friends.png",
+        "jeffery1938/jeffery1938.wife.png"
+      ],
+      "photoDescriptions": [
+        "Paul with his wife's side of the family at his son's wedding",
+        "Paul with his wife, brother in law, and a family friend",
+        "Paul with his wife, brother in law, and his brother in law's wife"
+      ]
   }
 ]
