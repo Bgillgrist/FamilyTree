@@ -3693,7 +3693,7 @@
       ]
     },
     "timeline": [
-      { "year": "1938", "event": "Born in ????, PA" },
+      { "year": "1938", "event": "Born in ????, PA (True Birth Date Unknown)" },
       { "year": "1963", "event": "Married Mary Jane Gillgrist", "id": "mary1938" },
       { "year": "1971", "event": "Birth of First Child Patty", "id": "patricia1971" },
       { "year": "1974", "event": "Birth of Second Child Jeff", "id": "jeffery1974" }
