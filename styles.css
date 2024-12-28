@@ -127,6 +127,18 @@ footer {
 
 /* CALENDAR STYLES */
 /* Filter Buttons Styling */
+.filter-header {
+  text-align: center; /* Centers the text */
+  margin-bottom: 10px; /* Adds spacing below the label */
+}
+
+.filter-header h2 {
+  margin: 0 auto; /* Ensures it's centered within the parent container */
+  font-size: 18px; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #333; /* Matches other text colors */
+}
+
 .filter-buttons {
   display: flex;
   flex-direction: column;
