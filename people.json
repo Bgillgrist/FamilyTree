@@ -3709,5 +3709,55 @@
         "Paul with his wife, brother in law, and a family friend",
         "Paul with his wife, brother in law, and his brother in law's wife"
       ]
+  },
+  {
+    "id": "patricia1971",
+    "name": "Patricia 'Patty' Jane Foley (Knoblespease)",
+    "commonName": "Patty Foley",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1971-02-14",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.130307, -80.003578]
+    },
+    "residence": {
+      "city": "Asheville, NC",
+      "coordinates": [35.5975, -82.5461]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        { "name": "Chuck Foley", "id": "charles1967" }
+      ],
+      "parents": [
+        { "name": "Paul Knoblespease", "id": "jeffery1938" },
+        { "name": "Mary Jane Knoblespease", "id": "mary1938" }
+      ],
+      "siblings": [
+        { "name": "Jeff Knoblespease", "id": "jeffery1974" }
+      ],
+      "children": [
+        { "name": "Sarah Trippeer", "id": "sarah1998" },
+        { "name": "Katie Foley", "id": "katie2001" },
+        { "name": "Emily Foley", "id": "emily2003" }
+      ]
+    },
+    "timeline": [
+      { "year": "1971", "event": "Born in Harrisville, PA" },
+      { "year": "1993", "event": "Married Chuck Foley", "id": "charles1967" },
+      { "year": "1998", "event": "Birth of First Child Sarah", "id": "sarah1998" },
+      { "year": "2001", "event": "Birth of Second Child Katie", "id": "katie2001" },
+      { "year": "2003", "event": "Birth of Third Child Emily", "id": "emily2003" }
+    ],
+    "profilePicture": "patricia1971/patricia1971.JPG",
+      "photos": [
+        "patricia1971/patricia1971..JPG",
+        "patricia1971/patricia1971..JPG",
+        "patricia1971/patricia1971..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
   }
 ]
