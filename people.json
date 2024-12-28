@@ -3495,5 +3495,114 @@
     "photoDescriptions": [
       
     ]
+  },
+  {
+    "id": "dallas1906",
+    "name": "Dallas James Gillgrist",
+    "commonName": "Dallas Gillgrist",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1906-11-05",
+    "birthplace": {
+      "city": "Grove City, PA",
+      "coordinates": [41.1578, -80.0887]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [42.130325, -80.003547]
+    },
+    "deathday": "1968-09-15",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Frances Gillgrist", "id": "frances1906" }
+      ],
+      "parents": [
+        { "name": "James Gillgrist", "id": "james1868" },
+        { "name": "Abigail Gillgrist", "id": "abigail1873" }
+      ],
+      "siblings": [
+        { "name": "Thomas Gillgrist", "id": "thomas1894" },
+        { "name": "Hazel Critchlow", "id": "hazel1898" },
+        { "name": "Pearl Gilchrist", "id": "pearl1900" },
+        { "name": "Myrtle Kerr", "id": "myrtle1903" }
+      ],
+      "children": [
+        { "name": "Mary Jane Knoblespease", "id": "mary1938" },
+        { "name": "Bob Gillgrist", "id": "robert1944" }
+      ]
+    },
+    "timeline": [
+      { "year": "1906", "event": "Born in Grove City, PA" },
+      { "year": "1931", "event": "Married Frances Gillgrist", "id": "frances1938" },
+      { "year": "1938", "event": "Birth of First Child Mary Jane", "id": "mary1938" },
+      { "year": "1944", "event": "Birth of Second Child Bob", "id": "robert1944" },
+      { "year": "1968", "event": "Died in Harrisville, PA" }
+    ],
+    "profilePicture": "dallas1906/dallas1906.png",
+      "photos": [
+        "dallas1906/dallas1906.family.png",
+        "dallas1906/dallas1906.son.png",
+        "dallas1906/dallas1906.wife.png"
+      ],
+      "photoDescriptions": [
+        "Dallas with his dad and brother's families",
+        "Dallas with his wife and kids at his son's graduation",
+        "Dallas with his wife Frances and his daughter Mary Jane"
+      ]
+  },
+  {
+    "id": "frances1906",
+    "name": "Frances Edna Gillgrist (Hoffman)",
+    "commonName": "Frances Gillgrist",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1906-11-15",
+    "birthplace": {
+      "city": "Clinton, PA",
+      "coordinates": [40.4406, -79.8633]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [42.130325, -80.003547]
+    },
+    "deathday": "1991-04-01",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Dallas Gillgrist", "id": "dallas1906" }
+      ],
+      "parents": [
+        { "name": "John Hoffman", "id": "john1882" },
+        { "name": "Harriett Hoffman", "id": "harriett1883" }
+      ],
+      "siblings": [
+        { "name": "Mary Hoffman", "id": "mary1903" },
+        { "name": "Robert Hoffman", "id": "robert1911" },
+        { "name": "Clinton Hoffman", "id": "clinton1914" }
+      ],
+      "children": [
+        { "name": "Mary Jane Knoblespease", "id": "mary1938" },
+        { "name": "Bob Gillgrist", "id": "robert1944" }
+      ]
+    },
+    "timeline": [
+      { "year": "1906", "event": "Born in Clinton, PA" },
+      { "year": "1927", "event": "Graduated from Slippery Rock Normal School between 1925-1928" },
+      { "year": "1931", "event": "Married Dallas Gillgrist", "id": "dallas1906" },
+      { "year": "1938", "event": "Birth of First Child Mary Jane", "id": "mary1938" },
+      { "year": "1944", "event": "Birth of Second Child Bob", "id": "robert1944" },
+      { "year": "1973", "event": "Remarried after the death of Dallas to Elwood Eisenhauer", "id": "elwood1903" },
+      { "year": "1991", "event": "Died in Harrisville, PA" }
+    ],
+    "profilePicture": "frances1906/frances1906.png",
+      "photos": [
+        "frances1906/frances1906.family.png",
+        "frances1906/frances1906.family2.jpg",
+        "frances1906/frances1906.children.png"
+      ],
+      "photoDescriptions": [
+        "Frances with her husband and children at her son's graduation",
+        "Frances with her dad, husband, and various family",
+        "Frances with her daughter Mary Jane and her son Bob"
+      ]
   }
 ]
