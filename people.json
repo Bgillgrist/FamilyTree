@@ -2865,8 +2865,8 @@
       "city": "Saint Helena, CA",
       "coordinates": [38.5052, -122.4704]
     },
-    "deathday": null,
-    "deceased": false,
+    "deathday": "1963-12-04",
+    "deceased": true,
     "timeline": [
       
     ],
@@ -2948,8 +2948,8 @@
       "city": "Saint Helena, CA",
       "coordinates": [38.5052, -122.4704]
     },
-    "deathday": null,
-    "deceased": false,
+    "deathday": "1998-11-26",
+    "deceased": true,
     "timeline": [
       
     ],
