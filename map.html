@@ -142,7 +142,9 @@
         console.error('Failed to fetch people data');
         return [];
       }
-      return await response.json();
+      const data = await response.json();
+      console.log('Fetched People Data:', data); // Log data
+      return data;
     }
 
     // Group locations for markers
@@ -162,14 +164,15 @@
           if (!groupedLocations[city]) {
             groupedLocations[city] = { coordinates, people: [] };
           }
-          groupedLocations[city].people.push({ 
-            name: person.name, 
-            birthday: person.birthday, 
+          groupedLocations[city].people.push({
+            name: person.name,
+            birthday: person.birthday,
             id: person.id
           });
         }
       });
 
+      console.log('Grouped Locations:', groupedLocations); // Log grouped locations
       return groupedLocations;
     }
 
@@ -183,12 +186,11 @@
         const { coordinates, people } = location;
 
         const tooltipContent = people
-          .map(person => 
-            <strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}
+          .map(person =>
+            `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
           )
           .join('<br><br>');
 
-        // Add markers for the main location and wrapped longitudes
         const longitudes = [0, -360, 360]; // Adjust for wraparound
         longitudes.forEach(offset => {
           const wrappedCoordinates = [
@@ -206,6 +208,7 @@
     // Update map view based on filters
     function updateMap(viewType, familyFilter, includeDeceased) {
       const groupedLocations = groupLocations(peopleData, viewType, familyFilter, includeDeceased);
+      console.log('Updating Map with:', groupedLocations); // Log update info
       displayLocations(groupedLocations);
     }
 
@@ -215,14 +218,13 @@
       const deceasedToggle = document.getElementById('include-deceased');
       const viewToggle = document.querySelectorAll('input[name="view"]');
 
-      // Add event listeners to toggle filters
       familyButtons.forEach(button => {
         button.addEventListener('click', () => {
           familyButtons.forEach(btn => btn.classList.remove('active'));
           button.classList.add('active');
           updateMap(
             document.querySelector('input[name="view"]:checked').value,
-            button.textContent,
+            button.textContent.trim(),
             deceasedToggle.checked
           );
         });
@@ -231,7 +233,7 @@
       deceasedToggle.addEventListener('change', () => {
         updateMap(
           document.querySelector('input[name="view"]:checked').value,
-          document.querySelector('.filter-buttons .active').textContent,
+          document.querySelector('.filter-buttons .active').textContent.trim(),
           deceasedToggle.checked
         );
       });
@@ -240,13 +242,12 @@
         radio.addEventListener('change', () => {
           updateMap(
             radio.value,
-            document.querySelector('.filter-buttons .active').textContent,
+            document.querySelector('.filter-buttons .active').textContent.trim(),
             deceasedToggle.checked
           );
         });
       });
 
-      // Initialize map
       fetchPeopleData().then(data => {
         peopleData = data.map(person => ({
           name: person.name,
