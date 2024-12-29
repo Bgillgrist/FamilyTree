@@ -3759,5 +3759,241 @@
       "photoDescriptions": [
         
       ]
+  },
+  {
+    "id": "charles1967",
+    "name": "Charles 'Chuck' T Foley",
+    "commonName": "Chuck Foley",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1967-02-14",
+    "birthplace": {
+      "city": "Unknown",
+      "coordinates": [0, -0]
+    },
+    "residence": {
+      "city": "Asheville, NC",
+      "coordinates": [35.5975, -82.5461]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        { "name": "Patty Foley", "id": "patricia1971" }
+      ],
+      "parents": [
+        { "name": "Unknown", "id": "unknown" },
+        { "name": "Unknown", "id": "unknown" }
+      ],
+      "siblings": [
+        { "name": "Unknown", "id": "unknown" }
+      ],
+      "children": [
+        { "name": "Sarah Trippeer", "id": "sarah1998" },
+        { "name": "Katie Foley", "id": "katie2001" },
+        { "name": "Emily Foley", "id": "emily2003" }
+      ]
+    },
+    "timeline": [
+      { "year": "1967", "event": "Born in Unknown" },
+      { "year": "1993", "event": "Married Patty Foley", "id": "patricia1971" },
+      { "year": "1998", "event": "Birth of First Child Sarah", "id": "sarah1998" },
+      { "year": "2001", "event": "Birth of Second Child Katie", "id": "katie2001" },
+      { "year": "2003", "event": "Birth of Third Child Emily", "id": "emily2003" }
+    ],
+    "profilePicture": "charles1967/charles1967.JPG",
+      "photos": [
+        "charles1967/charles1967..JPG",
+        "charles1967/charles1967..JPG",
+        "charles1967/charles1967..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "sarah1998",
+    "name": "Sarah Jane Trippeer (Foley)",
+    "commonName": "Sarah Trippeer",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1998-04-02",
+    "birthplace": {
+      "city": "Asheville, NC",
+      "coordinates": [35.5975, -82.5461]
+    },
+    "residence": {
+      "city": "Cleveland, TN",
+      "coordinates": [35.1595, -84.8766]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        { "name": "Chris Trippeer", "id": "chris1995" }
+      ],
+      "parents": [
+        { "name": "Chuck Foley", "id": "charles1967" },
+        { "name": "Patty Foley", "id": "patricia1971" }
+      ],
+      "siblings": [
+        { "name": "Katie Foley", "id": "katie2001" },
+        { "name": "Emily Foley", "id": "emily2003" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "1998", "event": "Born in Asheville, NC" },
+      { "year": "2021", "event": "Graduated from College" },
+      { "year": "2023", "event": "Married Chris Trippeer", "id": "chris1995" }
+    ],
+    "profilePicture": "sarah1998/sarah1998.JPG",
+      "photos": [
+        "sarah1998/sarah1998..JPG",
+        "sarah1998/sarah1998..JPG",
+        "sarah1998/sarah1998..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "chris1995",
+    "name": "Chris ???? Trippeer",
+    "commonName": "Chris Trippeer",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1995-02-04",
+    "birthplace": {
+      "city": "Unknown",
+      "coordinates": [0, -0]
+    },
+    "residence": {
+      "city": "Cleveland, TN",
+      "coordinates": [35.1595, -84.8766]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        { "name": "Sarah Trippeer", "id": "sarah1998" }
+      ],
+      "parents": [
+        { "name": "Allen Trippeer", "id": "allen1960" },
+        { "name": "Sherri Trippeer", "id": "sherri1968" }
+      ],
+      "siblings": [
+        { "name": "Jamie Trippeer", "id": "jamie1997" },
+        { "name": "Andrew Trippeer", "id": "andrew2000" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "1995", "event": "Born in Unknown" },
+      { "year": "2023", "event": "Married Sarah Trippeer", "id": "sarah1998" }
+    ],
+    "profilePicture": "chris1995/chris1995.JPG",
+      "photos": [
+        "chris1995/chris1995..JPG",
+        "chris1995/chris1995..JPG",
+        "chris1995/chris1995..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "katie2001",
+    "name": "Katie ???? Foley",
+    "commonName": "Katie Foley",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "2001-05-17",
+    "birthplace": {
+      "city": "Asheville, NC",
+      "coordinates": [35.5975, -82.5461]
+    },
+    "residence": {
+      "city": "Asheville, NC",
+      "coordinates": [35.5975, -82.5461]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        
+      ],
+      "parents": [
+        { "name": "Chuck Foley", "id": "charles1967" },
+        { "name": "Patty Foley", "id": "patricia1971" }
+      ],
+      "siblings": [
+        { "name": "Sarah Foley", "id": "sarah1998" },
+        { "name": "Emily Foley", "id": "emily2003" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "2001", "event": "Born in Asheville, NC" },
+      { "year": "2022", "event": "Graduated from AB-Tech" },
+      { "year": "2023", "event": "Graduated from Mars Hill University" }
+    ],
+    "profilePicture": "katie2001/katie2001.JPG",
+      "photos": [
+        "katie2001/katie2001..JPG",
+        "katie2001/katie2001..JPG",
+        "katie2001/katie2001..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "emily2003",
+    "name": "Emily ???? Foley",
+    "commonName": "Emily Trippeer",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "2003-12-09",
+    "birthplace": {
+      "city": "Asheville, NC",
+      "coordinates": [35.5975, -82.5461]
+    },
+    "residence": {
+      "city": "Asheville, NC",
+      "coordinates": [35.5975, -82.5461]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        
+      ],
+      "parents": [
+        { "name": "Chuck Foley", "id": "charles1967" },
+        { "name": "Patty Foley", "id": "patricia1971" }
+      ],
+      "siblings": [
+        { "name": "Sarah Trippeer", "id": "sarah1998" },
+        { "name": "Katie Foley", "id": "katie2001" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "2003", "event": "Born in Asheville, NC" },
+      { "year": "2022", "event": "Graduated from High School" }
+    ],
+    "profilePicture": "emily2003/emily2003.JPG",
+      "photos": [
+        "emily2003/emily2003..JPG",
+        "emily2003/emily2003..JPG",
+        "emily2003/emily2003..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
   }
 ]
