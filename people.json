@@ -408,7 +408,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.130307, -80.003578]
+      "coordinates": [41.1367, -80.0092]
     },
     "deathday": "2022-02-13",
     "deceased": true,
@@ -3508,7 +3508,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.130307, -80.003578]
+      "coordinates": [41.1367, -80.0092]
     },
     "deathday": "1968-09-15",
     "deceased": true,
@@ -3562,7 +3562,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.130307, -80.003578]
+      "coordinates": [41.1367, -80.0092]
     },
     "deathday": "1991-04-01",
     "deceased": true,
@@ -3617,7 +3617,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.130307, -80.003578]
+      "coordinates": [41.1367, -80.0092]
     },
     "deathday": "2020-02-01",
     "deceased": true,
@@ -3671,7 +3671,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.130307, -80.003578]
+      "coordinates": [41.1367, -80.0092]
     },
     "deathday": null,
     "deceased": false,
@@ -3718,7 +3718,7 @@
     "birthday": "1971-02-14",
     "birthplace": {
       "city": "Harrisville, PA",
-      "coordinates": [41.130307, -80.003578]
+      "coordinates": [41.1367, -80.0092]
     },
     "residence": {
       "city": "Asheville, NC",
@@ -3991,6 +3991,51 @@
         "emily2003/emily2003..JPG",
         "emily2003/emily2003..JPG",
         "emily2003/emily2003..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "jeffery1974",
+    "name": "Jeffery "Jeff" Paul Knoblespease Jr.",
+    "commonName": "Jeff Knoblespease",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1974-01-01",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        { "name": "Jamie Knoblespease", "id": "jamie1985" }
+      ],
+      "parents": [
+        { "name": "Paul Knoblespease", "id": "jeffery1938" },
+        { "name": "Mary Jane Knoblespease", "id": "mary1938" }
+      ],
+      "siblings": [
+        { "name": "Patty Foley", "id": "patricia1971" }
+      ],
+      "children": [
+        { "name": "Oliver Knoblespease", "id": "oliver2021" },
+        { "name": "Willa Knoblespease", "id": "willa2022" }
+      ]
+    },
+    "timeline": [
+      { "year": "1974", "event": "Born in Harrisville, PA (Exact date not known)" }
+    ],
+    "profilePicture": "jeffery1974/jeffery1974.JPG",
+      "photos": [
+        "jeffery1974/jeffery1974..JPG",
+        "jeffery1974/jeffery1974..JPG",
+        "jeffery1974/jeffery1974..jpeg"
       ],
       "photoDescriptions": [
         
