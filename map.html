@@ -156,21 +156,51 @@
         const { city, coordinates } = location;
 
         if (
-          (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) && // Fix filtering by familyGroup
+          (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) &&
           (includeDeceased || !person.deceased)
         ) {
           if (!groupedLocations[city]) {
             groupedLocations[city] = { coordinates, people: [] };
           }
-          groupedLocations[city].people.push({
-            name: person.name,
-            birthday: person.birthday,
+          groupedLocations[city].people.push({ 
+            name: person.name, 
+            birthday: person.birthday, 
             id: person.id
           });
         }
       });
 
       return groupedLocations;
+    }
+
+    // Add markers to the map
+    function displayLocations(groupedLocations) {
+      map.eachLayer(layer => {
+        if (layer instanceof L.Marker) map.removeLayer(layer); // Remove existing markers
+      });
+
+      Object.values(groupedLocations).forEach(location => {
+        const { coordinates, people } = location;
+
+        const tooltipContent = people
+          .map(person => 
+            <strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}
+          )
+          .join('<br><br>');
+
+        // Add markers for the main location and wrapped longitudes
+        const longitudes = [0, -360, 360]; // Adjust for wraparound
+        longitudes.forEach(offset => {
+          const wrappedCoordinates = [
+            coordinates[0], // Latitude stays the same
+            coordinates[1] + offset // Adjust longitude
+          ];
+
+          L.marker(wrappedCoordinates)
+            .addTo(map)
+            .bindPopup(tooltipContent);
+        });
+      });
     }
 
     // Update map view based on filters
@@ -221,7 +251,7 @@
         peopleData = data.map(person => ({
           name: person.name,
           birthday: person.birthday,
-          familyGroup: person.familyGroup, // Correctly reference familyGroup
+          familyGroup: person.familyGroup,
           deceased: person.deceased,
           residence: person.residence,
           birthplace: person.birthplace,
