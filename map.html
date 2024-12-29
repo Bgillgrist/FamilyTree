@@ -156,7 +156,7 @@
         const { city, coordinates } = location;
 
         if (
-          (familyFilter === 'All' || person.family.includes(familyFilter)) &&
+          (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) &&
           (includeDeceased || !person.deceased)
         ) {
           if (!groupedLocations[city]) {
