@@ -408,7 +408,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.1367, -80.0092]
+      "coordinates": [41.130320, -80.003408]
     },
     "deathday": "2022-02-13",
     "deceased": true,
@@ -1824,7 +1824,7 @@
     },
     "residence": {
       "city": "Gold Coast, Australia",
-      "coordinates": [-28.0167, 153.4]
+      "coordinates": [-27.99823, 153.35329]
     },
     "deathday": "2019-05-02",
     "deceased": true,
@@ -2863,7 +2863,7 @@
     },
     "residence": {
       "city": "Saint Helena, CA",
-      "coordinates": [38.5052, -122.4704]
+      "coordinates": [38.49256, -122.47664]
     },
     "deathday": "1963-12-04",
     "deceased": true,
@@ -2946,7 +2946,7 @@
     },
     "residence": {
       "city": "Saint Helena, CA",
-      "coordinates": [38.5052, -122.4704]
+      "coordinates": [38.49256, -122.47664]
     },
     "deathday": "1998-11-26",
     "deceased": true,
@@ -3508,7 +3508,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.1367, -80.0092]
+      "coordinates": [41.130285, -80.003407]
     },
     "deathday": "1968-09-15",
     "deceased": true,
@@ -3562,7 +3562,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.1367, -80.0092]
+      "coordinates": [41.130285, -80.003407]
     },
     "deathday": "1991-04-01",
     "deceased": true,
@@ -3617,7 +3617,7 @@
     },
     "residence": {
       "city": "Harrisville, PA",
-      "coordinates": [41.1367, -80.0092]
+      "coordinates": [41.130258, -80.003408]
     },
     "deathday": "2020-02-01",
     "deceased": true,
