@@ -104,10 +104,7 @@
   </div>
 
   <div class="deceased-toggle">
-    <label>
-      <input type="checkbox" id="include-deceased" checked>
-      Include Deceased Relatives
-    </label>
+    <button id="show-deceased">Show Only Deceased</button>
   </div>
 
   <div class="view-toggle">
@@ -148,19 +145,14 @@
     }
 
     // Group locations for markers
-    function groupLocations(people, viewType, familyFilter, includeDeceased) {
+    function groupLocations(people, viewType, familyFilter, showOnlyDeceased) {
       const groupedLocations = {};
-
       people.forEach(person => {
-        const location = person[viewType]; // 'residence' or 'birthplace'
+        if (showOnlyDeceased && !person.deceased) return;
+        const location = person[viewType];
         if (!location) return;
-
         const { city, coordinates } = location;
-
-        if (
-          (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) &&
-          (includeDeceased || !person.deceased)
-        ) {
+        if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
           if (!groupedLocations[city]) {
             groupedLocations[city] = { coordinates, people: [] };
           }
@@ -171,8 +163,6 @@
           });
         }
       });
-
-      console.log('Grouped Locations:', groupedLocations); // Log grouped locations
       return groupedLocations;
     }
 
@@ -206,9 +196,8 @@
     }
 
     // Update map view based on filters
-    function updateMap(viewType, familyFilter, includeDeceased) {
-      const groupedLocations = groupLocations(peopleData, viewType, familyFilter, includeDeceased);
-      console.log('Updating Map with:', groupedLocations); // Log update info
+    function updateMap(viewType, familyFilter, showOnlyDeceased) {
+      const groupedLocations = groupLocations(peopleData, viewType, familyFilter, showOnlyDeceased);
       displayLocations(groupedLocations);
     }
 
