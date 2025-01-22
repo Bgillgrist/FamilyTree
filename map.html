@@ -171,8 +171,9 @@
           }
       });
 
-      var markers = L.markerClusterGroup({
-        disableClusteringAtZoom: 18  // Adjust according to your map's capabilities
+      const markers = L.markerClusterGroup({
+        disableClusteringAtZoom: 18,  // Adjust this value based on your specific needs
+        chunkedLoading: true,
       });
 
       Object.values(groupedLocations).forEach(location => {
@@ -197,9 +198,11 @@
       displayLocations(groupedLocations);
     }
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      peopleData = await fetchPeopleData();
-      updateMap('residence', 'All', false); // Initialize map with living people
+    document.addEventListener('DOMContentLoaded', async function() {
+      const map = L.map('map').setView([37.7749, -95.7129], 4); // Initialize map
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
 
       const deceasedCheckbox = document.getElementById('include-deceased');
       deceasedCheckbox.addEventListener('change', () => {
