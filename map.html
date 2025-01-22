@@ -6,6 +6,9 @@
   <title>Family Map</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
   <style>
     /* Map container styling */
     #map {
@@ -163,16 +166,27 @@
     // Add markers to the map
     function displayLocations(groupedLocations) {
       map.eachLayer(layer => {
-        if (layer instanceof L.Marker) map.removeLayer(layer); // Remove existing markers
+          if (layer instanceof L.Marker || layer instanceof L.MarkerCluster) {
+              map.removeLayer(layer); // Remove existing markers and clusters
+          }
       });
 
+      var markers = L.markerClusterGroup(); // Initialize the marker cluster group
+
       Object.values(groupedLocations).forEach(location => {
-        const { coordinates, people } = location;
-        const tooltipContent = people.map(person =>
-          `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
-        ).join('<br><br>');
-        L.marker(coordinates).addTo(map).bindPopup(tooltipContent);
+          const { coordinates, people } = location;
+          const tooltipContent = people.map(person =>
+              `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
+          ).join('<br><br>');
+
+          // Add each person as a separate marker within the cluster
+          people.forEach(person => {
+              var marker = L.marker(person.residence.coordinates).bindPopup(tooltipContent);
+              markers.addLayer(marker); // Add marker to the cluster group
+          });
       });
+
+      map.addLayer(markers); // Add the cluster group to the map
     }
 
     // Update map view based on filters
