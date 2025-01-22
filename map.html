@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <style>
+    /* Map container styling */
     #map {
       width: 100%;
       height: 80vh;
@@ -14,14 +15,19 @@
       border: 2px solid #ddd;
       border-radius: 10px;
     }
+
+    /* Tooltip styling */
     .leaflet-popup-content {
       font-size: 14px;
     }
+
+    /* Tab Bar Styling */
     .tab-bar {
       background-color: #333;
       overflow: hidden;
       display: flex;
     }
+
     .tab-bar a {
       flex: 1;
       color: white;
@@ -30,17 +36,21 @@
       text-decoration: none;
       font-size: 17px;
     }
+
     .tab-bar a:hover {
       background-color: #575757;
     }
+
     .tab-bar a.active {
       background-color: #007BFF;
     }
+
     .deceased-toggle {
-      text-align: center;
       margin: 20px;
+      text-align: center;
       font-size: 16px;
     }
+
     .deceased-toggle label {
       display: flex;
       align-items: center;
@@ -49,6 +59,7 @@
       font-size: 16px;
       cursor: pointer;
     }
+
     .deceased-toggle input[type="checkbox"] {
       transform: scale(1.2);
       cursor: pointer;
@@ -58,10 +69,12 @@
       margin: 20px;
       font-size: 16px;
     }
+
     .view-toggle label {
       margin: 0 15px;
       cursor: pointer;
     }
+
     .view-toggle input[type="radio"] {
       margin-right: 5px;
     }
@@ -108,85 +121,85 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-  let peopleData = []; // Global variable to store fetched data
+    let peopleData = []; // Global variable to store fetched data
 
-  const map = L.map('map').setView([37.7749, -95.7129], 4); // Initialize map
+    const map = L.map('map').setView([37.7749, -95.7129], 4); // Initialize map
 
-  // Add OpenStreetMap tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-  // Fetch people data
-  async function fetchPeopleData() {
-    const response = await fetch('people.json');
-    const data = await response.ok ? await response.json() : [];
-    console.log('Fetched People Data:', data); // Log data
-    return data;
-  }
+    // Fetch people data
+    async function fetchPeopleData() {
+      const response = await fetch('people.json');
+      const data = await response.ok ? await response.json() : [];
+      console.log('Fetched People Data:', data); // Log data
+      return data;
+    }
 
-  // Group locations for markers
-  function groupLocations(people, viewType, familyFilter, showOnlyDeceased) {
-    const groupedLocations = {};
+    // Group locations for markers
+    function groupLocations(people, viewType, familyFilter, showOnlyDeceased) {
+      const groupedLocations = {};
 
-    people.forEach(person => {
-      if ((showOnlyDeceased && !person.deceased) || (!showOnlyDeceased && person.deceased)) return;
-      const location = person[viewType];
-      if (!location) return;
-      const { city, coordinates } = location;
-      if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
-        if (!groupedLocations[city]) {
-          groupedLocations[city] = { coordinates, people: [] };
+      people.forEach(person => {
+        if ((showOnlyDeceased && !person.deceased) || (!showOnlyDeceased && person.deceased)) return;
+        const location = person[viewType];
+        if (!location) return;
+        const { city, coordinates } = location;
+        if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
+          if (!groupedLocations[city]) {
+            groupedLocations[city] = { coordinates, people: [] };
+          }
+          groupedLocations[city].people.push(person);
         }
-        groupedLocations[city].people.push(person);
-      }
-    });
+      });
 
-    return groupedLocations;
-  }
+      return groupedLocations;
+    }
 
-  // Add markers to the map
-  function displayLocations(groupedLocations) {
-    map.eachLayer(layer => {
-      if (layer instanceof L.Marker) map.removeLayer(layer); // Remove existing markers
-    });
+    // Add markers to the map
+    function displayLocations(groupedLocations) {
+      map.eachLayer(layer => {
+        if (layer instanceof L.Marker) map.removeLayer(layer); // Remove existing markers
+      });
 
-    Object.values(groupedLocations).forEach(location => {
-      const { coordinates, people } = location;
-      const tooltipContent = people.map(person =>
-        `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
-      ).join('<br><br>');
-      L.marker(coordinates).addTo(map).bindPopup(tooltipContent);
-    });
-  }
+      Object.values(groupedLocations).forEach(location => {
+        const { coordinates, people } = location;
+        const tooltipContent = people.map(person =>
+          `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
+        ).join('<br><br>');
+        L.marker(coordinates).addTo(map).bindPopup(tooltipContent);
+      });
+    }
 
-  // Update map view based on filters
-  function updateMap(viewType, familyFilter, showOnlyDeceased) {
-    const groupedLocations = groupLocations(peopleData, viewType, familyFilter, showOnlyDeceased);
-    displayLocations(groupedLocations);
-  }
+    // Update map view based on filters
+    function updateMap(viewType, familyFilter, showOnlyDeceased) {
+      const groupedLocations = groupLocations(peopleData, viewType, familyFilter, showOnlyDeceased);
+      displayLocations(groupedLocations);
+    }
 
-  document.addEventListener('DOMContentLoaded', async () => {
-    peopleData = await fetchPeopleData();
-    updateMap('residence', 'All', false); // Initialize map with living people
+    document.addEventListener('DOMContentLoaded', async () => {
+      peopleData = await fetchPeopleData();
+      updateMap('residence', 'All', false); // Initialize map with living people
 
-    const deceasedCheckbox = document.getElementById('include-deceased');
-    deceasedCheckbox.addEventListener('change', () => {
-      updateMap(
-        document.querySelector('input[name="view"]:checked').value,
-        document.querySelector('.filter-buttons .active').textContent.trim(),
-        deceasedCheckbox.checked
-      );
-    });
-
-    document.querySelectorAll('.filter-buttons button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+      const deceasedCheckbox = document.getElementById('include-deceased');
+      deceasedCheckbox.addEventListener('change', () => {
         updateMap(
           document.querySelector('input[name="view"]:checked').value,
-          button.textContent.trim(),
+          document.querySelector('.filter-buttons .active').textContent.trim(),
           deceasedCheckbox.checked
+        );
+      });
+
+      document.querySelectorAll('.filter-buttons button').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          updateMap(
+            document.querySelector('input[name="view"]:checked').value,
+            button.textContent.trim(),
+            deceasedCheckbox.checked
         );
       });
     });
