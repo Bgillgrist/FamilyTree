@@ -171,7 +171,9 @@
           }
       });
 
-      var markers = L.markerClusterGroup(); // Initialize the marker cluster group
+      var markers = L.markerClusterGroup({
+        disableClusteringAtZoom: 18  // Adjust according to your map's capabilities
+      });
 
       Object.values(groupedLocations).forEach(location => {
           const { coordinates, people } = location;
