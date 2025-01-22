@@ -4003,8 +4003,8 @@
     "familyGroup": ["Gillgrist"],
     "birthday": "1974-01-17",
     "birthplace": {
-      "city": "Harrisville, PA",
-      "coordinates": [41.1367, -80.0092]
+      "city": "New Castle, PA",
+      "coordinates": [41.0037, -80.3470]
     },
     "residence": {
       "city": "Harrisville, PA",
@@ -4036,6 +4036,139 @@
         "jeffery1974/jeffery1974..JPG",
         "jeffery1974/jeffery1974..JPG",
         "jeffery1974/jeffery1974..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "jamie1985",
+    "name": "Jamie Marie Knoblespease (Pozzuto)",
+    "commonName": "Jamie Knoblespease",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1985-01-19",
+    "birthplace": {
+      "city": "Pittsburgh, PA",
+      "coordinates": [40.4406, -79.9959]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        { "name": "Jeff Knoblespease", "id": "jeffery1974" }
+      ],
+      "parents": [
+        { "name": "Unknown", "id": "unknown" },
+        { "name": "Unknown", "id": "unknown" }
+      ],
+      "siblings": [
+        { "name": "Unknown", "id": "unknown" }
+      ],
+      "children": [
+        { "name": "Oliver Knoblespease", "id": "oliver2021" },
+        { "name": "Willa Knoblespease", "id": "willa2022" }
+      ]
+    },
+    "timeline": [
+      { "year": "1985", "event": "Born in Pittsburgh, PA" }
+    ],
+    "profilePicture": "jamie1985/jamie1985.JPG",
+      "photos": [
+        "jamie1985/jamie1985..JPG",
+        "jamie1985/jamie1985..JPG",
+        "jamie1985/jamie1985..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "oliver2021",
+    "name": "Oliver William Knoblespease",
+    "commonName": "Oliver Knoblespease",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "2021-05-05",
+    "birthplace": {
+      "city": "Mayfield Heights, OH",
+      "coordinates": [41.5192, -81.4579]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        
+      ],
+      "parents": [
+        { "name": "Jeff Knoblespease", "id": "jeffery1974" },
+        { "name": "Jamie Knoblespease", "id": "jamie1985" }
+      ],
+      "siblings": [
+        { "name": "Willa Knoblespease", "id": "willa2022" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "2021", "event": "Born in Mayfield Heights, OH" }
+    ],
+    "profilePicture": "oliver2021/oliver2021.JPG",
+      "photos": [
+        "oliver2021/oliver2021..JPG",
+        "oliver2021/oliver2021..JPG",
+        "oliver2021/oliver2021..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "willa2022",
+    "name": "Willa Grace Knoblespease",
+    "commonName": "Willa Knoblespease",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "2022-10-27",
+    "birthplace": {
+      "city": "Pittsburgh, PA",
+      "coordinates": [40.4406, -79.9959]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "deathday": null,
+    "deceased": false,
+    "family": {
+      "spouse": [
+        
+      ],
+      "parents": [
+        { "name": "Jeff Knoblespease", "id": "jeffery1974" },
+        { "name": "Jamie Knoblespease", "id": "jamie1985" }
+      ],
+      "siblings": [
+        { "name": "Oliver Knoblespease", "id": "oliver2021" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "2022", "event": "Born in Pittsburgh, PA" }
+    ],
+    "profilePicture": "willa2022/willa2022.JPG",
+      "photos": [
+        "willa2022/willa2022..JPG",
+        "willa2022/willa2022..JPG",
+        "willa2022/willa2022..jpeg"
       ],
       "photoDescriptions": [
         
