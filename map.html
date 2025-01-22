@@ -132,70 +132,35 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      let peopleData = [];
       try {
-        peopleData = await fetchPeopleData();
+        const peopleData = await fetchPeopleData();
         updateMap('residence', 'All', false, peopleData, map);
       } catch (error) {
-        console.error('Error fetching or processing data:', error);
+        console.error('Failed to fetch or process data:', error);
       }
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      // Fetch data and then initialize the map with it
-      const peopleData = await fetchPeopleData();
-      updateMap('residence', 'All', false, peopleData); // Pass peopleData to function
-
-      // Event listeners for UI elements
-      document.getElementById('include-deceased').addEventListener('change', function() {
-        updateMap(
-          document.querySelector('input[name="view"]:checked').value,
-          document.querySelector('.filter-buttons .active').textContent.trim(),
-          this.checked,
-          peopleData // Pass the updated data
-        );
-      });
-
-      document.querySelectorAll('.filter-buttons button').forEach(button => {
-        button.addEventListener('click', function() {
-          document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-          updateMap(
-            document.querySelector('input[name="view"]:checked').value,
-            this.textContent.trim(),
-            document.getElementById('include-deceased').checked,
-            peopleData // Pass the updated data
-          );
-        });
-      });
-
-      document.querySelectorAll('input[name="view"]').forEach(radio => {
-        radio.addEventListener('change', function() {
-          updateMap(
-            this.value,
-            document.querySelector('.filter-buttons .active').textContent.trim(),
-            document.getElementById('include-deceased').checked,
-            peopleData // Pass the updated data
-          );
-        });
-      });
     });
 
     async function fetchPeopleData() {
       const response = await fetch('people.json');
-      if (response.ok) {
-        return await response.json();
-      } else {
-        console.error('Failed to fetch people data');
-        return []; // Return an empty array in case of failure
-      }
+      if (!response.ok) throw new Error('Failed to fetch people data');
+      return response.json();
     }
 
-    function updateMap(viewType, familyFilter, showOnlyDeceased, peopleData) {
+    function updateMap(viewType, familyFilter, showOnlyDeceased, peopleData, map) {
+      const markers = L.markerClusterGroup();
       const groupedLocations = groupLocations(peopleData, viewType, familyFilter, showOnlyDeceased);
-      displayLocations(groupedLocations, map);
+
+      Object.values(groupedLocations).forEach(location => {
+        location.people.forEach(person => {
+          const coords = person.residence.coordinates;
+          const marker = L.marker([coords[0], coords[1]]).bindPopup(
+            `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
+          );
+          markers.addLayer(marker);
+        });
+      });
+
+      map.addLayer(markers);
     }
 
     function groupLocations(people, viewType, familyFilter, showOnlyDeceased) {
@@ -203,30 +168,17 @@
       people.forEach(person => {
         if ((showOnlyDeceased && !person.deceased) || (!showOnlyDeceased && person.deceased)) return;
         const location = person[viewType];
-        if (!location) return;
-        const { city, coordinates } = location;
+        if (!location || !location.coordinates) return;
+        const { city } = location;
         if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
           if (!groupedLocations[city]) {
-            groupedLocations[city] = { coordinates, people: [] };
+            groupedLocations[city] = { people: [] };
           }
           groupedLocations[city].people.push(person);
         }
       });
       return groupedLocations;
     }
-
-    function displayLocations(groupedLocations, map) {
-      const markers = L.markerClusterGroup();
-      Object.values(groupedLocations).forEach(location => {
-        location.people.forEach(person => {
-          const marker = L.marker(person.residence.coordinates).bindPopup(
-            `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
-          );
-          markers.addLayer(marker);
-        });
-      });
-      map.addLayer(markers);
-    }
-  </script>
+    </script>
 </body>
 </html>
