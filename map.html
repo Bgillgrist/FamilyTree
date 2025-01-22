@@ -147,6 +147,12 @@
     }
 
     function updateMap(viewType, familyFilter, showOnlyDeceased, peopleData, map) {
+      map.eachLayer(layer => {
+        if (layer instanceof L.Marker || layer instanceof L.MarkerCluster) {
+          map.removeLayer(layer);  // Clear previous markers
+        }
+      });
+
       const markers = L.markerClusterGroup();
       const groupedLocations = groupLocations(peopleData, viewType, familyFilter, showOnlyDeceased);
 
