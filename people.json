@@ -4173,5 +4173,255 @@
       "photoDescriptions": [
         
       ]
+  },
+    {
+    "id": "thomas1894",
+    "name": "Thomas "Dick" Ralph Gillgrist",
+    "commonName": "Thomas Gillgrist",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1894-09-15",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131186, -80.003318]
+    },
+    "deathday": "1970-10-23",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Carrie Gillgrist", "id": "carrie1891" }
+      ],
+      "parents": [
+        { "name": "James Gillgrist", "id": "james1968" },
+        { "name": "Abigail Gillgrist", "id": "abigail1873" }
+      ],
+      "siblings": [
+        { "name": "Hazel Critchlow", "id": "hazel1898" },
+        { "name": "Pearl Sloan", "id": "pearl1900" },
+        { "name": "Myrtle Kerr", "id": "myrtle1903" },
+        { "name": "Dallas Gillgrist", "id": "dallas1906" }
+      ],
+      "children": [
+        { "name": "Donald Gilchrist", "id": "donald1916" },
+        { "name": "Charles Gilchrist", "id": "charles1917" },
+        { "name": "Ross Gillgrist", "id": "ross1920" },
+        { "name": "Olive Miller", "id": "olive1921" },
+        { "name": "Opal McCarl", "id": "opal1921" },
+        { "name": "Ralph Gilchrist", "id": "ralph1922" },
+        { "name": "Chester Gilchrist", "id": "chester1924" }
+      ]
+    },
+    "timeline": [
+      { "year": "1894", "event": "Born in Harrisville, PA (Unknown exact city)" },
+      { "year": "1915", "event": "Married Carrie Critchlow", "id": "carrie1891" },
+      { "year": "1915", "event": "Lived on the Edeburn Place between Harrisville and Murrinsville, near the election house" },
+      { "year": "1916", "event": "Birth of First Child Donald Gilchrist", "id": "donald1916" },
+      { "year": "1917", "event": "Birth of Second Child Charles Gilchrist", "id": "charles1917" },
+      { "year": "1920", "event": "Birth of Third Child Ross Gillgrist", "id": "ross1920" },
+      { "year": "1921", "event": "Birth of Fourth Child Olive Miller", "id": "olive1921" },
+      { "year": "1921", "event": "Birth of Fifth Child Opal McCarl", "id": "opal1921" },
+      { "year": "1922", "event": "Birth of Sixth Child Ralph Gilchrist", "id": "ralph1922" },
+      { "year": "1922", "event": "Bought a farm from Carrie's brother just west of Harrisville" },
+      { "year": "1924", "event": "Birth of Seventh Child Chester Gilchrist", "id": "chester1924" },
+      { "year": "1942", "event": "Sold their farm and bought a large house in Slippery Rock where their twin daughters attended college" },
+      { "year": "1970", "event": "Died in Anderson, SC while visiting his son Ralph" }
+    ],
+    "profilePicture": "thomas1894/thomas1894.JPG",
+      "photos": [
+        "thomas1894/thomas1894..JPG",
+        "thomas1894/thomas1894..JPG",
+        "thomas1894/thomas1894..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+    {
+    "id": "carrie1891",
+    "name": "Carrie Ethel Gillgrist (Critchlow)",
+    "commonName": "Carrie Gillgrist",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1891-12-06",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131186, -80.003318]
+    },
+    "deathday": "1994-07-21",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Thomas Gillgrist", "id": "thomas1894" }
+      ],
+      "parents": [
+        { "name": "William Critchlow", "id": "william1857" },
+        { "name": "Margaret Critchlow", "id": "margaret1866" }
+      ],
+      "siblings": [
+        { "name": "Harry Critchlow", "id": "harry1888" },
+        { "name": "Lee Critchlow", "id": "lee1889" },
+        { "name": "Dick Critchlow", "id": "richard1893" },
+        { "name": "Charles Critchlow", "id": "charles1896" },
+        { "name": "Mary Morley", "id": "mary1898" },
+        { "name": "Elton Critchlow", "id": "elton1899" },
+        { "name": "Elda Orr", "id": "elda1899" },
+        { "name": "Lawrence Critchlow", "id": "lawrence1900" },
+        { "name": "Aletha Humphrey", "id": "aletha1903" },
+        { "name": "Braden Critchlow", "id": "braden1904" },
+        { "name": "Bertram Critchlow", "id": "bertram1906" },
+        { "name": "Warren Critchlow", "id": "warren1909" }
+      ],
+      "children": [
+        { "name": "Donald Gilchrist", "id": "donald1916" },
+        { "name": "Charles Gilchrist", "id": "charles1917" },
+        { "name": "Ross Gillgrist", "id": "ross1920" },
+        { "name": "Olive Miller", "id": "olive1921" },
+        { "name": "Opal McCarl", "id": "opal1921" },
+        { "name": "Ralph Gilchrist", "id": "ralph1922" },
+        { "name": "Chester Gilchrist", "id": "chester1924" }
+      ]
+    },
+    "timeline": [
+      { "year": "1891", "event": "Born in Harrisville, PA (Unknown exact city)" },
+      { "year": "1915", "event": "Married Thomas Gillgrist", "id": "thomas1894" },
+      { "year": "1915", "event": "Lived on the Edeburn Place between Harrisville and Murrinsville, near the election house" },
+      { "year": "1916", "event": "Birth of First Child Donald Gilchrist", "id": "donald1916" },
+      { "year": "1917", "event": "Birth of Second Child Charles Gilchrist", "id": "charles1917" },
+      { "year": "1920", "event": "Birth of Third Child Ross Gillgrist", "id": "ross1920" },
+      { "year": "1921", "event": "Birth of Fourth Child Olive Miller", "id": "olive1921" },
+      { "year": "1921", "event": "Birth of Fifth Child Opal McCarl", "id": "opal1921" },
+      { "year": "1922", "event": "Birth of Sixth Child Ralph Gilchrist", "id": "ralph1922" },
+      { "year": "1922", "event": "Bought a farm from Carrie's brother just west of Harrisville" },
+      { "year": "1924", "event": "Birth of Seventh Child Chester Gilchrist", "id": "chester1924" },
+      { "year": "1942", "event": "Sold their farm and bought a large house in Slippery Rock where their twin daughters attended college" },
+      { "year": "1994", "event": "Died in Slippery Rock, PA" }
+    ],
+    "profilePicture": "carrie1891/carrie1891.JPG",
+      "photos": [
+        "carrie1891/carrie1891..JPG",
+        "carrie1891/carrie1891..JPG",
+        "carrie1891/carrie1891..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+    {
+    "id": "hazel1898",
+    "name": "Hazel Elizabeth Critchlow (Gillgrist)",
+    "commonName": "Hazel Gillgrist",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1898-03-21",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131558, -80.003535]
+    },
+    "deathday": "1917-05-16",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Charles Critchlow", "id": "charles1896" }
+      ],
+      "parents": [
+        { "name": "James Gillgrist", "id": "james1968" },
+        { "name": "Abigail Gillgrist", "id": "abigail1873" }
+      ],
+      "siblings": [
+        { "name": "Thomas Gillgrist", "id": "thomas1894" },
+        { "name": "Pearl Sloan", "id": "pearl1900" },
+        { "name": "Myrtle Kerr", "id": "myrtle1903" },
+        { "name": "Dallas Gillgrist", "id": "dallas1906" }
+      ],
+      "children": [
+        
+      ]
+    },
+    "timeline": [
+      { "year": "1898", "event": "Born in Harrisville, PA (Unknown exact city)" },
+      { "year": "1916", "event": "Married Charles Critchlow", "id": "charles1896" },
+      { "year": "1917", "event": "Died in Harrisville, PA of Influenza" }
+    ],
+    "profilePicture": "hazel1898/hazel1898.JPG",
+      "photos": [
+        "hazel1898/hazel1898..JPG",
+        "hazel1898/hazel1898..JPG",
+        "hazel1898/hazel1898..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+    {
+    "id": "charles1896",
+    "name": "Charles Frampton Critchlow",
+    "commonName": "Charles Critchlow",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1897-07-26",
+    "birthplace": {
+      "city": "Irwin Township, PA",
+      "coordinates": [41.2207, -79.9417]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131558, -80.003535]
+    },
+    "deathday": "1927-04-14",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Hazel Gillgrist", "id": "hazel1898" },
+        { "name": "Gladys Snyder (Remarried after Hazel's death)", "id": "gladys1902" }
+      ],
+      "parents": [
+        { "name": "William Critchlow", "id": "william1857" },
+        { "name": "Margaret Critchlow", "id": "margaret1866" }
+      ],
+      "siblings": [
+        { "name": "Harry Critchlow", "id": "harry1888" },
+        { "name": "Lee Critchlow", "id": "lee1889" },
+        { "name": "Carrie Gillgrist", "id": "charles1896" },
+        { "name": "Dick Critchlow", "id": "richard1893" },
+        { "name": "Mary Morley", "id": "mary1898" },
+        { "name": "Elton Critchlow", "id": "elton1899" },
+        { "name": "Elda Orr", "id": "elda1899" },
+        { "name": "Lawrence Critchlow", "id": "lawrence1900" },
+        { "name": "Aletha Humphrey", "id": "aletha1903" },
+        { "name": "Braden Critchlow", "id": "braden1904" },
+        { "name": "Bertram Critchlow", "id": "bertram1906" },
+        { "name": "Warren Critchlow", "id": "warren1909" }
+      ],
+      "children": [
+        { "name": "Aletha Shaffer", "id": "aletha1920" },
+        { "name": "Doris Shaffer", "id": "doris1923" }
+      ]
+    },
+    "timeline": [
+      { "year": "1896", "event": "Born in Irwin Township, PA" },
+      { "year": "1916", "event": "Married Hazel Gillgrist", "id": "hazel1898" },
+      { "year": "1917", "event": "Death of his wife Hazel Gillgrist", "id": "hazel1898" },
+      { "year": "1919", "event": "Remarried Gladys Snyder after the death of his first wife Hazel", "id": "gladys1902" },
+      { "year": "1920", "event": "Birth of First Child Aletha Critchlow", "id": "aletha1920" },
+      { "year": "1923", "event": "Birth of Second Child Doris Critchlow", "id": "doris1923" },
+      { "year": "1927", "event": "Died in Harrisville, PA at his parents' house of Typhoid fever after helping a neighbor prepare farmland by burning brush" },
+    ],
+    "profilePicture": "charles1896/charles1896.JPG",
+      "photos": [
+        "charles1896/charles1896..JPG",
+        "charles1896/charles1896..JPG",
+        "charles1896/charles1896..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
   }
 ]
