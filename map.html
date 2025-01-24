@@ -132,12 +132,44 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      try {
-        const peopleData = await fetchPeopleData();
-        updateMap('residence', 'All', false, peopleData, map);
-      } catch (error) {
-        console.error('Failed to fetch or process data:', error);
-      }
+      const peopleData = await fetchPeopleData();
+      updateMap('residence', 'All', document.getElementById('include-deceased').checked, peopleData, map);
+
+      document.getElementById('include-deceased').addEventListener('change', function() {
+        updateMap(
+          document.querySelector('input[name="view"]:checked').value,
+          document.querySelector('.filter-buttons .active').textContent.trim(),
+          this.checked,
+          peopleData,
+          map
+        );
+      });
+
+      document.querySelectorAll('.filter-buttons button').forEach(button => {
+        button.addEventListener('click', function() {
+          document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          updateMap(
+            document.querySelector('input[name="view"]:checked').value,
+            this.textContent.trim(),
+            document.getElementById('include-deceased').checked,
+            peopleData,
+            map
+          );
+        });
+      });
+
+      document.querySelectorAll('input[name="view"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+          updateMap(
+            this.value,
+            document.querySelector('.filter-buttons .active').textContent.trim(),
+            document.getElementById('include-deceased').checked,
+            peopleData,
+            map
+          );
+        });
+      });
     });
 
     async function fetchPeopleData() {
@@ -158,7 +190,7 @@
 
       Object.values(groupedLocations).forEach(location => {
         location.people.forEach(person => {
-          const coords = person.residence.coordinates;
+          const coords = person[viewType].coordinates; // Ensure you are accessing the correct coordinates
           const marker = L.marker([coords[0], coords[1]]).bindPopup(
             `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
           );
@@ -172,19 +204,20 @@
     function groupLocations(people, viewType, familyFilter, showOnlyDeceased) {
       const groupedLocations = {};
       people.forEach(person => {
-        if ((showOnlyDeceased && !person.deceased) || (!showOnlyDeceased && person.deceased)) return;
-        const location = person[viewType];
-        if (!location || !location.coordinates) return;
-        const { city } = location;
-        if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
-          if (!groupedLocations[city]) {
-            groupedLocations[city] = { people: [] };
+        if ((showOnlyDeceased && person.deceased) || (!showOnlyDeceased && !person.deceased)) {
+          const location = person[viewType];
+          if (!location || !location.coordinates) return;
+          const { city } = location;
+          if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
+            if (!groupedLocations[city]) {
+              groupedLocations[city] = { people: [] };
+            }
+            groupedLocations[city].people.push(person);
           }
-          groupedLocations[city].people.push(person);
         }
       });
       return groupedLocations;
     }
-    </script>
+  </script>
 </body>
 </html>
