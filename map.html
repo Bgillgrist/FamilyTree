@@ -126,22 +126,78 @@
   <div id="map"></div>
 
   <script>
-// Define global marker cluster variable outside DOMContentLoaded
-let markers = L.markerClusterGroup({
-  disableClusteringAtZoom: 18,  // Adjust this value as needed
-  chunkedLoading: true,
-});
-
 document.addEventListener('DOMContentLoaded', async function() {
   const map = L.map('map').setView([37.7749, -95.7129], 4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  const peopleData = await fetchPeopleData();  // Fetch data once and use it throughout
+  const peopleData = await fetchPeopleData();
   updateMap('residence', 'All', document.getElementById('include-deceased').checked, peopleData, map);
 
-  // Set up event listeners for UI elements
+  setupEventListeners(peopleData, map);
+});
+
+async function fetchPeopleData() {
+  const response = await fetch('people.json');
+  if (!response.ok) throw new Error('Failed to fetch people data');
+  return response.json();
+}
+
+function updateMap(viewType, familyFilter, showOnlyDeceased, peopleData, map) {
+  // Initialize or clear existing marker cluster group
+  if (window.markers) {
+    window.markers.clearLayers();
+  } else {
+    window.markers = L.markerClusterGroup({
+      disableClusteringAtZoom: 18, // Adjust or remove to control clustering behavior
+      chunkedLoading: true,
+    });
+  }
+
+  const groupedLocations = groupLocations(peopleData, viewType, familyFilter, showOnlyDeceased);
+
+  // Use an object to track unique coordinates to ensure unique markers for identical coords
+  const coordMap = {};
+
+  Object.values(groupedLocations).forEach(location => {
+    location.people.forEach(person => {
+      const coords = person[viewType].coordinates.join(',');
+      const popupContent = `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`;
+
+      if (!coordMap[coords]) {
+        coordMap[coords] = L.marker(person[viewType].coordinates).bindPopup(popupContent);
+        window.markers.addLayer(coordMap[coords]);
+      } else {
+        // Append new content to existing marker's popup
+        let existingPopup = coordMap[coords].getPopup().getContent();
+        coordMap[coords].setPopupContent(existingPopup + '<br><br>' + popupContent);
+      }
+    });
+  });
+
+  map.addLayer(window.markers);
+}
+
+function groupLocations(people, viewType, familyFilter, showOnlyDeceased) {
+  const groupedLocations = {};
+  people.forEach(person => {
+    if ((showOnlyDeceased && person.deceased) || (!showOnlyDeceased && !person.deceased)) {
+      const location = person[viewType];
+      if (!location || !location.coordinates) return;
+      const { city } = location;
+      if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
+        if (!groupedLocations[city]) {
+          groupedLocations[city] = { people: [] };
+        }
+        groupedLocations[city].people.push(person);
+      }
+    }
+  });
+  return groupedLocations;
+}
+
+function setupEventListeners(peopleData, map) {
   document.getElementById('include-deceased').addEventListener('change', function() {
     updateMap(
       document.querySelector('input[name="view"]:checked').value,
@@ -177,48 +233,6 @@ document.addEventListener('DOMContentLoaded', async function() {
       );
     });
   });
-});
-
-async function fetchPeopleData() {
-  const response = await fetch('people.json');
-  if (!response.ok) throw new Error('Failed to fetch people data');
-  return response.json();
-}
-
-function updateMap(viewType, familyFilter, showOnlyDeceased, peopleData, map) {
-  // Clear existing markers to ensure filters are applied correctly across zooms
-  markers.clearLayers();
-
-  const groupedLocations = groupLocations(peopleData, viewType, familyFilter, showOnlyDeceased);
-  Object.values(groupedLocations).forEach(location => {
-    location.people.forEach(person => {
-      const coords = person[viewType].coordinates; // Make sure this is correctly referenced
-      const marker = L.marker([coords[0], coords[1]]).bindPopup(
-        `<strong><a href="person.html?id=${person.id}">${person.name}</a></strong><br>Birthday: ${person.birthday}`
-      );
-      markers.addLayer(marker);
-    });
-  });
-
-  map.addLayer(markers);
-}
-
-function groupLocations(people, viewType, familyFilter, showOnlyDeceased) {
-  const groupedLocations = {};
-  people.forEach(person => {
-    if ((showOnlyDeceased && person.deceased) || (!showOnlyDeceased && !person.deceased)) {
-      const location = person[viewType];
-      if (!location || !location.coordinates) return;
-      const { city } = location;
-      if (familyFilter === 'All' || person.familyGroup.includes(familyFilter)) {
-        if (!groupedLocations[city]) {
-          groupedLocations[city] = { people: [] };
-        }
-        groupedLocations[city].people.push(person);
-      }
-    }
-  });
-  return groupedLocations;
 }
 </script>
 </body>
