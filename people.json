@@ -4423,5 +4423,126 @@
       "photoDescriptions": [
         
       ]
+  },
+  {
+    "id": "pearl1900",
+    "name": "Pearl M Sloan (Gillgrist)",
+    "commonName": "Pearl Sloan",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1900-04-02",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "residence": {
+      "city": "Grove City, PA",
+      "coordinates": [41.188426, -80.083544]
+    },
+    "deathday": "1989-06-??",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Homer Sloan", "id": "homer1901" }
+      ],
+      "parents": [
+        { "name": "James Gillgrist", "id": "james1968" },
+        { "name": "Abigail Gillgrist", "id": "abigail1873" }
+      ],
+      "siblings": [
+        { "name": "Thomas Gillgrist", "id": "thomas1894" },
+        { "name": "Hazel Gillgrist", "id": "hazel1898" },
+        { "name": "Myrtle Kerr", "id": "myrtle1903" },
+        { "name": "Dallas Gillgrist", "id": "dallas1906" }
+      ],
+      "children": [
+        { "name": "Jimmy Sloan", "id": "james1924" },
+        { "name": "Baby Sloan", "id": "sloan1928" },
+        { "name": "Homer Sloan Jr.", "id": "homer1934" },
+        { "name": "Larry Sloan", "id": "larry1937" },
+        { "name": "Infant Sloan", "id": "sloan1941" }
+      ]
+    },
+    "timeline": [
+      { "year": "1900", "event": "Born in Harrisville, PA (Unknown exact city)" },
+      { "year": "1920", "event": "Married Homer Sloan on an Unknown year (1920 is an estimate)", "id": "homer1901" },
+      { "year": "1924", "event": "Birth of First Child Jimmy Sloan", "id": "james1924" },
+      { "year": "1928", "event": "Birth of Second Child though he died at birth", "id": "sloan1928" },
+      { "year": "1934", "event": "Birth of Third Child Homer Sloan Jr. (Very little information on him. I'm not even sure he is real)", "id": "homer1934" },
+      { "year": "1937", "event": "Birth of Fourth Child Larry Sloan (Very little information on him. I'm not even sure he is real)", "id": "larry1937" },
+      { "year": "1941", "event": "Birth of Fifth Child though she died at birth", "id": "sloan1941" },
+      { "year": "1965", "event": "Death of her husband Homer Sloan", "id": "homer1901" },
+      { "year": "1966", "event": "Remarried to Harry Richard", "id": "harry1898" },
+      { "year": "1983", "event": "Death of her second husband Harry Richard", "id": "harry1898" },
+      { "year": "1989", "event": "Died in Mercer, PA" }
+    ],
+    "profilePicture": "pearl1900/pearl1900.JPG",
+      "photos": [
+        "pearl1900/pearl1900..JPG",
+        "pearl1900/pearl1900..JPG",
+        "pearl1900/pearl1900..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "homer1901",
+    "name": "Homer Brooks Sloan",
+    "commonName": "Homer Sloan",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1901-04-10",
+    "birthplace": {
+      "city": "Eau Claire, PA",
+      "coordinates": [41.1362, -79.7981]
+    },
+    "residence": {
+      "city": "Grove City, PA",
+      "coordinates": [41.188426, -80.083544]
+    },
+    "deathday": "1965-01-21",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Pearl Sloan", "id": "pearl1900" }
+      ],
+      "parents": [
+        { "name": "James Sloan", "id": "james1851" },
+        { "name": "Jennie Sloan", "id": "jennie1861" }
+      ],
+      "siblings": [
+        { "name": "Chloie Uber", "id": "chloie1886" },
+        { "name": "William Sloan", "id": "william1889" },
+        { "name": "Herbert Sloan", "id": "herbert1892" },
+        { "name": "Edith Schultz", "id": "edith1896" },
+        { "name": "Edna Mae Cokain", "id": "edna1896" },
+        { "name": "Thomas Sloan", "id": "thomas1904" }
+      ],
+      "children": [
+        { "name": "Jimmy Sloan", "id": "james1924" },
+        { "name": "Baby Sloan", "id": "sloan1928" },
+        { "name": "Homer Sloan Jr.", "id": "homer1934" },
+        { "name": "Larry Sloan", "id": "larry1937" },
+        { "name": "Infant Sloan", "id": "sloan1941" }
+      ]
+    },
+    "timeline": [
+      { "year": "1901", "event": "Born in Eau Claire, PA" },
+      { "year": "1920", "event": "Married Pearl Gillgrist (Unknown exact year)", "id": "pearl1900" },
+      { "year": "1924", "event": "Birth of First Child Jimmy Sloan", "id": "james1924" },
+      { "year": "1928", "event": "Birth of Second Child though he died at birth", "id": "sloan1928" },
+      { "year": "1934", "event": "Birth of Third Child Homer Sloan Jr. (Very little information on him. I'm not even sure he is real)", "id": "homer1934" },
+      { "year": "1937", "event": "Birth of Fourth Child Larry Sloan (Very little information on him. I'm not even sure he is real)", "id": "larry1937" },
+      { "year": "1941", "event": "Birth of Fifth Child though she died at birth", "id": "sloan1941" },
+      { "year": "1965", "event": "Died in Mercer, PA" }
+    ],
+    "profilePicture": "homer1901/homer1901.JPG",
+      "photos": [
+        "homer1901/homer1901..JPG",
+        "homer1901/homer1901..JPG",
+        "homer1901/homer1901..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
   }
 ]
