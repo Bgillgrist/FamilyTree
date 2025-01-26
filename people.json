@@ -4544,5 +4544,111 @@
       "photoDescriptions": [
         
       ]
+  },
+  {
+    "id": "myrtle1903",
+    "name": "Myrtle Sarah Kerr (Gillgrist)",
+    "commonName": "Myrtle Kerr",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1903-07-01",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131081, -80.004066]
+    },
+    "deathday": "1984-12-01",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Jim Kerr", "id": "james1904" }
+      ],
+      "parents": [
+        { "name": "Dallas Gillgrist", "id": "dallas1868" },
+        { "name": "Abigail Gillgrist", "id": "abigail1873" }
+      ],
+      "siblings": [
+        { "name": "Thomas Gillgrist", "id": "thomas1894" },
+        { "name": "Hazel Gillgrist", "id": "hazel1898" },
+        { "name": "Pearl Gillgrist", "id": "pearl1900" },
+        { "name": "Dallas Gillgrist", "id": "dallas1906" }
+      ],
+      "children": [
+        { "name": "Shirley Kerr", "id": "shirley1931" },
+        { "name": "Unknown if More", "id": "unknown" }
+      ]
+    },
+    "timeline": [
+      { "year": "1901", "event": "Born in Harrisvile, PA (Exact City is Unknown)" },
+      { "year": "1930", "event": "Married Jim Kerr (Unknown exact year)", "id": "james1904" },
+      { "year": "1931", "event": "Birth of First Child Shirley Kerr", "id": "shirley1931" },
+      { "year": "1931", "event": "Unknown about any more life events or children" },
+      { "year": "1984", "event": "Died in Grove City, PA" }
+    ],
+    "profilePicture": "myrtle1903/myrtle1903.JPG",
+      "photos": [
+        "myrtle1903/myrtle1903..JPG",
+        "myrtle1903/myrtle1903..JPG",
+        "myrtle1903/myrtle1903..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "james1904",
+    "name": "James 'Jim' Ward Kerr",
+    "commonName": "Jim Kerr",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1904-07-03",
+    "birthplace": {
+      "city": "Mercer, PA",
+      "coordinates": [41.2270, -80.2398]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131081, -80.004066]
+    },
+    "deathday": "1999-06-06",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Myrtle Kerr", "id": "myrtle1903" }
+      ],
+      "parents": [
+        { "name": "John Kerr", "id": "john1855" },
+        { "name": "Rosa Kerr", "id": "rosa1868" }
+      ],
+      "siblings": [
+        { "name": "Mary Kerr", "id": "mary1893" },
+        { "name": "Joseph Kerr", "id": "joseph1895" },
+        { "name": "Ethel Seber", "id": "ethel1899" },
+        { "name": "Russell Kerr", "id": "russell1901" },
+        { "name": "Lawrence Kerr", "id": "lawrence1905" }
+      ],
+      "children": [
+        { "name": "Shirley Kerr", "id": "shirley1931" },
+        { "name": "Unknown if More", "id": "unknown" }
+      ]
+    },
+    "timeline": [
+      { "year": "1904", "event": "Born in Mercer, PA (Exact City is Unknown)" },
+      { "year": "1930", "event": "Married Myrtle Gillgrist (Unknown exact year)", "id": "myrtle1903" },
+      { "year": "1931", "event": "Birth of First Child Shirley Kerr", "id": "shirley1931" },
+      { "year": "1931", "event": "Unknown about any more life events or children" },
+      { "year": "1984", "event": "Death of wife Myrtle Kerr", "id": "myrtle1903" },
+      { "year": "1999", "event": "Died in Grove City, PA" }
+    ],
+    "profilePicture": "james1904/james1904.JPG",
+      "photos": [
+        "james1904/james1904..JPG",
+        "james1904/james1904..JPG",
+        "james1904/james1904..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
   }
 ]
