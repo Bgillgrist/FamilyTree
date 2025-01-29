@@ -4650,5 +4650,131 @@
       "photoDescriptions": [
         
       ]
+  },
+  {
+    "id": "james1868",
+    "name": "James Andrew Gillgrist",
+    "commonName": "James Gillgrist",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1869-11-05",
+    "birthplace": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.1367, -80.0092]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131576, -80.003538]
+    },
+    "deathday": "1953-11-16",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "Abigail Gillgrist", "id": "abigail1873" }
+      ],
+      "parents": [
+        { "name": "Thomas Gillgrist", "id": "thomas1835" },
+        { "name": "Maria Gillgrist", "id": "maria1843" }
+      ],
+      "siblings": [
+        { "name": "John Gillgrist", "id": "john1866" },
+        { "name": "Ellen Gillgrist", "id": "ellen1866" },
+        { "name": "George Gillgrist", "id": "george1872" }
+      ],
+      "children": [
+        { "name": "Thomas Gillgrist", "id": "thomas1894" },
+        { "name": "Hazel Gillgrist", "id": "hazel1898" },
+        { "name": "Pearl Gillgrist", "id": "pearl1900" },
+        { "name": "Myrtle Gillgrist", "id": "myrtle1903" },
+        { "name": "Dallas Gillgrist", "id": "dallas1906" }
+      ]
+    },
+    "timeline": [
+      { "year": "1869", "event": "Born in Harrisville, PA (Unknown exact city)" },
+      { "year": "1892", "event": "Married Abigail VanDyke", "id": "abigail1873" },
+      { "year": "1894", "event": "Birth of First Child Thomas Gillgrist", "id": "thomas1894" },
+      { "year": "1898", "event": "Birth of Second Child Hazel Gillgrist", "id": "hazel1898" },
+      { "year": "1900", "event": "Birth of Third Child Pearl Gillgrist", "id": "pearl1900" },
+      { "year": "1903", "event": "Birth of Fourth Child Myrtle Gillgrist", "id": "myrtle1903" },
+      { "year": "1906", "event": "Birth of Fifth Child Dallas Gillgrist", "id": "dallas1906" },
+      { "year": "1917", "event": "Death of daughter Hazel", "id": "hazel1898" },
+      { "year": "1931", "event": "Death of wife Abigail", "id": "abigail1873" },
+      { "year": "1953", "event": "Died in Harrisville, PA" }
+    ],
+    "profilePicture": "james1868/james1868.JPG",
+      "photos": [
+        "james1868/james1868..JPG",
+        "james1868/james1868..JPG",
+        "james1868/james1868..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
+  },
+  {
+    "id": "abigail1873",
+    "name": "Abigail 'Abbie' Jane Gillgrist (VanDyke)",
+    "commonName": "Abbie Gillgrist",
+    "familyGroup": ["Gillgrist"],
+    "birthday": "1873-01-19",
+    "birthplace": {
+      "city": "Marion Township, PA",
+      "coordinates": [41.1411, -79.9417]
+    },
+    "residence": {
+      "city": "Harrisville, PA",
+      "coordinates": [41.131576, -80.003538]
+    },
+    "deathday": "1931-10-04",
+    "deceased": true,
+    "family": {
+      "spouse": [
+        { "name": "James Gillgrist", "id": "james1869" }
+      ],
+      "parents": [
+        { "name": "Jackson VanDyke", "id": "jackson1844" },
+        { "name": "Elizabeth VanDyke", "id": "elizabeth1850" }
+      ],
+      "siblings": [
+        { "name": "Samuel VanDyke", "id": "samuel1871" },
+        { "name": "Richard VanDyke", "id": "richard1874" },
+        { "name": "Sarah McNally", "id": "sarah1877" },
+        { "name": "Harrison VanDyke", "id": "harrison1878" },
+        { "name": "Amanda Rea", "id": "amanda1881" },
+        { "name": "Daisy Huff", "id": "daisy1881" },
+        { "name": "Jesse VanDyke", "id": "jesse1884" },
+        { "name": "Mary Hoffman", "id": "mary1889" },
+        { "name": "Amanda Graham", "id": "amanda1890" },
+        { "name": "Joseph VanDyke", "id": "joseph1894" },
+        { "name": "Charles VanDyke", "id": "charles1897" },
+        { "name": "*Note: I believe she only had 10 siblings. There is likely a duplicate here but I need to do more research to find out who. It is likely one of the Amandas." }
+      ],
+      "children": [
+        { "name": "Thomas Gillgrist", "id": "thomas1894" },
+        { "name": "Hazel Gillgrist", "id": "hazel1898" },
+        { "name": "Pearl Gillgrist", "id": "pearl1900" },
+        { "name": "Myrtle Gillgrist", "id": "myrtle1903" },
+        { "name": "Dallas Gillgrist", "id": "dallas1906" }
+      ]
+    },
+    "timeline": [
+      { "year": "1873", "event": "Born in Harrisville, PA (Unknown exact city)" },
+      { "year": "1892", "event": "Married James Gillgrist", "id": "james1869" },
+      { "year": "1894", "event": "Birth of First Child Thomas Gillgrist", "id": "thomas1894" },
+      { "year": "1898", "event": "Birth of Second Child Hazel Gillgrist", "id": "hazel1898" },
+      { "year": "1900", "event": "Birth of Third Child Pearl Gillgrist", "id": "pearl1900" },
+      { "year": "1903", "event": "Birth of Fourth Child Myrtle Gillgrist", "id": "myrtle1903" },
+      { "year": "1906", "event": "Birth of Fifth Child Dallas Gillgrist", "id": "dallas1906" },
+      { "year": "1917", "event": "Death of daughter Hazel", "id": "hazel1898" },
+      { "year": "1931", "event": "Died in Harrisville, PA" }
+    ],
+    "profilePicture": "abigail1873/abigail1873.JPG",
+      "photos": [
+        "abigail1873/abigail1873..JPG",
+        "abigail1873/abigail1873..JPG",
+        "abigail1873/abigail1873..jpeg"
+      ],
+      "photoDescriptions": [
+        
+      ]
   }
 ]
